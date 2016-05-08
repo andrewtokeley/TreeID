@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Bark" representedClassName=".Bark" syncable="YES">
+        <relationship name="flora" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flora" inverseName="bark" inverseEntity="Flora" syncable="YES"/>
+        <relationship name="textureType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BarkTextureType" inverseName="barks" inverseEntity="BarkTextureType" syncable="YES"/>
+    </entity>
+    <entity name="BarkTextureType" representedClassName=".BarkTextureType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="barks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bark" inverseName="textureType" inverseEntity="Bark" syncable="YES"/>
+    </entity>
+    <entity name="Flora" representedClassName=".Flora" syncable="YES">
+        <attribute name="commonName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="externalURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bark" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bark" inverseName="flora" inverseEntity="Bark" syncable="YES"/>
+        <relationship name="flowerColor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlowerColorType" inverseName="flora" inverseEntity="FlowerColorType" syncable="YES"/>
+        <relationship name="fruitColor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FruitColorType" inverseName="flora" inverseEntity="FruitColorType" syncable="YES"/>
+        <relationship name="leafUpper" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Leaf" inverseName="flora" inverseEntity="Leaf" syncable="YES"/>
+    </entity>
+    <entity name="FlowerColorType" representedClassName=".FlowerColorType" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="flora" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flora" inverseName="flowerColor" inverseEntity="Flora" syncable="YES"/>
+    </entity>
+    <entity name="FruitColorType" representedClassName=".FruitColorType" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="flora" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flora" inverseName="fruitColor" inverseEntity="Flora" syncable="YES"/>
+    </entity>
+    <entity name="Leaf" representedClassName=".Leaf" syncable="YES">
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="colorType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LeafColorType" inverseName="leaves" inverseEntity="LeafColorType" syncable="YES"/>
+        <relationship name="dimensions" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="LeafDimension" inverseName="leaf" inverseEntity="LeafDimension" syncable="YES"/>
+        <relationship name="edgeType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LeafEdgeType" inverseName="leaves" inverseEntity="LeafEdgeType" syncable="YES"/>
+        <relationship name="flora" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flora" inverseName="leafUpper" inverseEntity="Flora" syncable="YES"/>
+        <relationship name="formationType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LeafFormationType" inverseName="leaves" inverseEntity="LeafFormationType" syncable="YES"/>
+        <relationship name="textureType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LeafTextureType" inverseName="leaves" inverseEntity="LeafTextureType" syncable="YES"/>
+    </entity>
+    <entity name="LeafColorType" representedClassName=".LeafColorType" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="leaves" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Leaf" inverseName="colorType" inverseEntity="Leaf" syncable="YES"/>
+    </entity>
+    <entity name="LeafDimension" representedClassName=".LeafDimension" syncable="YES">
+        <attribute name="lengthMax" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="lengthMin" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="widthMax" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="widthMin" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <relationship name="leaf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Leaf" inverseName="dimensions" inverseEntity="Leaf" syncable="YES"/>
+    </entity>
+    <entity name="LeafEdgeType" representedClassName=".LeafEdgeType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="leaves" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Leaf" inverseName="edgeType" inverseEntity="Leaf" syncable="YES"/>
+    </entity>
+    <entity name="LeafFormationType" representedClassName=".LeafFormationType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="leaves" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Leaf" inverseName="formationType" inverseEntity="Leaf" syncable="YES"/>
+    </entity>
+    <entity name="LeafTextureType" representedClassName=".LeafTextureType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="leaves" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Leaf" inverseName="textureType" inverseEntity="Leaf" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Bark" positionX="-5987" positionY="122" width="128" height="73"/>
+        <element name="BarkTextureType" positionX="-5969" positionY="254" width="128" height="88"/>
+        <element name="Flora" positionX="-5735" positionY="-169" width="128" height="163"/>
+        <element name="FlowerColorType" positionX="-5465" positionY="-0" width="128" height="103"/>
+        <element name="FruitColorType" positionX="-5805" positionY="92" width="128" height="103"/>
+        <element name="Leaf" positionX="-5591" positionY="110" width="128" height="148"/>
+        <element name="LeafColorType" positionX="-5348" positionY="119" width="128" height="103"/>
+        <element name="LeafDimension" positionX="-5697" positionY="395" width="128" height="118"/>
+        <element name="LeafEdgeType" positionX="-5382" positionY="272" width="128" height="88"/>
+        <element name="LeafFormationType" positionX="-5517" positionY="395" width="128" height="88"/>
+        <element name="LeafTextureType" positionX="-5798" positionY="261" width="128" height="88"/>
+    </elements>
+</model>

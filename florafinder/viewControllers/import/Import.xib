@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImportViewController" customModule="florafinder" customModuleProvider="target">
+            <connections>
+                <outlet property="importButton" destination="rVo-3a-S2M" id="Pz9-Ia-L4B"/>
+                <outlet property="messageTextView" destination="Jxp-v3-EhL" id="xZE-Va-NfA"/>
+                <outlet property="view" destination="iN0-l3-epB" id="eYS-0r-sm8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Import..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jxp-v3-EhL">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="554"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVo-3a-S2M">
+                    <rect key="frame" x="277" y="562" width="46" height="30"/>
+                    <state key="normal" title="Import"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="rVo-3a-S2M" firstAttribute="top" secondItem="Jxp-v3-EhL" secondAttribute="bottom" constant="8" id="0tU-io-MkO"/>
+                <constraint firstAttribute="bottom" secondItem="rVo-3a-S2M" secondAttribute="bottom" constant="8" id="PBo-Po-lBB"/>
+                <constraint firstAttribute="trailing" secondItem="Jxp-v3-EhL" secondAttribute="trailing" id="SVh-lh-YST"/>
+                <constraint firstItem="rVo-3a-S2M" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TRO-LJ-dSZ"/>
+                <constraint firstItem="Jxp-v3-EhL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cF1-I9-fEs"/>
+                <constraint firstItem="Jxp-v3-EhL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lit-kR-fj7"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

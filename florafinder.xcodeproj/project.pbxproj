@@ -7,14 +7,233 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79348102BEECE7BDFA6C22A3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70101DC86DAC0C3A87DB2925 /* Pods.framework */; };
+		D837D9491CDEACEE00B2D775 /* previous.png in Resources */ = {isa = PBXBuildFile; fileRef = D837D9471CDEACEE00B2D775 /* previous.png */; };
+		D837D94A1CDEACEE00B2D775 /* previous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837D9481CDEACEE00B2D775 /* previous@2x.png */; };
+		D837D94D1CDEAE7700B2D775 /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837D94B1CDEAE7700B2D775 /* next@2x.png */; };
+		D837D94E1CDEAE7700B2D775 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = D837D94C1CDEAE7700B2D775 /* next.png */; };
+		D837D9501CDEB9A400B2D775 /* puka_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D837D94F1CDEB9A400B2D775 /* puka_main.jpg */; };
+		D837D9541CDEDF7C00B2D775 /* coprosma_robusta_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D837D9511CDEDF7C00B2D775 /* coprosma_robusta_main.jpg */; };
+		D837D9551CDEDF7C00B2D775 /* nikau_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D837D9521CDEDF7C00B2D775 /* nikau_main.jpg */; };
+		D837D9561CDEDF7C00B2D775 /* totara_main.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D837D9531CDEDF7C00B2D775 /* totara_main.JPG */; };
+		D837D9581CDEE5A500B2D775 /* LeafShapeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837D9571CDEE5A500B2D775 /* LeafShapeEnum.swift */; };
+		D837D95E1CDEFEC600B2D775 /* broadleaf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837D95B1CDEFEC600B2D775 /* broadleaf@2x.png */; };
+		D837D9601CDEFEC600B2D775 /* narrowleaf.png in Resources */ = {isa = PBXBuildFile; fileRef = D837D95D1CDEFEC600B2D775 /* narrowleaf.png */; };
+		D837FC911C730E220032C033 /* DataModel.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D837FC8D1C730E220032C033 /* DataModel.rtf */; };
+		D837FC921C730E220032C033 /* leaf_morphology.svg in Resources */ = {isa = PBXBuildFile; fileRef = D837FC8E1C730E220032C033 /* leaf_morphology.svg */; };
+		D837FC931C730E220032C033 /* Native-plants-of-Eastbourne-hills.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D837FC8F1C730E220032C033 /* Native-plants-of-Eastbourne-hills.pdf */; };
+		D837FC941C730E220032C033 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = D837FC901C730E220032C033 /* test.html */; };
+		D837FCA81C730E8A0032C033 /* cluster.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC951C730E8A0032C033 /* cluster.png */; };
+		D837FCA91C730E8A0032C033 /* cluster@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC961C730E8A0032C033 /* cluster@2x.png */; };
+		D837FCAA1C730E8A0032C033 /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC971C730E8A0032C033 /* eye.png */; };
+		D837FCAB1C730E8A0032C033 /* eye@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC981C730E8A0032C033 /* eye@2x.png */; };
+		D837FCAC1C730E8A0032C033 /* individual.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC991C730E8A0032C033 /* individual.png */; };
+		D837FCAD1C730E8A0032C033 /* individual@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC9A1C730E8A0032C033 /* individual@2x.png */; };
+		D837FCAE1C730E8A0032C033 /* lobed.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC9B1C730E8A0032C033 /* lobed.png */; };
+		D837FCAF1C730E8A0032C033 /* lobed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC9C1C730E8A0032C033 /* lobed@2x.png */; };
+		D837FCB01C730E8A0032C033 /* NZ_Beech.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC9D1C730E8A0032C033 /* NZ_Beech.png */; };
+		D837FCB11C730E8A0032C033 /* serrated.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC9E1C730E8A0032C033 /* serrated.png */; };
+		D837FCB21C730E8A0032C033 /* serrated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FC9F1C730E8A0032C033 /* serrated@2x.png */; };
+		D837FCB31C730E8A0032C033 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FCA01C730E8A0032C033 /* settings.png */; };
+		D837FCB41C730E8A0032C033 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FCA11C730E8A0032C033 /* settings@2x.png */; };
+		D837FCB51C730E8A0032C033 /* smooth.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FCA21C730E8A0032C033 /* smooth.png */; };
+		D837FCB61C730E8A0032C033 /* smooth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FCA31C730E8A0032C033 /* smooth@2x.png */; };
+		D837FCB71C730E8A0032C033 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FCA41C730E8A0032C033 /* star.png */; };
+		D837FCB81C730E8A0032C033 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FCA51C730E8A0032C033 /* star@2x.png */; };
+		D837FCB91C730E8A0032C033 /* wrinkled.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FCA61C730E8A0032C033 /* wrinkled.png */; };
+		D837FCBA1C730E8A0032C033 /* wrinkled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FCA71C730E8A0032C033 /* wrinkled@2x.png */; };
+		D837FCD81C730FC20032C033 /* Flora.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCBD1C730FC20032C033 /* Flora.swift */; };
+		D837FCDA1C730FC20032C033 /* Bark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCBF1C730FC20032C033 /* Bark.swift */; };
+		D837FCDB1C730FC20032C033 /* Bark+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCC01C730FC20032C033 /* Bark+CoreDataProperties.swift */; };
+		D837FCDC1C730FC20032C033 /* BarkTextureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCC11C730FC20032C033 /* BarkTextureType.swift */; };
+		D837FCDD1C730FC20032C033 /* BarkTextureType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCC21C730FC20032C033 /* BarkTextureType+CoreDataProperties.swift */; };
+		D837FCDE1C730FC20032C033 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCC31C730FC20032C033 /* CoreDataController.swift */; };
+		D837FCDF1C730FC20032C033 /* Leaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCC41C730FC20032C033 /* Leaf.swift */; };
+		D837FCE11C730FC20032C033 /* LeafColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCC61C730FC20032C033 /* LeafColorType.swift */; };
+		D837FCE21C730FC20032C033 /* LeafColorType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCC71C730FC20032C033 /* LeafColorType+CoreDataProperties.swift */; };
+		D837FCE51C730FC20032C033 /* LeafDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCCA1C730FC20032C033 /* LeafDimension.swift */; };
+		D837FCE71C730FC20032C033 /* LeafEdgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCCC1C730FC20032C033 /* LeafEdgeType.swift */; };
+		D837FCE81C730FC20032C033 /* LeafEdgeType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCCD1C730FC20032C033 /* LeafEdgeType+CoreDataProperties.swift */; };
+		D837FCED1C730FC20032C033 /* LeafTextureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCD21C730FC20032C033 /* LeafTextureType.swift */; };
+		D837FCEE1C730FC20032C033 /* LeafTextureType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCD31C730FC20032C033 /* LeafTextureType+CoreDataProperties.swift */; };
+		D837FCF61C7310350032C033 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCF21C7310350032C033 /* SearchViewController.swift */; };
+		D837FCF71C7310350032C033 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCF31C7310350032C033 /* SecondViewController.swift */; };
+		D837FCF81C7310350032C033 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCF41C7310350032C033 /* SettingsViewController.swift */; };
+		D837FCF91C7310350032C033 /* LeafViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCF51C7310350032C033 /* LeafViewController.swift */; };
+		D837FCFB1C7310BA0032C033 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCFA1C7310BA0032C033 /* FindViewController.swift */; };
+		D837FD001C7310FB0032C033 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCFC1C7310FB0032C033 /* SearchResult.swift */; };
+		D837FD011C7310FB0032C033 /* SearchTermByKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCFD1C7310FB0032C033 /* SearchTermByKeyword.swift */; };
+		D837FD021C7310FB0032C033 /* SearchTermByLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCFE1C7310FB0032C033 /* SearchTermByLookup.swift */; };
+		D837FD031C7310FB0032C033 /* SearchTermProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FCFF1C7310FB0032C033 /* SearchTermProtocol.swift */; };
+		D837FD061C7311730032C033 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD041C7311730032C033 /* StringExtension.swift */; };
+		D837FD071C7311730032C033 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD051C7311730032C033 /* UINavigationControllerExtension.swift */; };
+		D837FD141C73125D0032C033 /* LeafColorTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD081C73125D0032C033 /* LeafColorTypeProtocol.swift */; };
+		D837FD151C73125D0032C033 /* LeafColorTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD091C73125D0032C033 /* LeafColorTypeService.swift */; };
+		D837FD161C73125D0032C033 /* LeafEdgeTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD0A1C73125D0032C033 /* LeafEdgeTypeProtocol.swift */; };
+		D837FD171C73125D0032C033 /* LeafEdgeTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD0B1C73125D0032C033 /* LeafEdgeTypeService.swift */; };
+		D837FD181C73125D0032C033 /* LeafService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD0C1C73125D0032C033 /* LeafService.swift */; };
+		D837FD191C73125D0032C033 /* LeafServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD0D1C73125D0032C033 /* LeafServiceProtocol.swift */; };
+		D837FD1A1C73125D0032C033 /* LeafTextureTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD0E1C73125D0032C033 /* LeafTextureTypeProtocol.swift */; };
+		D837FD1B1C73125D0032C033 /* LeafTextureTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD0F1C73125D0032C033 /* LeafTextureTypeService.swift */; };
+		D837FD1C1C73125D0032C033 /* FloraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD101C73125D0032C033 /* FloraService.swift */; };
+		D837FD1D1C73125D0032C033 /* FloraServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD111C73125D0032C033 /* FloraServiceProtocol.swift */; };
+		D837FD1E1C73125D0032C033 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD121C73125D0032C033 /* Service.swift */; };
+		D837FD1F1C73125D0032C033 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD131C73125D0032C033 /* ServiceFactory.swift */; };
+		D837FD231C7312820032C033 /* SelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD201C7312820032C033 /* SelectorDelegate.swift */; };
+		D837FD241C7312820032C033 /* SelectorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD211C7312820032C033 /* SelectorItem.swift */; };
+		D837FD251C7312820032C033 /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD221C7312820032C033 /* SelectorViewController.swift */; };
+		D837FD271C7313330032C033 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837FD261C7313330032C033 /* Appearance.swift */; };
+		D837FD2A1C7313FC0032C033 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D837FD281C7313FC0032C033 /* Model.xcdatamodeld */; };
+		D837FD311C7316D70032C033 /* NMRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = D837FD301C7316D70032C033 /* NMRangeSlider.m */; };
+		D837FD3D1C7317120032C033 /* slider-default_trackBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD331C7317120032C033 /* slider-default_trackBackground@2x.png */; };
+		D837FD3E1C7317120032C033 /* slider-default-handle-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD341C7317120032C033 /* slider-default-handle-highlighted.png */; };
+		D837FD3F1C7317120032C033 /* slider-default-handle-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD351C7317120032C033 /* slider-default-handle-highlighted@2x.png */; };
+		D837FD401C7317120032C033 /* slider-default-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD361C7317120032C033 /* slider-default-handle.png */; };
+		D837FD411C7317120032C033 /* slider-default-handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD371C7317120032C033 /* slider-default-handle@2x.png */; };
+		D837FD421C7317120032C033 /* slider-default-track.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD381C7317120032C033 /* slider-default-track.png */; };
+		D837FD431C7317120032C033 /* slider-default-track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD391C7317120032C033 /* slider-default-track@2x.png */; };
+		D837FD441C7317120032C033 /* slider-default-trackBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD3A1C7317120032C033 /* slider-default-trackBackground.png */; };
+		D837FD451C7317120032C033 /* slider-default-trackCrossedOver.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD3B1C7317120032C033 /* slider-default-trackCrossedOver.png */; };
+		D837FD461C7317120032C033 /* slider-default-trackCrossedOver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837FD3C1C7317120032C033 /* slider-default-trackCrossedOver@2x.png */; };
+		D84D29B61CC74CE90084C851 /* ReferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29B51CC74CE90084C851 /* ReferenceViewController.swift */; };
+		D84D29B81CC8A9320084C851 /* DimensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29B71CC8A9320084C851 /* DimensionTests.swift */; };
+		D84D29BD1CCB50760084C851 /* ImageSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29BC1CCB50760084C851 /* ImageSelectorDelegate.swift */; };
+		D84D29C11CCC855B0084C851 /* SearchTermByFruitColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29C01CCC855B0084C851 /* SearchTermByFruitColor.swift */; };
+		D84D29C31CCC8D030084C851 /* SearchTermByFlowerColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29C21CCC8D030084C851 /* SearchTermByFlowerColor.swift */; };
+		D84D29C51CCC8D500084C851 /* SearchTermByLeafEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29C41CCC8D500084C851 /* SearchTermByLeafEdge.swift */; };
+		D84D29C71CCC8DD00084C851 /* SearchTermByLeafFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29C61CCC8DD00084C851 /* SearchTermByLeafFormation.swift */; };
+		D84D29C91CCC8F370084C851 /* SearchTermByLeafTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29C81CCC8F370084C851 /* SearchTermByLeafTexture.swift */; };
+		D84D29CB1CCCABCE0084C851 /* SearchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29CA1CCCABCE0084C851 /* SearchDetailsViewController.swift */; };
+		D84D29CF1CCEA40A0084C851 /* FloraDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29CE1CCEA40A0084C851 /* FloraDetailsViewController.swift */; };
+		D84D29D11CCFF5840084C851 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29D01CCFF5840084C851 /* ImageService.swift */; };
+		D84D29DC1CCFF7930084C851 /* DataStoreProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29D91CCFF7930084C851 /* DataStoreProviderProtocol.swift */; };
+		D84D29DD1CCFF7930084C851 /* S3DataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29DA1CCFF7930084C851 /* S3DataStoreProvider.swift */; };
+		D84D29DE1CCFF7930084C851 /* LocalDataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29DB1CCFF7930084C851 /* LocalDataStoreProvider.swift */; };
+		D84D29E01CD0B6980084C851 /* ImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29DF1CD0B6980084C851 /* ImageServiceTests.swift */; };
+		D84D29E21CD199340084C851 /* CacheDataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29E11CD199340084C851 /* CacheDataStoreProvider.swift */; };
+		D84D29E61CD1DC580084C851 /* fivefinger_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84D29E41CD1DC580084C851 /* fivefinger_main.jpg */; };
+		D84D29E71CD1DC580084C851 /* kowhai_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84D29E51CD1DC580084C851 /* kowhai_main.jpg */; };
+		D84D29E91CD211A30084C851 /* ImportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29E81CD211A30084C851 /* ImportDelegate.swift */; };
+		D84D29EF1CD21A790084C851 /* akeake_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84D29EC1CD21A790084C851 /* akeake_main.jpg */; };
+		D84D29F01CD21A790084C851 /* blackbeech_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84D29ED1CD21A790084C851 /* blackbeech_main.jpg */; };
+		D84D29F11CD21A790084C851 /* hardbeech_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84D29EE1CD21A790084C851 /* hardbeech_main.jpg */; };
+		D84D29F31CD2963A0084C851 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D84D29F21CD2963A0084C851 /* placeholder.png */; };
+		D84D29F61CD299D70084C851 /* kamahi_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84D29F41CD299D70084C851 /* kamahi_main.jpg */; };
+		D84D29F71CD299D70084C851 /* redmatipo_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D84D29F51CD299D70084C851 /* redmatipo_main.jpg */; };
+		D84D29F91CD29D2D0084C851 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D29F81CD29D2D0084C851 /* ImagePreviewViewController.swift */; };
+		D84D29FB1CD2E22A0084C851 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = D84D29FA1CD2E22A0084C851 /* close.png */; };
+		D84EA2BB1C815FE100BD75AD /* alternating.png in Resources */ = {isa = PBXBuildFile; fileRef = D84EA2B91C815FE100BD75AD /* alternating.png */; };
+		D84EA2BC1C815FE100BD75AD /* alternating@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D84EA2BA1C815FE100BD75AD /* alternating@2x.png */; };
+		D84EA2D01C84418300BD75AD /* Flora+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EA2CD1C84418300BD75AD /* Flora+CoreDataProperties.swift */; };
+		D84EA2D11C84418300BD75AD /* FruitColorType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EA2CE1C84418300BD75AD /* FruitColorType+CoreDataProperties.swift */; };
+		D84EA2D21C84418300BD75AD /* FruitColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EA2CF1C84418300BD75AD /* FruitColorType.swift */; };
+		D84EA2DB1C881CA700BD75AD /* fruit.png in Resources */ = {isa = PBXBuildFile; fileRef = D84EA2D91C881CA700BD75AD /* fruit.png */; };
+		D84EA2DC1C881CA700BD75AD /* fruit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D84EA2DA1C881CA700BD75AD /* fruit@2x.png */; };
+		D853240A1CC1AA8E002BC3ED /* cover_miro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D85324091CC1AA8E002BC3ED /* cover_miro.jpg */; };
+		D853240C1CC1AC86002BC3ED /* cover_catalogue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D853240B1CC1AC86002BC3ED /* cover_catalogue.jpg */; };
+		D853240E1CC2CED4002BC3ED /* LeafDimensionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D853240D1CC2CED4002BC3ED /* LeafDimensionProtocol.swift */; };
+		D85324101CC2CFA0002BC3ED /* LeafDimensionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D853240F1CC2CFA0002BC3ED /* LeafDimensionService.swift */; };
+		D85324131CC2E4A3002BC3ED /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85324121CC2E4A3002BC3ED /* SearchResultCell.xib */; };
+		D85324191CC34B77002BC3ED /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85324181CC34B77002BC3ED /* SearchResultCollectionViewCell.swift */; };
+		D853241B1CC35487002BC3ED /* SearchTermByDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D853241A1CC35487002BC3ED /* SearchTermByDimension.swift */; };
+		D853241D1CC4DF4D002BC3ED /* LeafFormationTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D853241C1CC4DF4D002BC3ED /* LeafFormationTypeProtocol.swift */; };
+		D853241F1CC4DF6A002BC3ED /* LeafFormationTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D853241E1CC4DF6A002BC3ED /* LeafFormationTypeService.swift */; };
+		D85324251CC4E168002BC3ED /* LeafFormationType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85324211CC4E168002BC3ED /* LeafFormationType+CoreDataProperties.swift */; };
+		D85324261CC4E168002BC3ED /* LeafFormationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85324221CC4E168002BC3ED /* LeafFormationType.swift */; };
+		D853242A1CC4E202002BC3ED /* LeafDimension+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85324281CC4E202002BC3ED /* LeafDimension+CoreDataProperties.swift */; };
+		D853242B1CC4E202002BC3ED /* Leaf+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85324291CC4E202002BC3ED /* Leaf+CoreDataProperties.swift */; };
+		D861DBB31C4370AF00CE0A22 /* LookupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DBB21C4370AF00CE0A22 /* LookupTests.swift */; };
+		D861DBB51C43713600CE0A22 /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861DBB41C43713600CE0A22 /* TestBase.swift */; };
 		D86BD30C1C37CA1C001E17E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86BD30B1C37CA1C001E17E7 /* AppDelegate.swift */; };
-		D86BD30E1C37CA1C001E17E7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86BD30D1C37CA1C001E17E7 /* FirstViewController.swift */; };
-		D86BD3101C37CA1C001E17E7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86BD30F1C37CA1C001E17E7 /* SecondViewController.swift */; };
 		D86BD3131C37CA1C001E17E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86BD3111C37CA1C001E17E7 /* Main.storyboard */; };
 		D86BD3151C37CA1C001E17E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86BD3141C37CA1C001E17E7 /* Assets.xcassets */; };
 		D86BD3181C37CA1C001E17E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86BD3161C37CA1C001E17E7 /* LaunchScreen.storyboard */; };
-		D86BD3231C37CA1C001E17E7 /* florafinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86BD3221C37CA1C001E17E7 /* florafinderTests.swift */; };
+		D86BD3231C37CA1C001E17E7 /* floraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86BD3221C37CA1C001E17E7 /* floraTests.swift */; };
 		D86BD32E1C37CA1C001E17E7 /* florafinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86BD32D1C37CA1C001E17E7 /* florafinderUITests.swift */; };
+		D87DCFEF1C965F2F007A32A8 /* FlowerColorTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DCFEE1C965F2F007A32A8 /* FlowerColorTypeService.swift */; };
+		D87DCFF21C9669AB007A32A8 /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = D87DCFF01C9669AB007A32A8 /* flower.png */; };
+		D87DCFF31C9669AB007A32A8 /* flower@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D87DCFF11C9669AB007A32A8 /* flower@2x.png */; };
+		D87DCFF61C9B7830007A32A8 /* MeasureLeaf.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87DCFF51C9B7830007A32A8 /* MeasureLeaf.xib */; };
+		D87DCFF81C9B79BC007A32A8 /* MeasureLeafViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DCFF71C9B79BC007A32A8 /* MeasureLeafViewController.swift */; };
+		D88FA0151CBAE1C30004462C /* ImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88FA0141CBAE1C30004462C /* ImportViewController.swift */; };
+		D88FA0171CBAE1DF0004462C /* Import.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88FA0161CBAE1DF0004462C /* Import.xib */; };
+		D89174DF1CBED6DD00D81CFF /* DataManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89174DE1CBED6DD00D81CFF /* DataManagerService.swift */; };
+		D89174E11CBED6FD00D81CFF /* DataManagerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89174E01CBED6FD00D81CFF /* DataManagerServiceProtocol.swift */; };
+		D89174E51CC0584300D81CFF /* EnumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89174E41CC0584300D81CFF /* EnumService.swift */; };
+		D89174E71CC0684900D81CFF /* FruitColorTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89174E61CC0684900D81CFF /* FruitColorTypeTests.swift */; };
+		D892D3421CD45704003E7DDA /* iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D892D3401CD45704003E7DDA /* iphone.png */; };
+		D892D3431CD45704003E7DDA /* iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D892D3411CD45704003E7DDA /* iphone@2x.png */; };
+		D892D3461CD48598003E7DDA /* grab.png in Resources */ = {isa = PBXBuildFile; fileRef = D892D3441CD48598003E7DDA /* grab.png */; };
+		D892D3471CD48598003E7DDA /* grab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D892D3451CD48598003E7DDA /* grab@2x.png */; };
+		D892D3491CD488AB003E7DDA /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3481CD488AB003E7DDA /* Grid.swift */; };
+		D892D34B1CD5DB5B003E7DDA /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D34A1CD5DB5B003E7DDA /* LaunchScreenViewController.swift */; };
+		D892D3531CD92AD3003E7DDA /* FlowerCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3521CD92AD3003E7DDA /* FlowerCollectionViewDelegate.swift */; };
+		D892D3551CD93FC6003E7DDA /* FruitCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3541CD93FC6003E7DDA /* FruitCollectionViewDelegate.swift */; };
+		D892D3621CDB1F73003E7DDA /* FruitImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3611CDB1F73003E7DDA /* FruitImageSelectionView.swift */; };
+		D892D3641CDB5752003E7DDA /* FlowerImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3631CDB5752003E7DDA /* FlowerImageSelectionView.swift */; };
+		D892D3681CDB582C003E7DDA /* FormationImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3671CDB582C003E7DDA /* FormationImageSelectionView.swift */; };
+		D892D36E1CDBD684003E7DDA /* LeafEdgeImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D36D1CDBD684003E7DDA /* LeafEdgeImageSelectionView.swift */; };
+		D892D3731CDBD81C003E7DDA /* ImageSelectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D36F1CDBD81C003E7DDA /* ImageSelectionData.swift */; };
+		D892D3741CDBD81C003E7DDA /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3701CDBD81C003E7DDA /* ImageSelectionView.swift */; };
+		D892D3751CDBD81C003E7DDA /* ImageSelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3711CDBD81C003E7DDA /* ImageSelectionViewCell.swift */; };
+		D892D3761CDBD81C003E7DDA /* ImageSelectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3721CDBD81C003E7DDA /* ImageSelectionViewDelegate.swift */; };
+		D892D37A1CDBD82A003E7DDA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3771CDBD82A003E7DDA /* ImageCollectionViewCell.swift */; };
+		D892D37B1CDBD82A003E7DDA /* ImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3781CDBD82A003E7DDA /* ImageSelector.swift */; };
+		D892D37C1CDBD82A003E7DDA /* ImageSelectorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892D3791CDBD82A003E7DDA /* ImageSelectorItem.swift */; };
+		D899D53E1C7399C9005A9A7F /* slider-default7-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = D899D5361C7399C9005A9A7F /* slider-default7-handle.png */; };
+		D899D53F1C7399C9005A9A7F /* slider-default7-handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D899D5371C7399C9005A9A7F /* slider-default7-handle@2x.png */; };
+		D899D5401C7399C9005A9A7F /* slider-default7-track.png in Resources */ = {isa = PBXBuildFile; fileRef = D899D5381C7399C9005A9A7F /* slider-default7-track.png */; };
+		D899D5411C7399C9005A9A7F /* slider-default7-track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D899D5391C7399C9005A9A7F /* slider-default7-track@2x.png */; };
+		D899D5421C7399C9005A9A7F /* slider-default7-trackBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D899D53A1C7399C9005A9A7F /* slider-default7-trackBackground.png */; };
+		D899D5431C7399C9005A9A7F /* slider-default7-trackBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D899D53B1C7399C9005A9A7F /* slider-default7-trackBackground@2x.png */; };
+		D899D5441C7399C9005A9A7F /* slider-default7-trackCrossedOver.png in Resources */ = {isa = PBXBuildFile; fileRef = D899D53C1C7399C9005A9A7F /* slider-default7-trackCrossedOver.png */; };
+		D899D5451C7399C9005A9A7F /* slider-default7-trackCrossedOver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D899D53D1C7399C9005A9A7F /* slider-default7-trackCrossedOver@2x.png */; };
+		D8B1E4911C521A33003AC017 /* SelectorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1E4901C521A33003AC017 /* SelectorViewControllerTests.swift */; };
+		D8B7651E1C96563700A9B4F2 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7651B1C96563700A9B4F2 /* UIColorExtension.swift */; };
+		D8B7651F1C96563700A9B4F2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7651C1C96563700A9B4F2 /* UIImageExtension.swift */; };
+		D8B765201C96563700A9B4F2 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7651D1C96563700A9B4F2 /* UITableViewCellExtension.swift */; };
+		D8B765231C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B765211C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.swift */; };
+		D8B765241C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B765221C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.xib */; };
+		D8B765281C96577F00A9B4F2 /* FloraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B765251C96577F00A9B4F2 /* FloraViewController.swift */; };
+		D8B7652A1C96577F00A9B4F2 /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B765271C96577F00A9B4F2 /* CatalogueViewController.swift */; };
+		D8B7652D1C96582300A9B4F2 /* DescriptionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7652B1C96582300A9B4F2 /* DescriptionList.swift */; };
+		D8B7652E1C96582300A9B4F2 /* DescriptionListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7652C1C96582300A9B4F2 /* DescriptionListItem.swift */; };
+		D8B765321C9658CE00A9B4F2 /* FlowerColorTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7652F1C9658CE00A9B4F2 /* FlowerColorTypeProtocol.swift */; };
+		D8B765331C9658CE00A9B4F2 /* FruitColorTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B765301C9658CE00A9B4F2 /* FruitColorTypeProtocol.swift */; };
+		D8B765341C9658CE00A9B4F2 /* FruitColorTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B765311C9658CE00A9B4F2 /* FruitColorTypeService.swift */; };
+		D8B765371C96598C00A9B4F2 /* FlowerColorType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B765351C96598C00A9B4F2 /* FlowerColorType+CoreDataProperties.swift */; };
+		D8B765381C96598C00A9B4F2 /* FlowerColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B765361C96598C00A9B4F2 /* FlowerColorType.swift */; };
+		D8B96F911C4A430700F659E4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D8B96F901C4A430700F659E4 /* Podfile */; };
+		D8C747EA1CA0DADE00FB8ED9 /* UISliderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C747E91CA0DADE00FB8ED9 /* UISliderExtension.swift */; };
+		D8C747EC1CA3161300FB8ED9 /* IPhoneGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C747EB1CA3161300FB8ED9 /* IPhoneGrid.swift */; };
+		D8C747EE1CA316F500FB8ED9 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C747ED1CA316F500FB8ED9 /* Units.swift */; };
+		D8C747F01CA3623200FB8ED9 /* IPhoneGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C747EF1CA3623200FB8ED9 /* IPhoneGridTests.swift */; };
+		D8C747F21CAB043E00FB8ED9 /* MeasureLeafDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C747F11CAB043E00FB8ED9 /* MeasureLeafDelegate.swift */; };
+		D8C748081CAC4F7F00FB8ED9 /* TOKCSVColumnDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C747F61CAC4F7F00FB8ED9 /* TOKCSVColumnDefinition.m */; };
+		D8C748091CAC4F7F00FB8ED9 /* TOKCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C747F81CAC4F7F00FB8ED9 /* TOKCSVParser.m */; };
+		D8C7480A1CAC4F7F00FB8ED9 /* TOKCSVReader.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C747FA1CAC4F7F00FB8ED9 /* TOKCSVReader.m */; };
+		D8C7480B1CAC4F7F00FB8ED9 /* TOKExportResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C747FD1CAC4F7F00FB8ED9 /* TOKExportResult.m */; };
+		D8C7480C1CAC4F7F00FB8ED9 /* TOKImportMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C747FF1CAC4F7F00FB8ED9 /* TOKImportMessage.m */; };
+		D8C7480D1CAC4F7F00FB8ED9 /* TOKImportResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C748011CAC4F7F00FB8ED9 /* TOKImportResult.m */; };
+		D8C7480E1CAC4F7F00FB8ED9 /* TOKImportValidationMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C748031CAC4F7F00FB8ED9 /* TOKImportValidationMessages.m */; };
+		D8C7480F1CAC4F7F00FB8ED9 /* TOKRowField.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C748051CAC4F7F00FB8ED9 /* TOKRowField.m */; };
+		D8C748101CAC4F7F00FB8ED9 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C748071CAC4F7F00FB8ED9 /* CHCSVParser.m */; };
+		D8C748121CAC52CD00FB8ED9 /* FloraImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C748111CAC52CD00FB8ED9 /* FloraImporter.swift */; };
+		D8C748141CAE415C00FB8ED9 /* importTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C748131CAE415C00FB8ED9 /* importTests.swift */; };
+		D8C748161CB23F6F00FB8ED9 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C748151CB23F6F00FB8ED9 /* LoggerProtocol.swift */; };
+		D8C748181CB3832300FB8ED9 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C748171CB3832300FB8ED9 /* Semaphore.swift */; };
+		D8D2A3961CDD9922001A9A7F /* cabbage_flower2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A3921CDD9922001A9A7F /* cabbage_flower2.jpg */; };
+		D8D2A3971CDD9922001A9A7F /* cabbage_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A3931CDD9922001A9A7F /* cabbage_main.jpg */; };
+		D8D2A3981CDD9922001A9A7F /* kanuka_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A3941CDD9922001A9A7F /* kanuka_main.jpg */; };
+		D8D2A3991CDD9922001A9A7F /* manuka_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A3951CDD9922001A9A7F /* manuka_main.jpg */; };
+		D8D2A39B1CDD9B83001A9A7F /* karaka_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A39A1CDD9B83001A9A7F /* karaka_main.jpg */; };
+		D8D2A3A01CDDA19A001A9A7F /* ngaio_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A39C1CDDA19A001A9A7F /* ngaio_main.jpg */; };
+		D8D2A3A11CDDA19A001A9A7F /* northernrata_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A39D1CDDA19A001A9A7F /* northernrata_main.jpg */; };
+		D8D2A3A21CDDA19A001A9A7F /* pigeonwood_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A39E1CDDA19A001A9A7F /* pigeonwood_main.jpg */; };
+		D8D2A3A31CDDA19A001A9A7F /* rimu_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A39F1CDDA19A001A9A7F /* rimu_main.jpg */; };
+		D8F0D8221CBB9F5C00A681B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0D8211CBB9F5C00A681B0 /* HomeViewController.swift */; };
+		D8F0D8241CBCBC6500A681B0 /* TestImport.csv in Resources */ = {isa = PBXBuildFile; fileRef = D8F0D8231CBCBC6500A681B0 /* TestImport.csv */; };
+		D8FFC6A21C5B2C4D00A04881 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FFC6A11C5B2C4D00A04881 /* SearchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +254,253 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70101DC86DAC0C3A87DB2925 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC56A94A9A77966C6A21D0C1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D837D9471CDEACEE00B2D775 /* previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = previous.png; path = images/previous.png; sourceTree = "<group>"; };
+		D837D9481CDEACEE00B2D775 /* previous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "previous@2x.png"; path = "images/previous@2x.png"; sourceTree = "<group>"; };
+		D837D94B1CDEAE7700B2D775 /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "next@2x.png"; path = "images/next@2x.png"; sourceTree = "<group>"; };
+		D837D94C1CDEAE7700B2D775 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = next.png; path = images/next.png; sourceTree = "<group>"; };
+		D837D94F1CDEB9A400B2D775 /* puka_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = puka_main.jpg; path = images/storage/puka_main.jpg; sourceTree = "<group>"; };
+		D837D9511CDEDF7C00B2D775 /* coprosma_robusta_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coprosma_robusta_main.jpg; path = images/storage/coprosma_robusta_main.jpg; sourceTree = "<group>"; };
+		D837D9521CDEDF7C00B2D775 /* nikau_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nikau_main.jpg; path = images/storage/nikau_main.jpg; sourceTree = "<group>"; };
+		D837D9531CDEDF7C00B2D775 /* totara_main.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = totara_main.JPG; path = images/storage/totara_main.JPG; sourceTree = "<group>"; };
+		D837D9571CDEE5A500B2D775 /* LeafShapeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeafShapeEnum.swift; sourceTree = "<group>"; };
+		D837D95B1CDEFEC600B2D775 /* broadleaf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "broadleaf@2x.png"; path = "images/broadleaf@2x.png"; sourceTree = "<group>"; };
+		D837D95D1CDEFEC600B2D775 /* narrowleaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = narrowleaf.png; path = images/narrowleaf.png; sourceTree = "<group>"; };
+		D837FC8D1C730E220032C033 /* DataModel.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = DataModel.rtf; path = documentation/DataModel.rtf; sourceTree = "<group>"; };
+		D837FC8E1C730E220032C033 /* leaf_morphology.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = leaf_morphology.svg; path = documentation/leaf_morphology.svg; sourceTree = "<group>"; };
+		D837FC8F1C730E220032C033 /* Native-plants-of-Eastbourne-hills.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Native-plants-of-Eastbourne-hills.pdf"; path = "documentation/Native-plants-of-Eastbourne-hills.pdf"; sourceTree = "<group>"; };
+		D837FC901C730E220032C033 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; name = test.html; path = documentation/test.html; sourceTree = "<group>"; };
+		D837FC951C730E8A0032C033 /* cluster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cluster.png; path = images/cluster.png; sourceTree = "<group>"; };
+		D837FC961C730E8A0032C033 /* cluster@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cluster@2x.png"; path = "images/cluster@2x.png"; sourceTree = "<group>"; };
+		D837FC971C730E8A0032C033 /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eye.png; path = images/eye.png; sourceTree = "<group>"; };
+		D837FC981C730E8A0032C033 /* eye@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eye@2x.png"; path = "images/eye@2x.png"; sourceTree = "<group>"; };
+		D837FC991C730E8A0032C033 /* individual.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = individual.png; path = images/individual.png; sourceTree = "<group>"; };
+		D837FC9A1C730E8A0032C033 /* individual@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "individual@2x.png"; path = "images/individual@2x.png"; sourceTree = "<group>"; };
+		D837FC9B1C730E8A0032C033 /* lobed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lobed.png; path = images/lobed.png; sourceTree = "<group>"; };
+		D837FC9C1C730E8A0032C033 /* lobed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lobed@2x.png"; path = "images/lobed@2x.png"; sourceTree = "<group>"; };
+		D837FC9D1C730E8A0032C033 /* NZ_Beech.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NZ_Beech.png; path = images/NZ_Beech.png; sourceTree = "<group>"; };
+		D837FC9E1C730E8A0032C033 /* serrated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = serrated.png; path = images/serrated.png; sourceTree = "<group>"; };
+		D837FC9F1C730E8A0032C033 /* serrated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "serrated@2x.png"; path = "images/serrated@2x.png"; sourceTree = "<group>"; };
+		D837FCA01C730E8A0032C033 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = images/settings.png; sourceTree = "<group>"; };
+		D837FCA11C730E8A0032C033 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x.png"; path = "images/settings@2x.png"; sourceTree = "<group>"; };
+		D837FCA21C730E8A0032C033 /* smooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smooth.png; path = images/smooth.png; sourceTree = "<group>"; };
+		D837FCA31C730E8A0032C033 /* smooth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "smooth@2x.png"; path = "images/smooth@2x.png"; sourceTree = "<group>"; };
+		D837FCA41C730E8A0032C033 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = images/star.png; sourceTree = "<group>"; };
+		D837FCA51C730E8A0032C033 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star@2x.png"; path = "images/star@2x.png"; sourceTree = "<group>"; };
+		D837FCA61C730E8A0032C033 /* wrinkled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wrinkled.png; path = images/wrinkled.png; sourceTree = "<group>"; };
+		D837FCA71C730E8A0032C033 /* wrinkled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wrinkled@2x.png"; path = "images/wrinkled@2x.png"; sourceTree = "<group>"; };
+		D837FCBD1C730FC20032C033 /* Flora.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flora.swift; path = data/Flora.swift; sourceTree = "<group>"; };
+		D837FCBF1C730FC20032C033 /* Bark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bark.swift; path = data/Bark.swift; sourceTree = "<group>"; };
+		D837FCC01C730FC20032C033 /* Bark+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bark+CoreDataProperties.swift"; path = "data/Bark+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D837FCC11C730FC20032C033 /* BarkTextureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarkTextureType.swift; path = data/BarkTextureType.swift; sourceTree = "<group>"; };
+		D837FCC21C730FC20032C033 /* BarkTextureType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BarkTextureType+CoreDataProperties.swift"; path = "data/BarkTextureType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D837FCC31C730FC20032C033 /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataController.swift; path = data/CoreDataController.swift; sourceTree = "<group>"; };
+		D837FCC41C730FC20032C033 /* Leaf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Leaf.swift; path = data/Leaf.swift; sourceTree = "<group>"; };
+		D837FCC61C730FC20032C033 /* LeafColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafColorType.swift; path = data/LeafColorType.swift; sourceTree = "<group>"; };
+		D837FCC71C730FC20032C033 /* LeafColorType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LeafColorType+CoreDataProperties.swift"; path = "data/LeafColorType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D837FCCA1C730FC20032C033 /* LeafDimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafDimension.swift; path = data/LeafDimension.swift; sourceTree = "<group>"; };
+		D837FCCC1C730FC20032C033 /* LeafEdgeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafEdgeType.swift; path = data/LeafEdgeType.swift; sourceTree = "<group>"; };
+		D837FCCD1C730FC20032C033 /* LeafEdgeType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LeafEdgeType+CoreDataProperties.swift"; path = "data/LeafEdgeType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D837FCD21C730FC20032C033 /* LeafTextureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafTextureType.swift; path = data/LeafTextureType.swift; sourceTree = "<group>"; };
+		D837FCD31C730FC20032C033 /* LeafTextureType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LeafTextureType+CoreDataProperties.swift"; path = "data/LeafTextureType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D837FCF21C7310350032C033 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = viewControllers/SearchViewController.swift; sourceTree = "<group>"; };
+		D837FCF31C7310350032C033 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = viewControllers/SecondViewController.swift; sourceTree = "<group>"; };
+		D837FCF41C7310350032C033 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = viewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
+		D837FCF51C7310350032C033 /* LeafViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafViewController.swift; path = viewControllers/LeafViewController.swift; sourceTree = "<group>"; };
+		D837FCFA1C7310BA0032C033 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindViewController.swift; path = viewControllers/FindViewController.swift; sourceTree = "<group>"; };
+		D837FCFC1C7310FB0032C033 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResult.swift; path = search/SearchResult.swift; sourceTree = "<group>"; };
+		D837FCFD1C7310FB0032C033 /* SearchTermByKeyword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTermByKeyword.swift; path = search/SearchTermByKeyword.swift; sourceTree = "<group>"; };
+		D837FCFE1C7310FB0032C033 /* SearchTermByLookup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTermByLookup.swift; path = search/SearchTermByLookup.swift; sourceTree = "<group>"; };
+		D837FCFF1C7310FB0032C033 /* SearchTermProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTermProtocol.swift; path = search/SearchTermProtocol.swift; sourceTree = "<group>"; };
+		D837FD041C7311730032C033 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = extensions/StringExtension.swift; sourceTree = "<group>"; };
+		D837FD051C7311730032C033 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UINavigationControllerExtension.swift; path = extensions/UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		D837FD081C73125D0032C033 /* LeafColorTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafColorTypeProtocol.swift; path = services/LeafColorTypeProtocol.swift; sourceTree = "<group>"; };
+		D837FD091C73125D0032C033 /* LeafColorTypeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafColorTypeService.swift; path = services/LeafColorTypeService.swift; sourceTree = "<group>"; };
+		D837FD0A1C73125D0032C033 /* LeafEdgeTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafEdgeTypeProtocol.swift; path = services/LeafEdgeTypeProtocol.swift; sourceTree = "<group>"; };
+		D837FD0B1C73125D0032C033 /* LeafEdgeTypeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafEdgeTypeService.swift; path = services/LeafEdgeTypeService.swift; sourceTree = "<group>"; };
+		D837FD0C1C73125D0032C033 /* LeafService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafService.swift; path = services/LeafService.swift; sourceTree = "<group>"; };
+		D837FD0D1C73125D0032C033 /* LeafServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafServiceProtocol.swift; path = services/LeafServiceProtocol.swift; sourceTree = "<group>"; };
+		D837FD0E1C73125D0032C033 /* LeafTextureTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafTextureTypeProtocol.swift; path = services/LeafTextureTypeProtocol.swift; sourceTree = "<group>"; };
+		D837FD0F1C73125D0032C033 /* LeafTextureTypeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafTextureTypeService.swift; path = services/LeafTextureTypeService.swift; sourceTree = "<group>"; };
+		D837FD101C73125D0032C033 /* FloraService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloraService.swift; path = services/FloraService.swift; sourceTree = "<group>"; };
+		D837FD111C73125D0032C033 /* FloraServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloraServiceProtocol.swift; path = services/FloraServiceProtocol.swift; sourceTree = "<group>"; };
+		D837FD121C73125D0032C033 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = services/Service.swift; sourceTree = "<group>"; };
+		D837FD131C73125D0032C033 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFactory.swift; path = services/ServiceFactory.swift; sourceTree = "<group>"; };
+		D837FD201C7312820032C033 /* SelectorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectorDelegate.swift; path = selector/SelectorDelegate.swift; sourceTree = "<group>"; };
+		D837FD211C7312820032C033 /* SelectorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectorItem.swift; path = selector/SelectorItem.swift; sourceTree = "<group>"; };
+		D837FD221C7312820032C033 /* SelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectorViewController.swift; path = selector/SelectorViewController.swift; sourceTree = "<group>"; };
+		D837FD261C7313330032C033 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Appearance.swift; path = styles/Appearance.swift; sourceTree = "<group>"; };
+		D837FD291C7313FC0032C033 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D837FD2E1C7316D60032C033 /* florafinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "florafinder-Bridging-Header.h"; sourceTree = "<group>"; };
+		D837FD2F1C7316D70032C033 /* NMRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NMRangeSlider.h; path = NMRangeSlider/NMRangeSlider.h; sourceTree = "<group>"; };
+		D837FD301C7316D70032C033 /* NMRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NMRangeSlider.m; path = NMRangeSlider/NMRangeSlider.m; sourceTree = "<group>"; };
+		D837FD331C7317120032C033 /* slider-default_trackBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default_trackBackground@2x.png"; path = "NMRangeSlider/DefaultTheme/slider-default_trackBackground@2x.png"; sourceTree = "<group>"; };
+		D837FD341C7317120032C033 /* slider-default-handle-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default-handle-highlighted.png"; path = "NMRangeSlider/DefaultTheme/slider-default-handle-highlighted.png"; sourceTree = "<group>"; };
+		D837FD351C7317120032C033 /* slider-default-handle-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default-handle-highlighted@2x.png"; path = "NMRangeSlider/DefaultTheme/slider-default-handle-highlighted@2x.png"; sourceTree = "<group>"; };
+		D837FD361C7317120032C033 /* slider-default-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default-handle.png"; path = "NMRangeSlider/DefaultTheme/slider-default-handle.png"; sourceTree = "<group>"; };
+		D837FD371C7317120032C033 /* slider-default-handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default-handle@2x.png"; path = "NMRangeSlider/DefaultTheme/slider-default-handle@2x.png"; sourceTree = "<group>"; };
+		D837FD381C7317120032C033 /* slider-default-track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default-track.png"; path = "NMRangeSlider/DefaultTheme/slider-default-track.png"; sourceTree = "<group>"; };
+		D837FD391C7317120032C033 /* slider-default-track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default-track@2x.png"; path = "NMRangeSlider/DefaultTheme/slider-default-track@2x.png"; sourceTree = "<group>"; };
+		D837FD3A1C7317120032C033 /* slider-default-trackBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default-trackBackground.png"; path = "NMRangeSlider/DefaultTheme/slider-default-trackBackground.png"; sourceTree = "<group>"; };
+		D837FD3B1C7317120032C033 /* slider-default-trackCrossedOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default-trackCrossedOver.png"; path = "NMRangeSlider/DefaultTheme/slider-default-trackCrossedOver.png"; sourceTree = "<group>"; };
+		D837FD3C1C7317120032C033 /* slider-default-trackCrossedOver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default-trackCrossedOver@2x.png"; path = "NMRangeSlider/DefaultTheme/slider-default-trackCrossedOver@2x.png"; sourceTree = "<group>"; };
+		D84D29B51CC74CE90084C851 /* ReferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReferenceViewController.swift; path = viewControllers/ReferenceViewController.swift; sourceTree = "<group>"; };
+		D84D29B71CC8A9320084C851 /* DimensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTests.swift; sourceTree = "<group>"; };
+		D84D29BC1CCB50760084C851 /* ImageSelectorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectorDelegate.swift; sourceTree = "<group>"; };
+		D84D29C01CCC855B0084C851 /* SearchTermByFruitColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTermByFruitColor.swift; path = search/SearchTermByFruitColor.swift; sourceTree = "<group>"; };
+		D84D29C21CCC8D030084C851 /* SearchTermByFlowerColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTermByFlowerColor.swift; path = search/SearchTermByFlowerColor.swift; sourceTree = "<group>"; };
+		D84D29C41CCC8D500084C851 /* SearchTermByLeafEdge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTermByLeafEdge.swift; path = search/SearchTermByLeafEdge.swift; sourceTree = "<group>"; };
+		D84D29C61CCC8DD00084C851 /* SearchTermByLeafFormation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTermByLeafFormation.swift; path = search/SearchTermByLeafFormation.swift; sourceTree = "<group>"; };
+		D84D29C81CCC8F370084C851 /* SearchTermByLeafTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTermByLeafTexture.swift; path = search/SearchTermByLeafTexture.swift; sourceTree = "<group>"; };
+		D84D29CA1CCCABCE0084C851 /* SearchDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchDetailsViewController.swift; path = viewControllers/search/SearchDetailsViewController.swift; sourceTree = "<group>"; };
+		D84D29CE1CCEA40A0084C851 /* FloraDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloraDetailsViewController.swift; path = viewControllers/FloraDetailsViewController.swift; sourceTree = "<group>"; };
+		D84D29D01CCFF5840084C851 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageService.swift; path = services/ImageService.swift; sourceTree = "<group>"; };
+		D84D29D91CCFF7930084C851 /* DataStoreProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStoreProviderProtocol.swift; path = services/DataStore/DataStoreProviderProtocol.swift; sourceTree = "<group>"; };
+		D84D29DA1CCFF7930084C851 /* S3DataStoreProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = S3DataStoreProvider.swift; path = services/DataStore/S3DataStoreProvider.swift; sourceTree = "<group>"; };
+		D84D29DB1CCFF7930084C851 /* LocalDataStoreProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalDataStoreProvider.swift; path = services/DataStore/LocalDataStoreProvider.swift; sourceTree = "<group>"; };
+		D84D29DF1CD0B6980084C851 /* ImageServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageServiceTests.swift; sourceTree = "<group>"; };
+		D84D29E11CD199340084C851 /* CacheDataStoreProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CacheDataStoreProvider.swift; path = services/DataStore/CacheDataStoreProvider.swift; sourceTree = "<group>"; };
+		D84D29E41CD1DC580084C851 /* fivefinger_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = fivefinger_main.jpg; path = images/storage/fivefinger_main.jpg; sourceTree = "<group>"; };
+		D84D29E51CD1DC580084C851 /* kowhai_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kowhai_main.jpg; path = images/storage/kowhai_main.jpg; sourceTree = "<group>"; };
+		D84D29E81CD211A30084C851 /* ImportDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImportDelegate.swift; path = viewControllers/import/ImportDelegate.swift; sourceTree = "<group>"; };
+		D84D29EC1CD21A790084C851 /* akeake_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = akeake_main.jpg; path = images/storage/akeake_main.jpg; sourceTree = "<group>"; };
+		D84D29ED1CD21A790084C851 /* blackbeech_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blackbeech_main.jpg; path = images/storage/blackbeech_main.jpg; sourceTree = "<group>"; };
+		D84D29EE1CD21A790084C851 /* hardbeech_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hardbeech_main.jpg; path = images/storage/hardbeech_main.jpg; sourceTree = "<group>"; };
+		D84D29F21CD2963A0084C851 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = images/storage/placeholder.png; sourceTree = "<group>"; };
+		D84D29F41CD299D70084C851 /* kamahi_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kamahi_main.jpg; path = images/storage/kamahi_main.jpg; sourceTree = "<group>"; };
+		D84D29F51CD299D70084C851 /* redmatipo_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = redmatipo_main.jpg; path = images/storage/redmatipo_main.jpg; sourceTree = "<group>"; };
+		D84D29F81CD29D2D0084C851 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePreviewViewController.swift; path = viewControllers/ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		D84D29FA1CD2E22A0084C851 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = images/close.png; sourceTree = "<group>"; };
+		D84EA2B91C815FE100BD75AD /* alternating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alternating.png; path = images/alternating.png; sourceTree = "<group>"; };
+		D84EA2BA1C815FE100BD75AD /* alternating@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alternating@2x.png"; path = "images/alternating@2x.png"; sourceTree = "<group>"; };
+		D84EA2CD1C84418300BD75AD /* Flora+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Flora+CoreDataProperties.swift"; path = "data/Flora+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D84EA2CE1C84418300BD75AD /* FruitColorType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FruitColorType+CoreDataProperties.swift"; path = "data/FruitColorType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D84EA2CF1C84418300BD75AD /* FruitColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FruitColorType.swift; path = data/FruitColorType.swift; sourceTree = "<group>"; };
+		D84EA2D91C881CA700BD75AD /* fruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fruit.png; path = images/fruit.png; sourceTree = "<group>"; };
+		D84EA2DA1C881CA700BD75AD /* fruit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fruit@2x.png"; path = "images/fruit@2x.png"; sourceTree = "<group>"; };
+		D85324091CC1AA8E002BC3ED /* cover_miro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cover_miro.jpg; path = images/cover/cover_miro.jpg; sourceTree = "<group>"; };
+		D853240B1CC1AC86002BC3ED /* cover_catalogue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cover_catalogue.jpg; path = images/cover/cover_catalogue.jpg; sourceTree = "<group>"; };
+		D853240D1CC2CED4002BC3ED /* LeafDimensionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafDimensionProtocol.swift; path = services/LeafDimensionProtocol.swift; sourceTree = "<group>"; };
+		D853240F1CC2CFA0002BC3ED /* LeafDimensionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafDimensionService.swift; path = services/LeafDimensionService.swift; sourceTree = "<group>"; };
+		D85324121CC2E4A3002BC3ED /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchResultCell.xib; path = viewControllers/search/SearchResultCell.xib; sourceTree = "<group>"; };
+		D85324181CC34B77002BC3ED /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultCollectionViewCell.swift; path = viewControllers/search/SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		D853241A1CC35487002BC3ED /* SearchTermByDimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTermByDimension.swift; sourceTree = "<group>"; };
+		D853241C1CC4DF4D002BC3ED /* LeafFormationTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafFormationTypeProtocol.swift; path = services/LeafFormationTypeProtocol.swift; sourceTree = "<group>"; };
+		D853241E1CC4DF6A002BC3ED /* LeafFormationTypeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeafFormationTypeService.swift; sourceTree = "<group>"; };
+		D85324211CC4E168002BC3ED /* LeafFormationType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LeafFormationType+CoreDataProperties.swift"; path = "data/LeafFormationType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D85324221CC4E168002BC3ED /* LeafFormationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafFormationType.swift; path = data/LeafFormationType.swift; sourceTree = "<group>"; };
+		D85324281CC4E202002BC3ED /* LeafDimension+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LeafDimension+CoreDataProperties.swift"; path = "data/LeafDimension+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D85324291CC4E202002BC3ED /* Leaf+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Leaf+CoreDataProperties.swift"; path = "data/Leaf+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D861DBB21C4370AF00CE0A22 /* LookupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookupTests.swift; sourceTree = "<group>"; };
+		D861DBB41C43713600CE0A22 /* TestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBase.swift; sourceTree = "<group>"; };
 		D86BD3081C37CA1C001E17E7 /* florafinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = florafinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86BD30B1C37CA1C001E17E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D86BD30D1C37CA1C001E17E7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D86BD30F1C37CA1C001E17E7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D86BD3121C37CA1C001E17E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D86BD3141C37CA1C001E17E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D86BD3171C37CA1C001E17E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D86BD3191C37CA1C001E17E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86BD31E1C37CA1C001E17E7 /* florafinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = florafinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D86BD3221C37CA1C001E17E7 /* florafinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = florafinderTests.swift; sourceTree = "<group>"; };
+		D86BD3221C37CA1C001E17E7 /* floraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floraTests.swift; sourceTree = "<group>"; };
 		D86BD3241C37CA1C001E17E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86BD3291C37CA1C001E17E7 /* florafinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = florafinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86BD32D1C37CA1C001E17E7 /* florafinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = florafinderUITests.swift; sourceTree = "<group>"; };
 		D86BD32F1C37CA1C001E17E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D87DCFEE1C965F2F007A32A8 /* FlowerColorTypeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlowerColorTypeService.swift; path = services/FlowerColorTypeService.swift; sourceTree = "<group>"; };
+		D87DCFF01C9669AB007A32A8 /* flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flower.png; path = images/flower.png; sourceTree = "<group>"; };
+		D87DCFF11C9669AB007A32A8 /* flower@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flower@2x.png"; path = "images/flower@2x.png"; sourceTree = "<group>"; };
+		D87DCFF51C9B7830007A32A8 /* MeasureLeaf.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MeasureLeaf.xib; path = viewControllers/measure/MeasureLeaf.xib; sourceTree = "<group>"; };
+		D87DCFF71C9B79BC007A32A8 /* MeasureLeafViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeasureLeafViewController.swift; path = viewControllers/measure/MeasureLeafViewController.swift; sourceTree = "<group>"; };
+		D88FA0141CBAE1C30004462C /* ImportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImportViewController.swift; path = viewControllers/import/ImportViewController.swift; sourceTree = "<group>"; };
+		D88FA0161CBAE1DF0004462C /* Import.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Import.xib; path = viewControllers/import/Import.xib; sourceTree = "<group>"; };
+		D89174DE1CBED6DD00D81CFF /* DataManagerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManagerService.swift; path = services/DataManagerService.swift; sourceTree = "<group>"; };
+		D89174E01CBED6FD00D81CFF /* DataManagerServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManagerServiceProtocol.swift; path = services/DataManagerServiceProtocol.swift; sourceTree = "<group>"; };
+		D89174E41CC0584300D81CFF /* EnumService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumService.swift; path = services/EnumService.swift; sourceTree = "<group>"; };
+		D89174E61CC0684900D81CFF /* FruitColorTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FruitColorTypeTests.swift; sourceTree = "<group>"; };
+		D892D3401CD45704003E7DDA /* iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone.png; path = images/iphone.png; sourceTree = "<group>"; };
+		D892D3411CD45704003E7DDA /* iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iphone@2x.png"; path = "images/iphone@2x.png"; sourceTree = "<group>"; };
+		D892D3441CD48598003E7DDA /* grab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grab.png; path = images/grab.png; sourceTree = "<group>"; };
+		D892D3451CD48598003E7DDA /* grab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "grab@2x.png"; path = "images/grab@2x.png"; sourceTree = "<group>"; };
+		D892D3481CD488AB003E7DDA /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grid.swift; path = viewControllers/measure/Grid.swift; sourceTree = "<group>"; };
+		D892D34A1CD5DB5B003E7DDA /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchScreenViewController.swift; path = viewControllers/LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		D892D3521CD92AD3003E7DDA /* FlowerCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlowerCollectionViewDelegate.swift; path = viewControllers/FlowerCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		D892D3541CD93FC6003E7DDA /* FruitCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FruitCollectionViewDelegate.swift; path = viewControllers/FruitCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		D892D3611CDB1F73003E7DDA /* FruitImageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FruitImageSelectionView.swift; path = views/imageSelectionView/FruitImageSelectionView.swift; sourceTree = "<group>"; };
+		D892D3631CDB5752003E7DDA /* FlowerImageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlowerImageSelectionView.swift; path = views/imageSelectionView/FlowerImageSelectionView.swift; sourceTree = "<group>"; };
+		D892D3671CDB582C003E7DDA /* FormationImageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormationImageSelectionView.swift; path = views/imageSelectionView/FormationImageSelectionView.swift; sourceTree = "<group>"; };
+		D892D36D1CDBD684003E7DDA /* LeafEdgeImageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafEdgeImageSelectionView.swift; path = views/imageSelectionView/LeafEdgeImageSelectionView.swift; sourceTree = "<group>"; };
+		D892D36F1CDBD81C003E7DDA /* ImageSelectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSelectionData.swift; path = views/imageSelectionView/core/ImageSelectionData.swift; sourceTree = "<group>"; };
+		D892D3701CDBD81C003E7DDA /* ImageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSelectionView.swift; path = views/imageSelectionView/core/ImageSelectionView.swift; sourceTree = "<group>"; };
+		D892D3711CDBD81C003E7DDA /* ImageSelectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSelectionViewCell.swift; path = views/imageSelectionView/core/ImageSelectionViewCell.swift; sourceTree = "<group>"; };
+		D892D3721CDBD81C003E7DDA /* ImageSelectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSelectionViewDelegate.swift; path = views/imageSelectionView/core/ImageSelectionViewDelegate.swift; sourceTree = "<group>"; };
+		D892D3771CDBD82A003E7DDA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = views/_temp/ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		D892D3781CDBD82A003E7DDA /* ImageSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSelector.swift; path = views/_temp/ImageSelector.swift; sourceTree = "<group>"; };
+		D892D3791CDBD82A003E7DDA /* ImageSelectorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSelectorItem.swift; path = views/_temp/ImageSelectorItem.swift; sourceTree = "<group>"; };
+		D899D5361C7399C9005A9A7F /* slider-default7-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default7-handle.png"; path = "NMRangeSlider/DefaultTheme7/slider-default7-handle.png"; sourceTree = "<group>"; };
+		D899D5371C7399C9005A9A7F /* slider-default7-handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default7-handle@2x.png"; path = "NMRangeSlider/DefaultTheme7/slider-default7-handle@2x.png"; sourceTree = "<group>"; };
+		D899D5381C7399C9005A9A7F /* slider-default7-track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default7-track.png"; path = "NMRangeSlider/DefaultTheme7/slider-default7-track.png"; sourceTree = "<group>"; };
+		D899D5391C7399C9005A9A7F /* slider-default7-track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default7-track@2x.png"; path = "NMRangeSlider/DefaultTheme7/slider-default7-track@2x.png"; sourceTree = "<group>"; };
+		D899D53A1C7399C9005A9A7F /* slider-default7-trackBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default7-trackBackground.png"; path = "NMRangeSlider/DefaultTheme7/slider-default7-trackBackground.png"; sourceTree = "<group>"; };
+		D899D53B1C7399C9005A9A7F /* slider-default7-trackBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default7-trackBackground@2x.png"; path = "NMRangeSlider/DefaultTheme7/slider-default7-trackBackground@2x.png"; sourceTree = "<group>"; };
+		D899D53C1C7399C9005A9A7F /* slider-default7-trackCrossedOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default7-trackCrossedOver.png"; path = "NMRangeSlider/DefaultTheme7/slider-default7-trackCrossedOver.png"; sourceTree = "<group>"; };
+		D899D53D1C7399C9005A9A7F /* slider-default7-trackCrossedOver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-default7-trackCrossedOver@2x.png"; path = "NMRangeSlider/DefaultTheme7/slider-default7-trackCrossedOver@2x.png"; sourceTree = "<group>"; };
+		D8B1E4901C521A33003AC017 /* SelectorViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectorViewControllerTests.swift; sourceTree = "<group>"; };
+		D8B7651B1C96563700A9B4F2 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = extensions/UIColorExtension.swift; sourceTree = "<group>"; };
+		D8B7651C1C96563700A9B4F2 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = extensions/UIImageExtension.swift; sourceTree = "<group>"; };
+		D8B7651D1C96563700A9B4F2 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewCellExtension.swift; path = extensions/UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		D8B765211C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectorRowWithViewTableViewCell.swift; path = selector/SelectorRowWithViewTableViewCell.swift; sourceTree = "<group>"; };
+		D8B765221C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectorRowWithViewTableViewCell.xib; path = selector/SelectorRowWithViewTableViewCell.xib; sourceTree = "<group>"; };
+		D8B765251C96577F00A9B4F2 /* FloraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloraViewController.swift; path = viewControllers/FloraViewController.swift; sourceTree = "<group>"; };
+		D8B765271C96577F00A9B4F2 /* CatalogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatalogueViewController.swift; path = viewControllers/CatalogueViewController.swift; sourceTree = "<group>"; };
+		D8B7652B1C96582300A9B4F2 /* DescriptionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionList.swift; path = descriptionLists/DescriptionList.swift; sourceTree = "<group>"; };
+		D8B7652C1C96582300A9B4F2 /* DescriptionListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionListItem.swift; path = descriptionLists/DescriptionListItem.swift; sourceTree = "<group>"; };
+		D8B7652F1C9658CE00A9B4F2 /* FlowerColorTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlowerColorTypeProtocol.swift; path = services/FlowerColorTypeProtocol.swift; sourceTree = "<group>"; };
+		D8B765301C9658CE00A9B4F2 /* FruitColorTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FruitColorTypeProtocol.swift; path = services/FruitColorTypeProtocol.swift; sourceTree = "<group>"; };
+		D8B765311C9658CE00A9B4F2 /* FruitColorTypeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FruitColorTypeService.swift; path = services/FruitColorTypeService.swift; sourceTree = "<group>"; };
+		D8B765351C96598C00A9B4F2 /* FlowerColorType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FlowerColorType+CoreDataProperties.swift"; path = "data/FlowerColorType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D8B765361C96598C00A9B4F2 /* FlowerColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlowerColorType.swift; path = data/FlowerColorType.swift; sourceTree = "<group>"; };
+		D8B96F901C4A430700F659E4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D8C747E91CA0DADE00FB8ED9 /* UISliderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UISliderExtension.swift; path = extensions/UISliderExtension.swift; sourceTree = "<group>"; };
+		D8C747EB1CA3161300FB8ED9 /* IPhoneGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPhoneGrid.swift; path = viewControllers/measure/IPhoneGrid.swift; sourceTree = "<group>"; };
+		D8C747ED1CA316F500FB8ED9 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Units.swift; path = viewControllers/measure/Units.swift; sourceTree = "<group>"; };
+		D8C747EF1CA3623200FB8ED9 /* IPhoneGridTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPhoneGridTests.swift; sourceTree = "<group>"; };
+		D8C747F11CAB043E00FB8ED9 /* MeasureLeafDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeasureLeafDelegate.swift; path = viewControllers/measure/MeasureLeafDelegate.swift; sourceTree = "<group>"; };
+		D8C747F51CAC4F7F00FB8ED9 /* TOKCSVColumnDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKCSVColumnDefinition.h; path = import/Core/TOKCSVColumnDefinition.h; sourceTree = "<group>"; };
+		D8C747F61CAC4F7F00FB8ED9 /* TOKCSVColumnDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKCSVColumnDefinition.m; path = import/Core/TOKCSVColumnDefinition.m; sourceTree = "<group>"; };
+		D8C747F71CAC4F7F00FB8ED9 /* TOKCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKCSVParser.h; path = import/Core/TOKCSVParser.h; sourceTree = "<group>"; };
+		D8C747F81CAC4F7F00FB8ED9 /* TOKCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKCSVParser.m; path = import/Core/TOKCSVParser.m; sourceTree = "<group>"; };
+		D8C747F91CAC4F7F00FB8ED9 /* TOKCSVReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKCSVReader.h; path = import/Core/TOKCSVReader.h; sourceTree = "<group>"; };
+		D8C747FA1CAC4F7F00FB8ED9 /* TOKCSVReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKCSVReader.m; path = import/Core/TOKCSVReader.m; sourceTree = "<group>"; };
+		D8C747FB1CAC4F7F00FB8ED9 /* TOKCSVReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKCSVReaderDelegate.h; path = import/Core/TOKCSVReaderDelegate.h; sourceTree = "<group>"; };
+		D8C747FC1CAC4F7F00FB8ED9 /* TOKExportResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKExportResult.h; path = import/Core/TOKExportResult.h; sourceTree = "<group>"; };
+		D8C747FD1CAC4F7F00FB8ED9 /* TOKExportResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKExportResult.m; path = import/Core/TOKExportResult.m; sourceTree = "<group>"; };
+		D8C747FE1CAC4F7F00FB8ED9 /* TOKImportMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKImportMessage.h; path = import/Core/TOKImportMessage.h; sourceTree = "<group>"; };
+		D8C747FF1CAC4F7F00FB8ED9 /* TOKImportMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKImportMessage.m; path = import/Core/TOKImportMessage.m; sourceTree = "<group>"; };
+		D8C748001CAC4F7F00FB8ED9 /* TOKImportResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKImportResult.h; path = import/Core/TOKImportResult.h; sourceTree = "<group>"; };
+		D8C748011CAC4F7F00FB8ED9 /* TOKImportResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKImportResult.m; path = import/Core/TOKImportResult.m; sourceTree = "<group>"; };
+		D8C748021CAC4F7F00FB8ED9 /* TOKImportValidationMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKImportValidationMessages.h; path = import/Core/TOKImportValidationMessages.h; sourceTree = "<group>"; };
+		D8C748031CAC4F7F00FB8ED9 /* TOKImportValidationMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKImportValidationMessages.m; path = import/Core/TOKImportValidationMessages.m; sourceTree = "<group>"; };
+		D8C748041CAC4F7F00FB8ED9 /* TOKRowField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOKRowField.h; path = import/Core/TOKRowField.h; sourceTree = "<group>"; };
+		D8C748051CAC4F7F00FB8ED9 /* TOKRowField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOKRowField.m; path = import/Core/TOKRowField.m; sourceTree = "<group>"; };
+		D8C748061CAC4F7F00FB8ED9 /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHCSVParser.h; path = import/Core/CHCSVParser.h; sourceTree = "<group>"; };
+		D8C748071CAC4F7F00FB8ED9 /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHCSVParser.m; path = import/Core/CHCSVParser.m; sourceTree = "<group>"; };
+		D8C748111CAC52CD00FB8ED9 /* FloraImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloraImporter.swift; path = import/FloraImporter.swift; sourceTree = "<group>"; };
+		D8C748131CAE415C00FB8ED9 /* importTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = importTests.swift; sourceTree = "<group>"; };
+		D8C748151CB23F6F00FB8ED9 /* LoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoggerProtocol.swift; path = services/LoggerProtocol.swift; sourceTree = "<group>"; };
+		D8C748171CB3832300FB8ED9 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
+		D8D2A3921CDD9922001A9A7F /* cabbage_flower2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cabbage_flower2.jpg; path = images/storage/cabbage_flower2.jpg; sourceTree = "<group>"; };
+		D8D2A3931CDD9922001A9A7F /* cabbage_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cabbage_main.jpg; path = images/storage/cabbage_main.jpg; sourceTree = "<group>"; };
+		D8D2A3941CDD9922001A9A7F /* kanuka_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kanuka_main.jpg; path = images/storage/kanuka_main.jpg; sourceTree = "<group>"; };
+		D8D2A3951CDD9922001A9A7F /* manuka_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = manuka_main.jpg; path = images/storage/manuka_main.jpg; sourceTree = "<group>"; };
+		D8D2A39A1CDD9B83001A9A7F /* karaka_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = karaka_main.jpg; path = images/storage/karaka_main.jpg; sourceTree = "<group>"; };
+		D8D2A39C1CDDA19A001A9A7F /* ngaio_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ngaio_main.jpg; path = images/storage/ngaio_main.jpg; sourceTree = "<group>"; };
+		D8D2A39D1CDDA19A001A9A7F /* northernrata_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = northernrata_main.jpg; path = images/storage/northernrata_main.jpg; sourceTree = "<group>"; };
+		D8D2A39E1CDDA19A001A9A7F /* pigeonwood_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pigeonwood_main.jpg; path = images/storage/pigeonwood_main.jpg; sourceTree = "<group>"; };
+		D8D2A39F1CDDA19A001A9A7F /* rimu_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rimu_main.jpg; path = images/storage/rimu_main.jpg; sourceTree = "<group>"; };
+		D8F0D8211CBB9F5C00A681B0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = viewControllers/HomeViewController.swift; sourceTree = "<group>"; };
+		D8F0D8231CBCBC6500A681B0 /* TestImport.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TestImport.csv; path = import/TestImport.csv; sourceTree = "<group>"; };
+		D8FFC6A11C5B2C4D00A04881 /* SearchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
+		EE3FF3567D3143AFB115082A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +508,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79348102BEECE7BDFA6C22A3 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +529,227 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A4DD19738B53204529BC196 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC56A94A9A77966C6A21D0C1 /* Pods.debug.xcconfig */,
+				EE3FF3567D3143AFB115082A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D53BBECACEBAD6D4488977D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70101DC86DAC0C3A87DB2925 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D827DC111C5888BA006D0EAA /* styles */ = {
+			isa = PBXGroup;
+			children = (
+				D837FD261C7313330032C033 /* Appearance.swift */,
+			);
+			name = styles;
+			sourceTree = "<group>";
+		};
+		D82FE8701C3F7DEE00AEB5D8 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				D84D29D81CCFF77D0084C851 /* DataStore */,
+				D89174DE1CBED6DD00D81CFF /* DataManagerService.swift */,
+				D89174E01CBED6FD00D81CFF /* DataManagerServiceProtocol.swift */,
+				D837FD101C73125D0032C033 /* FloraService.swift */,
+				D837FD111C73125D0032C033 /* FloraServiceProtocol.swift */,
+				D8B7652F1C9658CE00A9B4F2 /* FlowerColorTypeProtocol.swift */,
+				D87DCFEE1C965F2F007A32A8 /* FlowerColorTypeService.swift */,
+				D8B765301C9658CE00A9B4F2 /* FruitColorTypeProtocol.swift */,
+				D8B765311C9658CE00A9B4F2 /* FruitColorTypeService.swift */,
+				D837FD081C73125D0032C033 /* LeafColorTypeProtocol.swift */,
+				D837FD091C73125D0032C033 /* LeafColorTypeService.swift */,
+				D837FD0A1C73125D0032C033 /* LeafEdgeTypeProtocol.swift */,
+				D837FD0B1C73125D0032C033 /* LeafEdgeTypeService.swift */,
+				D837FD0C1C73125D0032C033 /* LeafService.swift */,
+				D837FD0D1C73125D0032C033 /* LeafServiceProtocol.swift */,
+				D837FD0E1C73125D0032C033 /* LeafTextureTypeProtocol.swift */,
+				D837FD0F1C73125D0032C033 /* LeafTextureTypeService.swift */,
+				D8C748151CB23F6F00FB8ED9 /* LoggerProtocol.swift */,
+				D837FD121C73125D0032C033 /* Service.swift */,
+				D837FD131C73125D0032C033 /* ServiceFactory.swift */,
+				D89174E41CC0584300D81CFF /* EnumService.swift */,
+				D853240D1CC2CED4002BC3ED /* LeafDimensionProtocol.swift */,
+				D853240F1CC2CFA0002BC3ED /* LeafDimensionService.swift */,
+				D853241C1CC4DF4D002BC3ED /* LeafFormationTypeProtocol.swift */,
+				D853241E1CC4DF6A002BC3ED /* LeafFormationTypeService.swift */,
+				D84D29D01CCFF5840084C851 /* ImageService.swift */,
+				D837D9571CDEE5A500B2D775 /* LeafShapeEnum.swift */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
+		D837D9591CDEFE1E00B2D775 /* freePix */ = {
+			isa = PBXGroup;
+			children = (
+				D837FCA61C730E8A0032C033 /* wrinkled.png */,
+				D837FCA71C730E8A0032C033 /* wrinkled@2x.png */,
+				D837FCA41C730E8A0032C033 /* star.png */,
+				D837FCA51C730E8A0032C033 /* star@2x.png */,
+				D837FC9E1C730E8A0032C033 /* serrated.png */,
+				D837FC9F1C730E8A0032C033 /* serrated@2x.png */,
+				D837FC9B1C730E8A0032C033 /* lobed.png */,
+				D837FC9C1C730E8A0032C033 /* lobed@2x.png */,
+				D837FC991C730E8A0032C033 /* individual.png */,
+				D837FC9A1C730E8A0032C033 /* individual@2x.png */,
+				D84EA2D91C881CA700BD75AD /* fruit.png */,
+				D84EA2DA1C881CA700BD75AD /* fruit@2x.png */,
+				D87DCFF01C9669AB007A32A8 /* flower.png */,
+				D87DCFF11C9669AB007A32A8 /* flower@2x.png */,
+				D837FC951C730E8A0032C033 /* cluster.png */,
+				D837FC961C730E8A0032C033 /* cluster@2x.png */,
+				D84EA2B91C815FE100BD75AD /* alternating.png */,
+				D84EA2BA1C815FE100BD75AD /* alternating@2x.png */,
+				D837D95B1CDEFEC600B2D775 /* broadleaf@2x.png */,
+				D837D95D1CDEFEC600B2D775 /* narrowleaf.png */,
+				D837FCA21C730E8A0032C033 /* smooth.png */,
+				D837FCA31C730E8A0032C033 /* smooth@2x.png */,
+			);
+			name = freePix;
+			sourceTree = "<group>";
+		};
+		D837D95A1CDEFE2F00B2D775 /* icons8 */ = {
+			isa = PBXGroup;
+			children = (
+				D837D94B1CDEAE7700B2D775 /* next@2x.png */,
+				D837D94C1CDEAE7700B2D775 /* next.png */,
+				D837D9471CDEACEE00B2D775 /* previous.png */,
+				D837D9481CDEACEE00B2D775 /* previous@2x.png */,
+			);
+			name = icons8;
+			sourceTree = "<group>";
+		};
+		D837D9611CDF017500B2D775 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				D837FCA01C730E8A0032C033 /* settings.png */,
+				D837FCA11C730E8A0032C033 /* settings@2x.png */,
+				D892D3441CD48598003E7DDA /* grab.png */,
+				D892D3451CD48598003E7DDA /* grab@2x.png */,
+				D892D3401CD45704003E7DDA /* iphone.png */,
+				D892D3411CD45704003E7DDA /* iphone@2x.png */,
+				D84D29FA1CD2E22A0084C851 /* close.png */,
+				D837FC971C730E8A0032C033 /* eye.png */,
+				D837FC981C730E8A0032C033 /* eye@2x.png */,
+				D837FC9D1C730E8A0032C033 /* NZ_Beech.png */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
+		D837FD2D1C7316A70032C033 /* NMRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				D899D5351C7399A5005A9A7F /* DefaulTheme7 */,
+				D837FD321C7316FD0032C033 /* DefaultTheme */,
+				D837FD2F1C7316D70032C033 /* NMRangeSlider.h */,
+				D837FD301C7316D70032C033 /* NMRangeSlider.m */,
+			);
+			name = NMRangeSlider;
+			sourceTree = "<group>";
+		};
+		D837FD321C7316FD0032C033 /* DefaultTheme */ = {
+			isa = PBXGroup;
+			children = (
+				D837FD331C7317120032C033 /* slider-default_trackBackground@2x.png */,
+				D837FD341C7317120032C033 /* slider-default-handle-highlighted.png */,
+				D837FD351C7317120032C033 /* slider-default-handle-highlighted@2x.png */,
+				D837FD361C7317120032C033 /* slider-default-handle.png */,
+				D837FD371C7317120032C033 /* slider-default-handle@2x.png */,
+				D837FD381C7317120032C033 /* slider-default-track.png */,
+				D837FD391C7317120032C033 /* slider-default-track@2x.png */,
+				D837FD3A1C7317120032C033 /* slider-default-trackBackground.png */,
+				D837FD3B1C7317120032C033 /* slider-default-trackCrossedOver.png */,
+				D837FD3C1C7317120032C033 /* slider-default-trackCrossedOver@2x.png */,
+			);
+			name = DefaultTheme;
+			sourceTree = "<group>";
+		};
+		D84D29B91CCB4F500084C851 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D892D36A1CDBD325003E7DDA /* _temp */,
+				D892D3561CD9EF16003E7DDA /* imageSelectionView */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		D84D29D81CCFF77D0084C851 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				D84D29D91CCFF7930084C851 /* DataStoreProviderProtocol.swift */,
+				D84D29DA1CCFF7930084C851 /* S3DataStoreProvider.swift */,
+				D84D29DB1CCFF7930084C851 /* LocalDataStoreProvider.swift */,
+				D84D29E11CD199340084C851 /* CacheDataStoreProvider.swift */,
+			);
+			name = DataStore;
+			sourceTree = "<group>";
+		};
+		D84D29E31CD1DC3D0084C851 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				D837D9511CDEDF7C00B2D775 /* coprosma_robusta_main.jpg */,
+				D837D9521CDEDF7C00B2D775 /* nikau_main.jpg */,
+				D837D9531CDEDF7C00B2D775 /* totara_main.JPG */,
+				D837D94F1CDEB9A400B2D775 /* puka_main.jpg */,
+				D8D2A39C1CDDA19A001A9A7F /* ngaio_main.jpg */,
+				D8D2A39D1CDDA19A001A9A7F /* northernrata_main.jpg */,
+				D8D2A39E1CDDA19A001A9A7F /* pigeonwood_main.jpg */,
+				D8D2A39F1CDDA19A001A9A7F /* rimu_main.jpg */,
+				D8D2A39A1CDD9B83001A9A7F /* karaka_main.jpg */,
+				D8D2A3921CDD9922001A9A7F /* cabbage_flower2.jpg */,
+				D8D2A3931CDD9922001A9A7F /* cabbage_main.jpg */,
+				D8D2A3941CDD9922001A9A7F /* kanuka_main.jpg */,
+				D8D2A3951CDD9922001A9A7F /* manuka_main.jpg */,
+				D84D29F41CD299D70084C851 /* kamahi_main.jpg */,
+				D84D29F51CD299D70084C851 /* redmatipo_main.jpg */,
+				D84D29F21CD2963A0084C851 /* placeholder.png */,
+				D84D29EC1CD21A790084C851 /* akeake_main.jpg */,
+				D84D29ED1CD21A790084C851 /* blackbeech_main.jpg */,
+				D84D29EE1CD21A790084C851 /* hardbeech_main.jpg */,
+				D84D29E41CD1DC580084C851 /* fivefinger_main.jpg */,
+				D84D29E51CD1DC580084C851 /* kowhai_main.jpg */,
+			);
+			name = storage;
+			sourceTree = "<group>";
+		};
+		D85324081CC1AA39002BC3ED /* cover */ = {
+			isa = PBXGroup;
+			children = (
+				D853240B1CC1AC86002BC3ED /* cover_catalogue.jpg */,
+				D85324091CC1AA8E002BC3ED /* cover_miro.jpg */,
+			);
+			name = cover;
+			sourceTree = "<group>";
+		};
+		D85324111CC2E461002BC3ED /* search */ = {
+			isa = PBXGroup;
+			children = (
+				D84D29CA1CCCABCE0084C851 /* SearchDetailsViewController.swift */,
+				D85324121CC2E4A3002BC3ED /* SearchResultCell.xib */,
+				D85324181CC34B77002BC3ED /* SearchResultCollectionViewCell.swift */,
+			);
+			name = search;
+			sourceTree = "<group>";
+		};
 		D86BD2FF1C37CA1C001E17E7 = {
 			isa = PBXGroup;
 			children = (
+				D8B96F901C4A430700F659E4 /* Podfile */,
 				D86BD30A1C37CA1C001E17E7 /* florafinder */,
 				D86BD3211C37CA1C001E17E7 /* florafinderTests */,
 				D86BD32C1C37CA1C001E17E7 /* florafinderUITests */,
 				D86BD3091C37CA1C001E17E7 /* Products */,
+				4A4DD19738B53204529BC196 /* Pods */,
+				9D53BBECACEBAD6D4488977D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,12 +767,24 @@
 			isa = PBXGroup;
 			children = (
 				D86BD30B1C37CA1C001E17E7 /* AppDelegate.swift */,
-				D86BD30D1C37CA1C001E17E7 /* FirstViewController.swift */,
-				D86BD30F1C37CA1C001E17E7 /* SecondViewController.swift */,
-				D86BD3111C37CA1C001E17E7 /* Main.storyboard */,
 				D86BD3141C37CA1C001E17E7 /* Assets.xcassets */,
-				D86BD3161C37CA1C001E17E7 /* LaunchScreen.storyboard */,
+				D86BD33B1C37CCD1001E17E7 /* data */,
+				D8F5EE2C1C8FD8AF00979718 /* descriptionLists */,
+				D8CB846D1C37DDE6005ABB6E /* documentation */,
+				D8FFC69D1C59460800A04881 /* extensions */,
+				D837FD2E1C7316D60032C033 /* florafinder-Bridging-Header.h */,
+				D8CB84701C391314005ABB6E /* images */,
+				D8C747F31CAC4DFC00FB8ED9 /* import */,
 				D86BD3191C37CA1C001E17E7 /* Info.plist */,
+				D86BD3161C37CA1C001E17E7 /* LaunchScreen.storyboard */,
+				D86BD3111C37CA1C001E17E7 /* Main.storyboard */,
+				D837FD2D1C7316A70032C033 /* NMRangeSlider */,
+				D8FFC69E1C5A1AC900A04881 /* search */,
+				D8DC04351C4DF87400CE7C8C /* selector */,
+				D82FE8701C3F7DEE00AEB5D8 /* services */,
+				D827DC111C5888BA006D0EAA /* styles */,
+				D84D29B91CCB4F500084C851 /* views */,
+				D8DC04321C4DF54500CE7C8C /* viewControllers */,
 			);
 			path = florafinder;
 			sourceTree = "<group>";
@@ -113,8 +792,18 @@
 		D86BD3211C37CA1C001E17E7 /* florafinderTests */ = {
 			isa = PBXGroup;
 			children = (
-				D86BD3221C37CA1C001E17E7 /* florafinderTests.swift */,
+				D86BD3221C37CA1C001E17E7 /* floraTests.swift */,
 				D86BD3241C37CA1C001E17E7 /* Info.plist */,
+				D861DBB21C4370AF00CE0A22 /* LookupTests.swift */,
+				D861DBB41C43713600CE0A22 /* TestBase.swift */,
+				D8B1E4901C521A33003AC017 /* SelectorViewControllerTests.swift */,
+				D8FFC6A11C5B2C4D00A04881 /* SearchTests.swift */,
+				D8C747EF1CA3623200FB8ED9 /* IPhoneGridTests.swift */,
+				D8C748131CAE415C00FB8ED9 /* importTests.swift */,
+				D8C748171CB3832300FB8ED9 /* Semaphore.swift */,
+				D89174E61CC0684900D81CFF /* FruitColorTypeTests.swift */,
+				D84D29B71CC8A9320084C851 /* DimensionTests.swift */,
+				D84D29DF1CD0B6980084C851 /* ImageServiceTests.swift */,
 			);
 			path = florafinderTests;
 			sourceTree = "<group>";
@@ -128,6 +817,243 @@
 			path = florafinderUITests;
 			sourceTree = "<group>";
 		};
+		D86BD33B1C37CCD1001E17E7 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				D837FCBF1C730FC20032C033 /* Bark.swift */,
+				D837FCC01C730FC20032C033 /* Bark+CoreDataProperties.swift */,
+				D837FCC11C730FC20032C033 /* BarkTextureType.swift */,
+				D837FCC21C730FC20032C033 /* BarkTextureType+CoreDataProperties.swift */,
+				D837FCC31C730FC20032C033 /* CoreDataController.swift */,
+				D837FCBD1C730FC20032C033 /* Flora.swift */,
+				D84EA2CD1C84418300BD75AD /* Flora+CoreDataProperties.swift */,
+				D8B765361C96598C00A9B4F2 /* FlowerColorType.swift */,
+				D8B765351C96598C00A9B4F2 /* FlowerColorType+CoreDataProperties.swift */,
+				D84EA2CF1C84418300BD75AD /* FruitColorType.swift */,
+				D84EA2CE1C84418300BD75AD /* FruitColorType+CoreDataProperties.swift */,
+				D837FCC41C730FC20032C033 /* Leaf.swift */,
+				D85324291CC4E202002BC3ED /* Leaf+CoreDataProperties.swift */,
+				D837FCC61C730FC20032C033 /* LeafColorType.swift */,
+				D837FCC71C730FC20032C033 /* LeafColorType+CoreDataProperties.swift */,
+				D837FCCA1C730FC20032C033 /* LeafDimension.swift */,
+				D85324281CC4E202002BC3ED /* LeafDimension+CoreDataProperties.swift */,
+				D837FCCC1C730FC20032C033 /* LeafEdgeType.swift */,
+				D837FCCD1C730FC20032C033 /* LeafEdgeType+CoreDataProperties.swift */,
+				D85324221CC4E168002BC3ED /* LeafFormationType.swift */,
+				D85324211CC4E168002BC3ED /* LeafFormationType+CoreDataProperties.swift */,
+				D837FCD21C730FC20032C033 /* LeafTextureType.swift */,
+				D837FCD31C730FC20032C033 /* LeafTextureType+CoreDataProperties.swift */,
+				D837FD281C7313FC0032C033 /* Model.xcdatamodeld */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		D87DCFF41C9B77B9007A32A8 /* measure */ = {
+			isa = PBXGroup;
+			children = (
+				D87DCFF51C9B7830007A32A8 /* MeasureLeaf.xib */,
+				D87DCFF71C9B79BC007A32A8 /* MeasureLeafViewController.swift */,
+				D8C747EB1CA3161300FB8ED9 /* IPhoneGrid.swift */,
+				D8C747ED1CA316F500FB8ED9 /* Units.swift */,
+				D8C747F11CAB043E00FB8ED9 /* MeasureLeafDelegate.swift */,
+				D892D3481CD488AB003E7DDA /* Grid.swift */,
+			);
+			name = measure;
+			sourceTree = "<group>";
+		};
+		D88FA0131CBAE1720004462C /* import */ = {
+			isa = PBXGroup;
+			children = (
+				D88FA0141CBAE1C30004462C /* ImportViewController.swift */,
+				D88FA0161CBAE1DF0004462C /* Import.xib */,
+				D84D29E81CD211A30084C851 /* ImportDelegate.swift */,
+			);
+			name = import;
+			sourceTree = "<group>";
+		};
+		D892D3561CD9EF16003E7DDA /* imageSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D892D3631CDB5752003E7DDA /* FlowerImageSelectionView.swift */,
+				D892D3671CDB582C003E7DDA /* FormationImageSelectionView.swift */,
+				D892D3611CDB1F73003E7DDA /* FruitImageSelectionView.swift */,
+				D892D36D1CDBD684003E7DDA /* LeafEdgeImageSelectionView.swift */,
+				D892D3691CDBCF63003E7DDA /* core */,
+			);
+			name = imageSelectionView;
+			sourceTree = "<group>";
+		};
+		D892D3691CDBCF63003E7DDA /* core */ = {
+			isa = PBXGroup;
+			children = (
+				D892D36F1CDBD81C003E7DDA /* ImageSelectionData.swift */,
+				D892D3701CDBD81C003E7DDA /* ImageSelectionView.swift */,
+				D892D3711CDBD81C003E7DDA /* ImageSelectionViewCell.swift */,
+				D892D3721CDBD81C003E7DDA /* ImageSelectionViewDelegate.swift */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		D892D36A1CDBD325003E7DDA /* _temp */ = {
+			isa = PBXGroup;
+			children = (
+				D892D3771CDBD82A003E7DDA /* ImageCollectionViewCell.swift */,
+				D892D3781CDBD82A003E7DDA /* ImageSelector.swift */,
+				D892D3791CDBD82A003E7DDA /* ImageSelectorItem.swift */,
+				D84D29BC1CCB50760084C851 /* ImageSelectorDelegate.swift */,
+			);
+			name = _temp;
+			sourceTree = "<group>";
+		};
+		D899D5351C7399A5005A9A7F /* DefaulTheme7 */ = {
+			isa = PBXGroup;
+			children = (
+				D899D5361C7399C9005A9A7F /* slider-default7-handle.png */,
+				D899D5371C7399C9005A9A7F /* slider-default7-handle@2x.png */,
+				D899D5381C7399C9005A9A7F /* slider-default7-track.png */,
+				D899D5391C7399C9005A9A7F /* slider-default7-track@2x.png */,
+				D899D53A1C7399C9005A9A7F /* slider-default7-trackBackground.png */,
+				D899D53B1C7399C9005A9A7F /* slider-default7-trackBackground@2x.png */,
+				D899D53C1C7399C9005A9A7F /* slider-default7-trackCrossedOver.png */,
+				D899D53D1C7399C9005A9A7F /* slider-default7-trackCrossedOver@2x.png */,
+			);
+			name = DefaulTheme7;
+			sourceTree = "<group>";
+		};
+		D8C747F31CAC4DFC00FB8ED9 /* import */ = {
+			isa = PBXGroup;
+			children = (
+				D8F0D8231CBCBC6500A681B0 /* TestImport.csv */,
+				D8C747F41CAC4F6500FB8ED9 /* core */,
+				D8C748111CAC52CD00FB8ED9 /* FloraImporter.swift */,
+			);
+			name = import;
+			sourceTree = "<group>";
+		};
+		D8C747F41CAC4F6500FB8ED9 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				D8C747F51CAC4F7F00FB8ED9 /* TOKCSVColumnDefinition.h */,
+				D8C747F61CAC4F7F00FB8ED9 /* TOKCSVColumnDefinition.m */,
+				D8C747F71CAC4F7F00FB8ED9 /* TOKCSVParser.h */,
+				D8C747F81CAC4F7F00FB8ED9 /* TOKCSVParser.m */,
+				D8C747F91CAC4F7F00FB8ED9 /* TOKCSVReader.h */,
+				D8C747FA1CAC4F7F00FB8ED9 /* TOKCSVReader.m */,
+				D8C747FB1CAC4F7F00FB8ED9 /* TOKCSVReaderDelegate.h */,
+				D8C747FC1CAC4F7F00FB8ED9 /* TOKExportResult.h */,
+				D8C747FD1CAC4F7F00FB8ED9 /* TOKExportResult.m */,
+				D8C747FE1CAC4F7F00FB8ED9 /* TOKImportMessage.h */,
+				D8C747FF1CAC4F7F00FB8ED9 /* TOKImportMessage.m */,
+				D8C748001CAC4F7F00FB8ED9 /* TOKImportResult.h */,
+				D8C748011CAC4F7F00FB8ED9 /* TOKImportResult.m */,
+				D8C748021CAC4F7F00FB8ED9 /* TOKImportValidationMessages.h */,
+				D8C748031CAC4F7F00FB8ED9 /* TOKImportValidationMessages.m */,
+				D8C748041CAC4F7F00FB8ED9 /* TOKRowField.h */,
+				D8C748051CAC4F7F00FB8ED9 /* TOKRowField.m */,
+				D8C748061CAC4F7F00FB8ED9 /* CHCSVParser.h */,
+				D8C748071CAC4F7F00FB8ED9 /* CHCSVParser.m */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		D8CB846D1C37DDE6005ABB6E /* documentation */ = {
+			isa = PBXGroup;
+			children = (
+				D837FC8D1C730E220032C033 /* DataModel.rtf */,
+				D837FC8E1C730E220032C033 /* leaf_morphology.svg */,
+				D837FC8F1C730E220032C033 /* Native-plants-of-Eastbourne-hills.pdf */,
+				D837FC901C730E220032C033 /* test.html */,
+			);
+			name = documentation;
+			sourceTree = "<group>";
+		};
+		D8CB84701C391314005ABB6E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D837D9611CDF017500B2D775 /* other */,
+				D837D95A1CDEFE2F00B2D775 /* icons8 */,
+				D837D9591CDEFE1E00B2D775 /* freePix */,
+				D84D29E31CD1DC3D0084C851 /* storage */,
+				D85324081CC1AA39002BC3ED /* cover */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		D8DC04321C4DF54500CE7C8C /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D892D3541CD93FC6003E7DDA /* FruitCollectionViewDelegate.swift */,
+				D892D3521CD92AD3003E7DDA /* FlowerCollectionViewDelegate.swift */,
+				D8B765271C96577F00A9B4F2 /* CatalogueViewController.swift */,
+				D837FCFA1C7310BA0032C033 /* FindViewController.swift */,
+				D84D29CE1CCEA40A0084C851 /* FloraDetailsViewController.swift */,
+				D8B765251C96577F00A9B4F2 /* FloraViewController.swift */,
+				D8F0D8211CBB9F5C00A681B0 /* HomeViewController.swift */,
+				D88FA0131CBAE1720004462C /* import */,
+				D837FCF51C7310350032C033 /* LeafViewController.swift */,
+				D87DCFF41C9B77B9007A32A8 /* measure */,
+				D84D29B51CC74CE90084C851 /* ReferenceViewController.swift */,
+				D85324111CC2E461002BC3ED /* search */,
+				D837FCF21C7310350032C033 /* SearchViewController.swift */,
+				D837FCF31C7310350032C033 /* SecondViewController.swift */,
+				D837FCF41C7310350032C033 /* SettingsViewController.swift */,
+				D84D29F81CD29D2D0084C851 /* ImagePreviewViewController.swift */,
+				D892D34A1CD5DB5B003E7DDA /* LaunchScreenViewController.swift */,
+			);
+			name = viewControllers;
+			sourceTree = "<group>";
+		};
+		D8DC04351C4DF87400CE7C8C /* selector */ = {
+			isa = PBXGroup;
+			children = (
+				D8B765211C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.swift */,
+				D8B765221C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.xib */,
+				D837FD201C7312820032C033 /* SelectorDelegate.swift */,
+				D837FD211C7312820032C033 /* SelectorItem.swift */,
+				D837FD221C7312820032C033 /* SelectorViewController.swift */,
+			);
+			name = selector;
+			sourceTree = "<group>";
+		};
+		D8F5EE2C1C8FD8AF00979718 /* descriptionLists */ = {
+			isa = PBXGroup;
+			children = (
+				D8B7652B1C96582300A9B4F2 /* DescriptionList.swift */,
+				D8B7652C1C96582300A9B4F2 /* DescriptionListItem.swift */,
+			);
+			name = descriptionLists;
+			sourceTree = "<group>";
+		};
+		D8FFC69D1C59460800A04881 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8B7651B1C96563700A9B4F2 /* UIColorExtension.swift */,
+				D8B7651C1C96563700A9B4F2 /* UIImageExtension.swift */,
+				D8B7651D1C96563700A9B4F2 /* UITableViewCellExtension.swift */,
+				D837FD041C7311730032C033 /* StringExtension.swift */,
+				D837FD051C7311730032C033 /* UINavigationControllerExtension.swift */,
+				D8C747E91CA0DADE00FB8ED9 /* UISliderExtension.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
+		D8FFC69E1C5A1AC900A04881 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				D837FCFC1C7310FB0032C033 /* SearchResult.swift */,
+				D837FCFD1C7310FB0032C033 /* SearchTermByKeyword.swift */,
+				D837FCFE1C7310FB0032C033 /* SearchTermByLookup.swift */,
+				D837FCFF1C7310FB0032C033 /* SearchTermProtocol.swift */,
+				D853241A1CC35487002BC3ED /* SearchTermByDimension.swift */,
+				D84D29C01CCC855B0084C851 /* SearchTermByFruitColor.swift */,
+				D84D29C21CCC8D030084C851 /* SearchTermByFlowerColor.swift */,
+				D84D29C41CCC8D500084C851 /* SearchTermByLeafEdge.swift */,
+				D84D29C61CCC8DD00084C851 /* SearchTermByLeafFormation.swift */,
+				D84D29C81CCC8F370084C851 /* SearchTermByLeafTexture.swift */,
+			);
+			name = search;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +1061,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D86BD3321C37CA1C001E17E7 /* Build configuration list for PBXNativeTarget "florafinder" */;
 			buildPhases = (
+				25C92C281C38F016DF630056 /* Check Pods Manifest.lock */,
 				D86BD3041C37CA1C001E17E7 /* Sources */,
 				D86BD3051C37CA1C001E17E7 /* Frameworks */,
 				D86BD3061C37CA1C001E17E7 /* Resources */,
+				F84279C1F31664B893880045 /* Embed Pods Frameworks */,
+				0C96FF2D84AEA04073F1178F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +1125,7 @@
 				TargetAttributes = {
 					D86BD3071C37CA1C001E17E7 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2DTZ6ESMX9;
 					};
 					D86BD31D1C37CA1C001E17E7 = {
 						CreatedOnToolsVersion = 7.2;
@@ -232,9 +1162,96 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D837FD441C7317120032C033 /* slider-default-trackBackground.png in Resources */,
+				D84D29F61CD299D70084C851 /* kamahi_main.jpg in Resources */,
+				D87DCFF31C9669AB007A32A8 /* flower@2x.png in Resources */,
+				D84EA2DC1C881CA700BD75AD /* fruit@2x.png in Resources */,
+				D84D29E61CD1DC580084C851 /* fivefinger_main.jpg in Resources */,
+				D837FCB01C730E8A0032C033 /* NZ_Beech.png in Resources */,
+				D84D29E71CD1DC580084C851 /* kowhai_main.jpg in Resources */,
+				D8D2A3961CDD9922001A9A7F /* cabbage_flower2.jpg in Resources */,
+				D899D5401C7399C9005A9A7F /* slider-default7-track.png in Resources */,
+				D837FC931C730E220032C033 /* Native-plants-of-Eastbourne-hills.pdf in Resources */,
+				D837FCB61C730E8A0032C033 /* smooth@2x.png in Resources */,
+				D837D94A1CDEACEE00B2D775 /* previous@2x.png in Resources */,
+				D837FD451C7317120032C033 /* slider-default-trackCrossedOver.png in Resources */,
+				D837FCB91C730E8A0032C033 /* wrinkled.png in Resources */,
+				D84D29EF1CD21A790084C851 /* akeake_main.jpg in Resources */,
+				D837FCAE1C730E8A0032C033 /* lobed.png in Resources */,
+				D84D29F71CD299D70084C851 /* redmatipo_main.jpg in Resources */,
+				D837FCAC1C730E8A0032C033 /* individual.png in Resources */,
+				D837FCB71C730E8A0032C033 /* star.png in Resources */,
+				D837FD431C7317120032C033 /* slider-default-track@2x.png in Resources */,
+				D837D9501CDEB9A400B2D775 /* puka_main.jpg in Resources */,
+				D837FD411C7317120032C033 /* slider-default-handle@2x.png in Resources */,
+				D84EA2BC1C815FE100BD75AD /* alternating@2x.png in Resources */,
+				D837FCB21C730E8A0032C033 /* serrated@2x.png in Resources */,
+				D837D9601CDEFEC600B2D775 /* narrowleaf.png in Resources */,
 				D86BD3181C37CA1C001E17E7 /* LaunchScreen.storyboard in Resources */,
+				D853240A1CC1AA8E002BC3ED /* cover_miro.jpg in Resources */,
+				D8D2A3A31CDDA19A001A9A7F /* rimu_main.jpg in Resources */,
+				D899D53F1C7399C9005A9A7F /* slider-default7-handle@2x.png in Resources */,
+				D837FC941C730E220032C033 /* test.html in Resources */,
+				D8D2A3A11CDDA19A001A9A7F /* northernrata_main.jpg in Resources */,
+				D837D9551CDEDF7C00B2D775 /* nikau_main.jpg in Resources */,
+				D8D2A3971CDD9922001A9A7F /* cabbage_main.jpg in Resources */,
+				D8D2A39B1CDD9B83001A9A7F /* karaka_main.jpg in Resources */,
+				D8B765241C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.xib in Resources */,
+				D8D2A3991CDD9922001A9A7F /* manuka_main.jpg in Resources */,
+				D88FA0171CBAE1DF0004462C /* Import.xib in Resources */,
+				D84D29FB1CD2E22A0084C851 /* close.png in Resources */,
+				D837FCA91C730E8A0032C033 /* cluster@2x.png in Resources */,
+				D837FD3D1C7317120032C033 /* slider-default_trackBackground@2x.png in Resources */,
+				D84EA2DB1C881CA700BD75AD /* fruit.png in Resources */,
+				D8F0D8241CBCBC6500A681B0 /* TestImport.csv in Resources */,
+				D837FCA81C730E8A0032C033 /* cluster.png in Resources */,
+				D837FC911C730E220032C033 /* DataModel.rtf in Resources */,
+				D837FCBA1C730E8A0032C033 /* wrinkled@2x.png in Resources */,
+				D8D2A3981CDD9922001A9A7F /* kanuka_main.jpg in Resources */,
+				D899D5451C7399C9005A9A7F /* slider-default7-trackCrossedOver@2x.png in Resources */,
+				D8D2A3A21CDDA19A001A9A7F /* pigeonwood_main.jpg in Resources */,
+				D837D9491CDEACEE00B2D775 /* previous.png in Resources */,
+				D892D3461CD48598003E7DDA /* grab.png in Resources */,
+				D837FD401C7317120032C033 /* slider-default-handle.png in Resources */,
+				D899D5421C7399C9005A9A7F /* slider-default7-trackBackground.png in Resources */,
+				D837FCAD1C730E8A0032C033 /* individual@2x.png in Resources */,
+				D899D5431C7399C9005A9A7F /* slider-default7-trackBackground@2x.png in Resources */,
+				D84D29F11CD21A790084C851 /* hardbeech_main.jpg in Resources */,
+				D837FD3E1C7317120032C033 /* slider-default-handle-highlighted.png in Resources */,
+				D837D9541CDEDF7C00B2D775 /* coprosma_robusta_main.jpg in Resources */,
+				D837FD421C7317120032C033 /* slider-default-track.png in Resources */,
+				D837FCAB1C730E8A0032C033 /* eye@2x.png in Resources */,
+				D837FCB11C730E8A0032C033 /* serrated.png in Resources */,
+				D853240C1CC1AC86002BC3ED /* cover_catalogue.jpg in Resources */,
+				D837FCB51C730E8A0032C033 /* smooth.png in Resources */,
+				D892D3471CD48598003E7DDA /* grab@2x.png in Resources */,
+				D837FCB81C730E8A0032C033 /* star@2x.png in Resources */,
+				D837FD3F1C7317120032C033 /* slider-default-handle-highlighted@2x.png in Resources */,
+				D892D3431CD45704003E7DDA /* iphone@2x.png in Resources */,
+				D899D5441C7399C9005A9A7F /* slider-default7-trackCrossedOver.png in Resources */,
+				D8B96F911C4A430700F659E4 /* Podfile in Resources */,
+				D837FCAA1C730E8A0032C033 /* eye.png in Resources */,
+				D84D29F31CD2963A0084C851 /* placeholder.png in Resources */,
+				D837FC921C730E220032C033 /* leaf_morphology.svg in Resources */,
+				D837FD461C7317120032C033 /* slider-default-trackCrossedOver@2x.png in Resources */,
+				D899D53E1C7399C9005A9A7F /* slider-default7-handle.png in Resources */,
+				D837FCB41C730E8A0032C033 /* settings@2x.png in Resources */,
+				D87DCFF21C9669AB007A32A8 /* flower.png in Resources */,
+				D87DCFF61C9B7830007A32A8 /* MeasureLeaf.xib in Resources */,
+				D84D29F01CD21A790084C851 /* blackbeech_main.jpg in Resources */,
+				D837D95E1CDEFEC600B2D775 /* broadleaf@2x.png in Resources */,
+				D892D3421CD45704003E7DDA /* iphone.png in Resources */,
+				D8D2A3A01CDDA19A001A9A7F /* ngaio_main.jpg in Resources */,
+				D837FCB31C730E8A0032C033 /* settings.png in Resources */,
+				D85324131CC2E4A3002BC3ED /* SearchResultCell.xib in Resources */,
+				D84EA2BB1C815FE100BD75AD /* alternating.png in Resources */,
+				D837D9561CDEDF7C00B2D775 /* totara_main.JPG in Resources */,
 				D86BD3151C37CA1C001E17E7 /* Assets.xcassets in Resources */,
+				D837D94D1CDEAE7700B2D775 /* next@2x.png in Resources */,
 				D86BD3131C37CA1C001E17E7 /* Main.storyboard in Resources */,
+				D837FCAF1C730E8A0032C033 /* lobed@2x.png in Resources */,
+				D899D5411C7399C9005A9A7F /* slider-default7-track@2x.png in Resources */,
+				D837D94E1CDEAE7700B2D775 /* next.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +1271,183 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C96FF2D84AEA04073F1178F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25C92C281C38F016DF630056 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F84279C1F31664B893880045 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D86BD3041C37CA1C001E17E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86BD3101C37CA1C001E17E7 /* SecondViewController.swift in Sources */,
+				D837FCD81C730FC20032C033 /* Flora.swift in Sources */,
+				D8C748161CB23F6F00FB8ED9 /* LoggerProtocol.swift in Sources */,
+				D8B765231C96567E00A9B4F2 /* SelectorRowWithViewTableViewCell.swift in Sources */,
+				D837FD2A1C7313FC0032C033 /* Model.xcdatamodeld in Sources */,
+				D84D29C11CCC855B0084C851 /* SearchTermByFruitColor.swift in Sources */,
+				D837FD191C73125D0032C033 /* LeafServiceProtocol.swift in Sources */,
+				D892D3621CDB1F73003E7DDA /* FruitImageSelectionView.swift in Sources */,
+				D837FCE11C730FC20032C033 /* LeafColorType.swift in Sources */,
+				D89174E11CBED6FD00D81CFF /* DataManagerServiceProtocol.swift in Sources */,
+				D837FCF71C7310350032C033 /* SecondViewController.swift in Sources */,
+				D837FD1E1C73125D0032C033 /* Service.swift in Sources */,
+				D8C7480C1CAC4F7F00FB8ED9 /* TOKImportMessage.m in Sources */,
+				D892D3761CDBD81C003E7DDA /* ImageSelectionViewDelegate.swift in Sources */,
+				D84D29C91CCC8F370084C851 /* SearchTermByLeafTexture.swift in Sources */,
+				D853242A1CC4E202002BC3ED /* LeafDimension+CoreDataProperties.swift in Sources */,
+				D8B765381C96598C00A9B4F2 /* FlowerColorType.swift in Sources */,
+				D8C747F21CAB043E00FB8ED9 /* MeasureLeafDelegate.swift in Sources */,
+				D84D29BD1CCB50760084C851 /* ImageSelectorDelegate.swift in Sources */,
+				D837FD161C73125D0032C033 /* LeafEdgeTypeProtocol.swift in Sources */,
+				D84D29C51CCC8D500084C851 /* SearchTermByLeafEdge.swift in Sources */,
+				D837FD241C7312820032C033 /* SelectorItem.swift in Sources */,
+				D837FD181C73125D0032C033 /* LeafService.swift in Sources */,
+				D892D37A1CDBD82A003E7DDA /* ImageCollectionViewCell.swift in Sources */,
+				D84D29B61CC74CE90084C851 /* ReferenceViewController.swift in Sources */,
+				D837FCE71C730FC20032C033 /* LeafEdgeType.swift in Sources */,
+				D837FCF91C7310350032C033 /* LeafViewController.swift in Sources */,
+				D8C7480A1CAC4F7F00FB8ED9 /* TOKCSVReader.m in Sources */,
+				D8B7652E1C96582300A9B4F2 /* DescriptionListItem.swift in Sources */,
+				D88FA0151CBAE1C30004462C /* ImportViewController.swift in Sources */,
+				D837FCED1C730FC20032C033 /* LeafTextureType.swift in Sources */,
+				D85324261CC4E168002BC3ED /* LeafFormationType.swift in Sources */,
+				D837FCE21C730FC20032C033 /* LeafColorType+CoreDataProperties.swift in Sources */,
+				D84EA2D01C84418300BD75AD /* Flora+CoreDataProperties.swift in Sources */,
+				D84D29CF1CCEA40A0084C851 /* FloraDetailsViewController.swift in Sources */,
+				D892D3741CDBD81C003E7DDA /* ImageSelectionView.swift in Sources */,
+				D8C747EE1CA316F500FB8ED9 /* Units.swift in Sources */,
+				D837D9581CDEE5A500B2D775 /* LeafShapeEnum.swift in Sources */,
+				D837FCDA1C730FC20032C033 /* Bark.swift in Sources */,
+				D8B7652D1C96582300A9B4F2 /* DescriptionList.swift in Sources */,
+				D84D29D11CCFF5840084C851 /* ImageService.swift in Sources */,
 				D86BD30C1C37CA1C001E17E7 /* AppDelegate.swift in Sources */,
-				D86BD30E1C37CA1C001E17E7 /* FirstViewController.swift in Sources */,
+				D84D29DD1CCFF7930084C851 /* S3DataStoreProvider.swift in Sources */,
+				D8C748121CAC52CD00FB8ED9 /* FloraImporter.swift in Sources */,
+				D837FD1F1C73125D0032C033 /* ServiceFactory.swift in Sources */,
+				D837FCE81C730FC20032C033 /* LeafEdgeType+CoreDataProperties.swift in Sources */,
+				D892D36E1CDBD684003E7DDA /* LeafEdgeImageSelectionView.swift in Sources */,
+				D837FCDE1C730FC20032C033 /* CoreDataController.swift in Sources */,
+				D87DCFEF1C965F2F007A32A8 /* FlowerColorTypeService.swift in Sources */,
+				D8C7480D1CAC4F7F00FB8ED9 /* TOKImportResult.m in Sources */,
+				D85324101CC2CFA0002BC3ED /* LeafDimensionService.swift in Sources */,
+				D8B7652A1C96577F00A9B4F2 /* CatalogueViewController.swift in Sources */,
+				D892D3751CDBD81C003E7DDA /* ImageSelectionViewCell.swift in Sources */,
+				D837FCF81C7310350032C033 /* SettingsViewController.swift in Sources */,
+				D85324251CC4E168002BC3ED /* LeafFormationType+CoreDataProperties.swift in Sources */,
+				D8C747EC1CA3161300FB8ED9 /* IPhoneGrid.swift in Sources */,
+				D837FCDF1C730FC20032C033 /* Leaf.swift in Sources */,
+				D837FCDD1C730FC20032C033 /* BarkTextureType+CoreDataProperties.swift in Sources */,
+				D837FD251C7312820032C033 /* SelectorViewController.swift in Sources */,
+				D892D3731CDBD81C003E7DDA /* ImageSelectionData.swift in Sources */,
+				D853240E1CC2CED4002BC3ED /* LeafDimensionProtocol.swift in Sources */,
+				D84D29E21CD199340084C851 /* CacheDataStoreProvider.swift in Sources */,
+				D84D29F91CD29D2D0084C851 /* ImagePreviewViewController.swift in Sources */,
+				D892D3531CD92AD3003E7DDA /* FlowerCollectionViewDelegate.swift in Sources */,
+				D837FD141C73125D0032C033 /* LeafColorTypeProtocol.swift in Sources */,
+				D837FD011C7310FB0032C033 /* SearchTermByKeyword.swift in Sources */,
+				D8C747EA1CA0DADE00FB8ED9 /* UISliderExtension.swift in Sources */,
+				D837FD061C7311730032C033 /* StringExtension.swift in Sources */,
+				D8B765341C9658CE00A9B4F2 /* FruitColorTypeService.swift in Sources */,
+				D853241D1CC4DF4D002BC3ED /* LeafFormationTypeProtocol.swift in Sources */,
+				D8C748091CAC4F7F00FB8ED9 /* TOKCSVParser.m in Sources */,
+				D837FD171C73125D0032C033 /* LeafEdgeTypeService.swift in Sources */,
+				D8B765331C9658CE00A9B4F2 /* FruitColorTypeProtocol.swift in Sources */,
+				D8C748081CAC4F7F00FB8ED9 /* TOKCSVColumnDefinition.m in Sources */,
+				D837FD151C73125D0032C033 /* LeafColorTypeService.swift in Sources */,
+				D853241B1CC35487002BC3ED /* SearchTermByDimension.swift in Sources */,
+				D837FD1B1C73125D0032C033 /* LeafTextureTypeService.swift in Sources */,
+				D84D29DC1CCFF7930084C851 /* DataStoreProviderProtocol.swift in Sources */,
+				D837FD311C7316D70032C033 /* NMRangeSlider.m in Sources */,
+				D8B765371C96598C00A9B4F2 /* FlowerColorType+CoreDataProperties.swift in Sources */,
+				D84D29C31CCC8D030084C851 /* SearchTermByFlowerColor.swift in Sources */,
+				D8C7480F1CAC4F7F00FB8ED9 /* TOKRowField.m in Sources */,
+				D837FCEE1C730FC20032C033 /* LeafTextureType+CoreDataProperties.swift in Sources */,
+				D837FCFB1C7310BA0032C033 /* FindViewController.swift in Sources */,
+				D84D29CB1CCCABCE0084C851 /* SearchDetailsViewController.swift in Sources */,
+				D89174E51CC0584300D81CFF /* EnumService.swift in Sources */,
+				D837FD071C7311730032C033 /* UINavigationControllerExtension.swift in Sources */,
+				D837FD231C7312820032C033 /* SelectorDelegate.swift in Sources */,
+				D84D29E91CD211A30084C851 /* ImportDelegate.swift in Sources */,
+				D837FD271C7313330032C033 /* Appearance.swift in Sources */,
+				D8B765201C96563700A9B4F2 /* UITableViewCellExtension.swift in Sources */,
+				D84EA2D21C84418300BD75AD /* FruitColorType.swift in Sources */,
+				D8B765321C9658CE00A9B4F2 /* FlowerColorTypeProtocol.swift in Sources */,
+				D837FD031C7310FB0032C033 /* SearchTermProtocol.swift in Sources */,
+				D85324191CC34B77002BC3ED /* SearchResultCollectionViewCell.swift in Sources */,
+				D892D3681CDB582C003E7DDA /* FormationImageSelectionView.swift in Sources */,
+				D84D29DE1CCFF7930084C851 /* LocalDataStoreProvider.swift in Sources */,
+				D892D37C1CDBD82A003E7DDA /* ImageSelectorItem.swift in Sources */,
+				D853242B1CC4E202002BC3ED /* Leaf+CoreDataProperties.swift in Sources */,
+				D892D3551CD93FC6003E7DDA /* FruitCollectionViewDelegate.swift in Sources */,
+				D837FD1C1C73125D0032C033 /* FloraService.swift in Sources */,
+				D892D3641CDB5752003E7DDA /* FlowerImageSelectionView.swift in Sources */,
+				D892D34B1CD5DB5B003E7DDA /* LaunchScreenViewController.swift in Sources */,
+				D89174DF1CBED6DD00D81CFF /* DataManagerService.swift in Sources */,
+				D8B765281C96577F00A9B4F2 /* FloraViewController.swift in Sources */,
+				D8B7651F1C96563700A9B4F2 /* UIImageExtension.swift in Sources */,
+				D837FCDB1C730FC20032C033 /* Bark+CoreDataProperties.swift in Sources */,
+				D8C7480B1CAC4F7F00FB8ED9 /* TOKExportResult.m in Sources */,
+				D892D37B1CDBD82A003E7DDA /* ImageSelector.swift in Sources */,
+				D837FCE51C730FC20032C033 /* LeafDimension.swift in Sources */,
+				D837FCF61C7310350032C033 /* SearchViewController.swift in Sources */,
+				D8B7651E1C96563700A9B4F2 /* UIColorExtension.swift in Sources */,
+				D892D3491CD488AB003E7DDA /* Grid.swift in Sources */,
+				D87DCFF81C9B79BC007A32A8 /* MeasureLeafViewController.swift in Sources */,
+				D853241F1CC4DF6A002BC3ED /* LeafFormationTypeService.swift in Sources */,
+				D837FD1D1C73125D0032C033 /* FloraServiceProtocol.swift in Sources */,
+				D84EA2D11C84418300BD75AD /* FruitColorType+CoreDataProperties.swift in Sources */,
+				D837FD001C7310FB0032C033 /* SearchResult.swift in Sources */,
+				D8C7480E1CAC4F7F00FB8ED9 /* TOKImportValidationMessages.m in Sources */,
+				D84D29C71CCC8DD00084C851 /* SearchTermByLeafFormation.swift in Sources */,
+				D8F0D8221CBB9F5C00A681B0 /* HomeViewController.swift in Sources */,
+				D8C748101CAC4F7F00FB8ED9 /* CHCSVParser.m in Sources */,
+				D837FD1A1C73125D0032C033 /* LeafTextureTypeProtocol.swift in Sources */,
+				D837FD021C7310FB0032C033 /* SearchTermByLookup.swift in Sources */,
+				D837FCDC1C730FC20032C033 /* BarkTextureType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +1455,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86BD3231C37CA1C001E17E7 /* florafinderTests.swift in Sources */,
+				D8C747F01CA3623200FB8ED9 /* IPhoneGridTests.swift in Sources */,
+				D8FFC6A21C5B2C4D00A04881 /* SearchTests.swift in Sources */,
+				D84D29B81CC8A9320084C851 /* DimensionTests.swift in Sources */,
+				D861DBB31C4370AF00CE0A22 /* LookupTests.swift in Sources */,
+				D8B1E4911C521A33003AC017 /* SelectorViewControllerTests.swift in Sources */,
+				D89174E71CC0684900D81CFF /* FruitColorTypeTests.swift in Sources */,
+				D861DBB51C43713600CE0A22 /* TestBase.swift in Sources */,
+				D86BD3231C37CA1C001E17E7 /* floraTests.swift in Sources */,
+				D8C748181CB3832300FB8ED9 /* Semaphore.swift in Sources */,
+				D8C748141CAE415C00FB8ED9 /* importTests.swift in Sources */,
+				D84D29E01CD0B6980084C851 /* ImageServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,23 +1597,38 @@
 		};
 		D86BD3331C37CA1C001E17E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC56A94A9A77966C6A21D0C1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = florafinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = andrewtokeley.com.florafinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "florafinder/florafinder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_RUNNING = NO;
 			};
 			name = Debug;
 		};
 		D86BD3341C37CA1C001E17E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE3FF3567D3143AFB115082A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = florafinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = andrewtokeley.com.florafinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "florafinder/florafinder-Bridging-Header.h";
+				TEST_RUNNING = NO;
 			};
 			name = Release;
 		};
@@ -430,6 +1641,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = andrewtokeley.com.florafinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/florafinder.app/florafinder";
+				TEST_RUNNING = YES;
 			};
 			name = Debug;
 		};
@@ -442,6 +1654,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = andrewtokeley.com.florafinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/florafinder.app/florafinder";
+				TEST_RUNNING = YES;
 			};
 			name = Release;
 		};
@@ -452,6 +1665,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = andrewtokeley.com.florafinderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_RUNNING = YES;
 				TEST_TARGET_NAME = florafinder;
 				USES_XCTRUNNER = YES;
 			};
@@ -464,6 +1678,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = andrewtokeley.com.florafinderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_RUNNING = YES;
 				TEST_TARGET_NAME = florafinder;
 				USES_XCTRUNNER = YES;
 			};
@@ -488,6 +1703,7 @@
 				D86BD3341C37CA1C001E17E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D86BD3351C37CA1C001E17E7 /* Build configuration list for PBXNativeTarget "florafinderTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +1712,7 @@
 				D86BD3371C37CA1C001E17E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D86BD3381C37CA1C001E17E7 /* Build configuration list for PBXNativeTarget "florafinderUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,8 +1721,23 @@
 				D86BD33A1C37CA1C001E17E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D837FD281C7313FC0032C033 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D837FD291C7313FC0032C033 /* Model.xcdatamodel */,
+			);
+			currentVersion = D837FD291C7313FC0032C033 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = data/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D86BD3001C37CA1C001E17E7 /* Project object */;
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uXq-ay-UKe" customClass="SearchResultCollectionViewCell" customModule="florafinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="127"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="127"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="HIY-hH-Gtd">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="KS8-54-JL5"/>
+                            <constraint firstAttribute="width" constant="100" id="mf7-fB-0eE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4g-tK-ARg">
+                        <rect key="frame" x="0.0" y="107" width="100" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Z4g-tK-ARg" firstAttribute="leading" secondItem="uXq-ay-UKe" secondAttribute="leading" id="PsL-ud-26Y"/>
+                <constraint firstItem="HIY-hH-Gtd" firstAttribute="top" secondItem="uXq-ay-UKe" secondAttribute="top" id="dPu-fB-xw0"/>
+                <constraint firstItem="HIY-hH-Gtd" firstAttribute="leading" secondItem="uXq-ay-UKe" secondAttribute="leading" id="f99-Eh-3Go"/>
+                <constraint firstAttribute="bottom" secondItem="Z4g-tK-ARg" secondAttribute="bottom" constant="8" id="h57-nQ-FZf"/>
+                <constraint firstAttribute="trailing" secondItem="HIY-hH-Gtd" secondAttribute="trailing" id="lTW-vz-6mm"/>
+                <constraint firstAttribute="trailing" secondItem="Z4g-tK-ARg" secondAttribute="trailing" id="ozl-nd-408"/>
+                <constraint firstItem="Z4g-tK-ARg" firstAttribute="top" secondItem="HIY-hH-Gtd" secondAttribute="bottom" constant="8" id="pwo-Wp-239"/>
+            </constraints>
+            <size key="customSize" width="100" height="127"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="lTW-vz-6mm"/>
+                    <exclude reference="pwo-Wp-239"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="image" destination="HIY-hH-Gtd" id="6Hp-CM-CtF"/>
+                <outlet property="label" destination="Z4g-tK-ARg" id="AuZ-Mi-osi"/>
+            </connections>
+            <point key="canvasLocation" x="-547" y="-364.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

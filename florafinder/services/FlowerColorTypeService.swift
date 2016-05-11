@@ -16,7 +16,7 @@ enum FlowerColorTypeEnum: String
     case White = "White"
     case Purple = "Purple"
     
-    static let allValues = [Red, Pink, Yellow, White, Purple]
+    static let allValues = [White, Yellow, Pink, Red, Purple]
     
     static func getByName(name: String) -> FlowerColorTypeEnum?
     {

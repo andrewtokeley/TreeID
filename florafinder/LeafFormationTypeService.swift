@@ -13,9 +13,9 @@ enum LeafFormationTypeEnum: String
     case Paired = "Paired"
     case Alternate = "Alternate"
     case Star = "Star"
-    case Cluster = "Compound"
+    //case Cluster = "Small"
     
-    static let allValues = [Paired, Alternate, Star, Cluster]
+    static let allValues = [Paired, Alternate, Star] //, Cluster]
     
     func image() -> UIImage
     {
@@ -24,7 +24,7 @@ enum LeafFormationTypeEnum: String
             case .Paired: return UIImage(named: "individual")!.changeColor(UIColor.leafDarkGreen())!
             case .Alternate: return UIImage(named: "alternating.png")!.changeColor(UIColor.leafDarkGreen())!
             case .Star: return UIImage(named: "star.png")!.changeColor(UIColor.leafDarkGreen())!
-            case .Cluster: return UIImage(named: "cluster.png")!.changeColor(UIColor.leafDarkGreen())!
+            //case .Cluster: return UIImage(named: "cluster.png")!.changeColor(UIColor.leafDarkGreen())!
         }
     }
     

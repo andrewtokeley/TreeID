@@ -23,13 +23,10 @@ class ImageSelectionViewCell: UICollectionViewCell
         self.contentView.addSubview(imageView)
         self.contentView.addSubview(label)
         self.contentView.addSubview(selectionStrip)
-        
-        //self.backgroundColor = UIColor.grayColor()
     }
     
     override func layoutSubviews()
     {
-        
         let labelHeight: CGFloat = showLabel ? 15 : 0
         let PADDING: CGFloat = 8
         
@@ -63,6 +60,7 @@ class ImageSelectionViewCell: UICollectionViewCell
     lazy var imageView: UIImageView = {
        let imageView = UIImageView()
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        //imageView.clipsToBounds = true
         return imageView
     }()
     

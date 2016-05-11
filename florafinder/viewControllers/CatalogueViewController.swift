@@ -14,6 +14,8 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
     let SEGUE_ADD = "add"
     
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -22,6 +24,8 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
         
         datasource = floraService.groupByCommonName(floraService.getAll())
         sections = Array(datasource.keys.sort())
+        
+        self.tableView.registerNib(UINib(nibName: "CatalogueTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
     //MARK: - Properties
@@ -86,12 +90,12 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier("cell")
+        if let cell = tableView.dequeueReusableCellWithIdentifier("cell") as? CatalogueTableViewCell
         {
             let sectionKey = sections[indexPath.section]
             let selectedFlora = datasource[sectionKey]![indexPath.row]
-            cell.textLabel?.text = selectedFlora.commonName
-            cell.imageView?.image = selectedFlora.image
+            cell.commonName?.text = selectedFlora.commonName
+            cell.treeImage?.image = selectedFlora.image ?? UIImage(named: "placeholder.png")
             return cell
         }
         return UITableViewCell()
@@ -100,6 +104,16 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         self.selectedFlora = datasource[sections[indexPath.section]]![indexPath.row]
         return indexPath
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        self.performSegueWithIdentifier(self.SEGUE_VIEW, sender: nil)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 68
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

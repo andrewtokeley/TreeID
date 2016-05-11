@@ -28,7 +28,7 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
         self.storeURL = try initializeStore(storeName)
     }
     
-    internal var rootFolder: NSURL
+    var rootFolder: NSURL
     {
         // Return the app's Document directory
         return NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first!)

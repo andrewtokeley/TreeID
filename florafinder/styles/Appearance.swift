@@ -13,12 +13,13 @@ class Appearance
 {
     static func setAppearance()
     {
-        UISegmentedControl.appearance().tintColor = UIColor.darkGrayColor()
+        //UISegmentedControl.appearance().tintColor = UIColor.darkGrayColor()
         
-        UISlider.appearance().tintColor = UIColor.leafGreen()
-        
-        NMRangeSlider.appearance().tintColor = UIColor.leafGreen()
+        //UISlider.appearance().tintColor = UIColor.leafGreen()
         
         UISwitch.appearance().onTintColor = UIColor.leafDarkGreen()
+        
+//        UINavigationBar.appearance().backgroundColor = UIColor.leafGreen()
+//        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
     }
 }

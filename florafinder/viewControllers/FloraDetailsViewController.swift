@@ -14,6 +14,7 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     var flora: Flora?
     var showAllDetails: Bool = false
     var photos: [NYTPhoto] = []
+    var layoutGigDone: Bool = false
     
     //MARK: - Constants
     
@@ -53,10 +54,14 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     
     override func viewWillLayoutSubviews() {
         
-        // Required to ensure the correct size of the header tablecell
-        super.viewWillLayoutSubviews()
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
+        // Required to ensure the correct size of the header tablecell. When relying on the tableView:heightForRowAtIndexPath it doesn't have the correct label height until this method is called.
+        if (!layoutGigDone)
+        {
+            //super.viewWillLayoutSubviews()
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+            layoutGigDone = true
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -77,7 +82,6 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
             {
                 if let flora = self.flora
                 {
-//                    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
                     controller.prepareForView(flora)
                 }
             }
@@ -90,7 +94,6 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     func configureView()
     {
         // Temporary until we get multiple images
-        photos.append(flora!)
         photos.append(flora!)
         
         photosView.backgroundColor = UIColor.whiteColor()
@@ -109,8 +112,9 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
             externalReferenceURL.setAttributedTitle(NSAttributedString(string: reference), forState: UIControlState.Normal)
         }
         
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
+        
+//        self.tableView.beginUpdates()
+//        self.tableView.endUpdates()
     }
     
     func prepareForView(flora: Flora)
@@ -125,26 +129,34 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
         
         if let flowerColor = flora?.flowerColor?.color as? UIColor
         {
-            let image = UIImage(named: "flower.png")
-            images.append(image!.changeColor(flowerColor)!)
+            if let image = UIImage(named: "flower.png")
+            {
+                images.append(image.changeColor(flowerColor)!)
+            }
         }
         
         if let fruitColor = flora?.fruitColor?.color as? UIColor
         {
-            let image = UIImage(named: "fruit.png")
-            images.append(image!.changeColor(fruitColor)!)
+            if let image = UIImage(named: "fruit.png")
+            {
+                images.append(image.changeColor(fruitColor)!)
+            }
         }
         
         if let edge = flora?.leafUpper?.edgeType
         {
-            let type = LeafEdgeTypeEnum(rawValue: edge.name!)
-            images.append(type!.image())
+            if let type = LeafEdgeTypeEnum(rawValue: edge.name!)
+            {
+                images.append(type.image())
+            }
         }
         
         if let formation = flora?.leafUpper?.formationType
         {
-            let type = LeafFormationTypeEnum(rawValue: formation.name!)
-            images.append(type!.image())
+            if let type = LeafFormationTypeEnum(rawValue: formation.name!)
+            {
+                images.append(type.image())
+            }
         }
         
         let count = images.count

@@ -11,6 +11,8 @@ import Foundation
 class HomeViewController: UIViewController, ImportDelegate
 {
 
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
+    
     func importData(url: NSURL)
     {
         // Currently the HomeViewController will always look at main serviceFactory, and you can't inject the test version...
@@ -20,5 +22,11 @@ class HomeViewController: UIViewController, ImportDelegate
     
     func importViewController(importViewController: ImportViewController, didImportRecords: Int) {
         // do nothing for now
+    }
+    
+    override func viewDidLoad() {
+        //self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
+        //self.view.backgroundColor = UIColor.leafGreen()
+        settingsButton.tintColor = UIColor.leafDarkGreen()
     }
 }

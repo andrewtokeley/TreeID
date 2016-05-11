@@ -107,10 +107,12 @@ class ImageSelectionView: UIView, UICollectionViewDelegateFlowLayout, UICollecti
     {
         if let columns = numberOfColumns
         {
+            // Used to make sure rounding doesn't make the required space between cells too big
+            let ROUNDING_NUDGE: CGFloat = 1
             let viewWidth = self.frame.size.width
             let cellWidth = cellSize.width
             
-            let spaceBetweenCellsRequired = viewWidth/CGFloat(columns) - cellWidth
+            let spaceBetweenCellsRequired = viewWidth/CGFloat(columns) - cellWidth - ROUNDING_NUDGE
             
             if spaceBetweenCellsRequired > 0
             {
@@ -140,6 +142,7 @@ class ImageSelectionView: UIView, UICollectionViewDelegateFlowLayout, UICollecti
         
         cell.selectionStrip.hidden = datasource[indexPath.row] != _selectedItem
         
+        self.needsUpdateConstraints()
         return cell
     }
     

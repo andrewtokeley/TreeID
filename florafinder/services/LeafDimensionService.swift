@@ -24,6 +24,32 @@ struct Measurement: Equatable
         let lengthString = String(format: lengthFormat, length)
         return "\(widthString)-\(lengthString)"
     }
+    
+    func descriptionWithOtherMeasure(measurement: Measurement) -> String
+    {
+        var widthFormat = (width % 1 == 0) ? "%.0f" : "%.01f"
+        let widthFromString = String(format: widthFormat, width)
+        var lengthFormat = (length % 1 == 0) ? "%.0f" : "%.01f"
+        let lengthFromString = String(format: lengthFormat, length)
+        
+        widthFormat = (measurement.width % 1 == 0) ? "%.0f" : "%.01f"
+        let widthToString = String(format: widthFormat, measurement.width)
+        lengthFormat = (measurement.length % 1 == 0) ? "%.0f" : "%.01f"
+        let lengthToString = String(format: lengthFormat, measurement.length)
+        
+        var widthRange = "\(widthFromString)-\(widthToString)"
+        if (widthFromString == widthToString)
+        {
+            widthRange = widthFromString
+        }
+        var lengthRange = "\(lengthFromString)-\(lengthToString)"
+        if (lengthFromString == lengthToString)
+        {
+            lengthRange = lengthFromString
+        }
+        
+        return "\(widthRange)cms wide and \(lengthRange)cms long"
+    }
 }
 
 func ==(lhs:Measurement, rhs:Measurement) -> Bool

@@ -20,7 +20,7 @@ enum FruitColorTypeEnum: String
     case Yellow = "Yellow"
     case DarkRed = "Dark Red"
     
-    static let allValues = [Pink, Green, Purple, Orange, Yellow, Black, Red, DarkRed, Blue]
+    static let allValues = [Yellow, Orange, Pink, Red, DarkRed, Green, Blue, Purple,  Black]
 
     static func getByName(name: String) -> FruitColorTypeEnum?
     {

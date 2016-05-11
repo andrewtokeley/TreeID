@@ -20,10 +20,10 @@ class FormationImageSelectionView: ImageSelectionView
         return super._selectedItem?.tag as? LeafFormationType
     }
     
-//    override internal var numberOfColumns: Int?
-//    {
-//        return 4
-//    }
+    override internal var numberOfColumns: Int?
+    {
+        return 3
+    }
     
     override internal var datasource: [ImageSelectionData]
     {

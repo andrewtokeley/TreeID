@@ -52,6 +52,9 @@ class ImportViewController: UIViewController
     
     func importButtonClick(sender: UIButton)
     {
+        // Rebuild the database - this will delete all data!
+        let _ = try? ServiceFactory.shareInstance.dataManagementService.rebuildDatabase()
+        
         let importer = FloraImporter(serviceFactory: serviceFactory, fileURL: self.importFileURL)
         
         importer.importFile { (result) in

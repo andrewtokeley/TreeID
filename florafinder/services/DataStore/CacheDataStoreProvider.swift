@@ -10,7 +10,7 @@ import Foundation
 
 class CacheDataStoreProvider: LocalDataStoreProvider
 {
-    override internal var rootFolder: NSURL
+    override var rootFolder: NSURL
     {
         // Return the app's Cache directory
         return NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).first!)

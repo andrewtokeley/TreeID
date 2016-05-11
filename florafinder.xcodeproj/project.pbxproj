@@ -17,8 +17,7 @@
 		D837D9551CDEDF7C00B2D775 /* nikau_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D837D9521CDEDF7C00B2D775 /* nikau_main.jpg */; };
 		D837D9561CDEDF7C00B2D775 /* totara_main.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D837D9531CDEDF7C00B2D775 /* totara_main.JPG */; };
 		D837D9581CDEE5A500B2D775 /* LeafShapeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837D9571CDEE5A500B2D775 /* LeafShapeEnum.swift */; };
-		D837D95E1CDEFEC600B2D775 /* broadleaf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D837D95B1CDEFEC600B2D775 /* broadleaf@2x.png */; };
-		D837D9601CDEFEC600B2D775 /* narrowleaf.png in Resources */ = {isa = PBXBuildFile; fileRef = D837D95D1CDEFEC600B2D775 /* narrowleaf.png */; };
+		D837D95E1CDEFEC600B2D775 /* broadleaf.png in Resources */ = {isa = PBXBuildFile; fileRef = D837D95B1CDEFEC600B2D775 /* broadleaf.png */; };
 		D837FC911C730E220032C033 /* DataModel.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D837FC8D1C730E220032C033 /* DataModel.rtf */; };
 		D837FC921C730E220032C033 /* leaf_morphology.svg in Resources */ = {isa = PBXBuildFile; fileRef = D837FC8E1C730E220032C033 /* leaf_morphology.svg */; };
 		D837FC931C730E220032C033 /* Native-plants-of-Eastbourne-hills.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D837FC8F1C730E220032C033 /* Native-plants-of-Eastbourne-hills.pdf */; };
@@ -233,6 +232,20 @@
 		D8D2A3A31CDDA19A001A9A7F /* rimu_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8D2A39F1CDDA19A001A9A7F /* rimu_main.jpg */; };
 		D8F0D8221CBB9F5C00A681B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0D8211CBB9F5C00A681B0 /* HomeViewController.swift */; };
 		D8F0D8241CBCBC6500A681B0 /* TestImport.csv in Resources */ = {isa = PBXBuildFile; fileRef = D8F0D8231CBCBC6500A681B0 /* TestImport.csv */; };
+		D8FF48FA1CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF48F91CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift */; };
+		D8FF48FC1CE022DF0079A4C1 /* lacebark_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF48FB1CE022DF0079A4C1 /* lacebark_main.jpg */; };
+		D8FF48FE1CE02BEB0079A4C1 /* kawakawa_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF48FD1CE02BEB0079A4C1 /* kawakawa_main.jpg */; };
+		D8FF49001CE02CDF0079A4C1 /* hinau_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF48FF1CE02CDF0079A4C1 /* hinau_main.jpg */; };
+		D8FF49021CE1232D0079A4C1 /* leafGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FF49011CE1232D0079A4C1 /* leafGreen.png */; };
+		D8FF49041CE1242E0079A4C1 /* greenStar.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FF49031CE1242E0079A4C1 /* greenStar.png */; };
+		D8FF49101CE1D7DE0079A4C1 /* broadleaf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FF490D1CE1D7DE0079A4C1 /* broadleaf@2x.png */; };
+		D8FF49111CE1D7DE0079A4C1 /* narrowleaf.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FF490E1CE1D7DE0079A4C1 /* narrowleaf.png */; };
+		D8FF49121CE1D7DE0079A4C1 /* narrowleaf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FF490F1CE1D7DE0079A4C1 /* narrowleaf@2x.png */; };
+		D8FF49141CE266070079A4C1 /* makomako_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF49131CE266070079A4C1 /* makomako_main.jpg */; };
+		D8FF49171CE269B60079A4C1 /* CatalogueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF49161CE269B60079A4C1 /* CatalogueTableViewCell.swift */; };
+		D8FF491B1CE26A290079A4C1 /* CatalogueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FF491A1CE26A290079A4C1 /* CatalogueTableViewCell.xib */; };
+		D8FF491E1CE343350079A4C1 /* lancewood_adult_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF491C1CE343350079A4C1 /* lancewood_adult_main.jpg */; };
+		D8FF491F1CE343350079A4C1 /* lancewood_juevenille_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF491D1CE343350079A4C1 /* lancewood_juevenille_main.jpg */; };
 		D8FFC6A21C5B2C4D00A04881 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FFC6A11C5B2C4D00A04881 /* SearchTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -265,8 +278,7 @@
 		D837D9521CDEDF7C00B2D775 /* nikau_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nikau_main.jpg; path = images/storage/nikau_main.jpg; sourceTree = "<group>"; };
 		D837D9531CDEDF7C00B2D775 /* totara_main.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = totara_main.JPG; path = images/storage/totara_main.JPG; sourceTree = "<group>"; };
 		D837D9571CDEE5A500B2D775 /* LeafShapeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeafShapeEnum.swift; sourceTree = "<group>"; };
-		D837D95B1CDEFEC600B2D775 /* broadleaf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "broadleaf@2x.png"; path = "images/broadleaf@2x.png"; sourceTree = "<group>"; };
-		D837D95D1CDEFEC600B2D775 /* narrowleaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = narrowleaf.png; path = images/narrowleaf.png; sourceTree = "<group>"; };
+		D837D95B1CDEFEC600B2D775 /* broadleaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = broadleaf.png; path = images/broadleaf.png; sourceTree = "<group>"; };
 		D837FC8D1C730E220032C033 /* DataModel.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = DataModel.rtf; path = documentation/DataModel.rtf; sourceTree = "<group>"; };
 		D837FC8E1C730E220032C033 /* leaf_morphology.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = leaf_morphology.svg; path = documentation/leaf_morphology.svg; sourceTree = "<group>"; };
 		D837FC8F1C730E220032C033 /* Native-plants-of-Eastbourne-hills.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Native-plants-of-Eastbourne-hills.pdf"; path = "documentation/Native-plants-of-Eastbourne-hills.pdf"; sourceTree = "<group>"; };
@@ -499,6 +511,20 @@
 		D8D2A39F1CDDA19A001A9A7F /* rimu_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rimu_main.jpg; path = images/storage/rimu_main.jpg; sourceTree = "<group>"; };
 		D8F0D8211CBB9F5C00A681B0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = viewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		D8F0D8231CBCBC6500A681B0 /* TestImport.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TestImport.csv; path = import/TestImport.csv; sourceTree = "<group>"; };
+		D8FF48F91CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafShapeImageSelectionView.swift; path = views/imageSelectionView/LeafShapeImageSelectionView.swift; sourceTree = "<group>"; };
+		D8FF48FB1CE022DF0079A4C1 /* lacebark_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lacebark_main.jpg; path = images/storage/lacebark_main.jpg; sourceTree = "<group>"; };
+		D8FF48FD1CE02BEB0079A4C1 /* kawakawa_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kawakawa_main.jpg; path = images/storage/kawakawa_main.jpg; sourceTree = "<group>"; };
+		D8FF48FF1CE02CDF0079A4C1 /* hinau_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hinau_main.jpg; path = images/storage/hinau_main.jpg; sourceTree = "<group>"; };
+		D8FF49011CE1232D0079A4C1 /* leafGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leafGreen.png; path = images/leafGreen.png; sourceTree = "<group>"; };
+		D8FF49031CE1242E0079A4C1 /* greenStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenStar.png; path = images/greenStar.png; sourceTree = "<group>"; };
+		D8FF490D1CE1D7DE0079A4C1 /* broadleaf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "broadleaf@2x.png"; path = "images/broadleaf@2x.png"; sourceTree = "<group>"; };
+		D8FF490E1CE1D7DE0079A4C1 /* narrowleaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = narrowleaf.png; path = images/narrowleaf.png; sourceTree = "<group>"; };
+		D8FF490F1CE1D7DE0079A4C1 /* narrowleaf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "narrowleaf@2x.png"; path = "images/narrowleaf@2x.png"; sourceTree = "<group>"; };
+		D8FF49131CE266070079A4C1 /* makomako_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = makomako_main.jpg; path = images/storage/makomako_main.jpg; sourceTree = "<group>"; };
+		D8FF49161CE269B60079A4C1 /* CatalogueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatalogueTableViewCell.swift; path = viewControllers/CatalogueTableViewCell.swift; sourceTree = "<group>"; };
+		D8FF491A1CE26A290079A4C1 /* CatalogueTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CatalogueTableViewCell.xib; path = viewControllers/CatalogueTableViewCell.xib; sourceTree = "<group>"; };
+		D8FF491C1CE343350079A4C1 /* lancewood_adult_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lancewood_adult_main.jpg; path = images/storage/lancewood_adult_main.jpg; sourceTree = "<group>"; };
+		D8FF491D1CE343350079A4C1 /* lancewood_juevenille_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lancewood_juevenille_main.jpg; path = images/storage/lancewood_juevenille_main.jpg; sourceTree = "<group>"; };
 		D8FFC6A11C5B2C4D00A04881 /* SearchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
 		EE3FF3567D3143AFB115082A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -591,28 +617,30 @@
 		D837D9591CDEFE1E00B2D775 /* freePix */ = {
 			isa = PBXGroup;
 			children = (
-				D837FCA61C730E8A0032C033 /* wrinkled.png */,
-				D837FCA71C730E8A0032C033 /* wrinkled@2x.png */,
-				D837FCA41C730E8A0032C033 /* star.png */,
-				D837FCA51C730E8A0032C033 /* star@2x.png */,
-				D837FC9E1C730E8A0032C033 /* serrated.png */,
-				D837FC9F1C730E8A0032C033 /* serrated@2x.png */,
-				D837FC9B1C730E8A0032C033 /* lobed.png */,
-				D837FC9C1C730E8A0032C033 /* lobed@2x.png */,
-				D837FC991C730E8A0032C033 /* individual.png */,
-				D837FC9A1C730E8A0032C033 /* individual@2x.png */,
-				D84EA2D91C881CA700BD75AD /* fruit.png */,
-				D84EA2DA1C881CA700BD75AD /* fruit@2x.png */,
-				D87DCFF01C9669AB007A32A8 /* flower.png */,
-				D87DCFF11C9669AB007A32A8 /* flower@2x.png */,
-				D837FC951C730E8A0032C033 /* cluster.png */,
-				D837FC961C730E8A0032C033 /* cluster@2x.png */,
 				D84EA2B91C815FE100BD75AD /* alternating.png */,
 				D84EA2BA1C815FE100BD75AD /* alternating@2x.png */,
-				D837D95B1CDEFEC600B2D775 /* broadleaf@2x.png */,
-				D837D95D1CDEFEC600B2D775 /* narrowleaf.png */,
+				D837D95B1CDEFEC600B2D775 /* broadleaf.png */,
+				D8FF490D1CE1D7DE0079A4C1 /* broadleaf@2x.png */,
+				D837FC951C730E8A0032C033 /* cluster.png */,
+				D837FC961C730E8A0032C033 /* cluster@2x.png */,
+				D87DCFF01C9669AB007A32A8 /* flower.png */,
+				D87DCFF11C9669AB007A32A8 /* flower@2x.png */,
+				D84EA2D91C881CA700BD75AD /* fruit.png */,
+				D84EA2DA1C881CA700BD75AD /* fruit@2x.png */,
+				D837FC991C730E8A0032C033 /* individual.png */,
+				D837FC9A1C730E8A0032C033 /* individual@2x.png */,
+				D837FC9B1C730E8A0032C033 /* lobed.png */,
+				D837FC9C1C730E8A0032C033 /* lobed@2x.png */,
+				D8FF490E1CE1D7DE0079A4C1 /* narrowleaf.png */,
+				D8FF490F1CE1D7DE0079A4C1 /* narrowleaf@2x.png */,
+				D837FC9E1C730E8A0032C033 /* serrated.png */,
+				D837FC9F1C730E8A0032C033 /* serrated@2x.png */,
 				D837FCA21C730E8A0032C033 /* smooth.png */,
 				D837FCA31C730E8A0032C033 /* smooth@2x.png */,
+				D837FCA41C730E8A0032C033 /* star.png */,
+				D837FCA51C730E8A0032C033 /* star@2x.png */,
+				D837FCA61C730E8A0032C033 /* wrinkled.png */,
+				D837FCA71C730E8A0032C033 /* wrinkled@2x.png */,
 			);
 			name = freePix;
 			sourceTree = "<group>";
@@ -631,6 +659,8 @@
 		D837D9611CDF017500B2D775 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				D8FF49031CE1242E0079A4C1 /* greenStar.png */,
+				D8FF49011CE1232D0079A4C1 /* leafGreen.png */,
 				D837FCA01C730E8A0032C033 /* settings.png */,
 				D837FCA11C730E8A0032C033 /* settings@2x.png */,
 				D892D3441CD48598003E7DDA /* grab.png */,
@@ -696,6 +726,12 @@
 		D84D29E31CD1DC3D0084C851 /* storage */ = {
 			isa = PBXGroup;
 			children = (
+				D8FF491C1CE343350079A4C1 /* lancewood_adult_main.jpg */,
+				D8FF491D1CE343350079A4C1 /* lancewood_juevenille_main.jpg */,
+				D8FF49131CE266070079A4C1 /* makomako_main.jpg */,
+				D8FF48FF1CE02CDF0079A4C1 /* hinau_main.jpg */,
+				D8FF48FD1CE02BEB0079A4C1 /* kawakawa_main.jpg */,
+				D8FF48FB1CE022DF0079A4C1 /* lacebark_main.jpg */,
 				D837D9511CDEDF7C00B2D775 /* coprosma_robusta_main.jpg */,
 				D837D9521CDEDF7C00B2D775 /* nikau_main.jpg */,
 				D837D9531CDEDF7C00B2D775 /* totara_main.JPG */,
@@ -766,16 +802,16 @@
 		D86BD30A1C37CA1C001E17E7 /* florafinder */ = {
 			isa = PBXGroup;
 			children = (
+				D837FD2E1C7316D60032C033 /* florafinder-Bridging-Header.h */,
+				D86BD3191C37CA1C001E17E7 /* Info.plist */,
 				D86BD30B1C37CA1C001E17E7 /* AppDelegate.swift */,
 				D86BD3141C37CA1C001E17E7 /* Assets.xcassets */,
 				D86BD33B1C37CCD1001E17E7 /* data */,
 				D8F5EE2C1C8FD8AF00979718 /* descriptionLists */,
 				D8CB846D1C37DDE6005ABB6E /* documentation */,
 				D8FFC69D1C59460800A04881 /* extensions */,
-				D837FD2E1C7316D60032C033 /* florafinder-Bridging-Header.h */,
 				D8CB84701C391314005ABB6E /* images */,
 				D8C747F31CAC4DFC00FB8ED9 /* import */,
-				D86BD3191C37CA1C001E17E7 /* Info.plist */,
 				D86BD3161C37CA1C001E17E7 /* LaunchScreen.storyboard */,
 				D86BD3111C37CA1C001E17E7 /* Main.storyboard */,
 				D837FD2D1C7316A70032C033 /* NMRangeSlider */,
@@ -783,8 +819,8 @@
 				D8DC04351C4DF87400CE7C8C /* selector */,
 				D82FE8701C3F7DEE00AEB5D8 /* services */,
 				D827DC111C5888BA006D0EAA /* styles */,
-				D84D29B91CCB4F500084C851 /* views */,
 				D8DC04321C4DF54500CE7C8C /* viewControllers */,
+				D84D29B91CCB4F500084C851 /* views */,
 			);
 			path = florafinder;
 			sourceTree = "<group>";
@@ -878,6 +914,7 @@
 				D892D3671CDB582C003E7DDA /* FormationImageSelectionView.swift */,
 				D892D3611CDB1F73003E7DDA /* FruitImageSelectionView.swift */,
 				D892D36D1CDBD684003E7DDA /* LeafEdgeImageSelectionView.swift */,
+				D8FF48F91CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift */,
 				D892D3691CDBCF63003E7DDA /* core */,
 			);
 			name = imageSelectionView;
@@ -970,11 +1007,11 @@
 		D8CB84701C391314005ABB6E /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D837D9611CDF017500B2D775 /* other */,
-				D837D95A1CDEFE2F00B2D775 /* icons8 */,
-				D837D9591CDEFE1E00B2D775 /* freePix */,
-				D84D29E31CD1DC3D0084C851 /* storage */,
 				D85324081CC1AA39002BC3ED /* cover */,
+				D837D9591CDEFE1E00B2D775 /* freePix */,
+				D837D95A1CDEFE2F00B2D775 /* icons8 */,
+				D837D9611CDF017500B2D775 /* other */,
+				D84D29E31CD1DC3D0084C851 /* storage */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -982,23 +1019,23 @@
 		D8DC04321C4DF54500CE7C8C /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D892D3541CD93FC6003E7DDA /* FruitCollectionViewDelegate.swift */,
-				D892D3521CD92AD3003E7DDA /* FlowerCollectionViewDelegate.swift */,
-				D8B765271C96577F00A9B4F2 /* CatalogueViewController.swift */,
+				D8FF49151CE269810079A4C1 /* catalogue */,
 				D837FCFA1C7310BA0032C033 /* FindViewController.swift */,
 				D84D29CE1CCEA40A0084C851 /* FloraDetailsViewController.swift */,
 				D8B765251C96577F00A9B4F2 /* FloraViewController.swift */,
+				D892D3521CD92AD3003E7DDA /* FlowerCollectionViewDelegate.swift */,
+				D892D3541CD93FC6003E7DDA /* FruitCollectionViewDelegate.swift */,
 				D8F0D8211CBB9F5C00A681B0 /* HomeViewController.swift */,
-				D88FA0131CBAE1720004462C /* import */,
+				D84D29F81CD29D2D0084C851 /* ImagePreviewViewController.swift */,
+				D892D34A1CD5DB5B003E7DDA /* LaunchScreenViewController.swift */,
 				D837FCF51C7310350032C033 /* LeafViewController.swift */,
-				D87DCFF41C9B77B9007A32A8 /* measure */,
 				D84D29B51CC74CE90084C851 /* ReferenceViewController.swift */,
-				D85324111CC2E461002BC3ED /* search */,
 				D837FCF21C7310350032C033 /* SearchViewController.swift */,
 				D837FCF31C7310350032C033 /* SecondViewController.swift */,
 				D837FCF41C7310350032C033 /* SettingsViewController.swift */,
-				D84D29F81CD29D2D0084C851 /* ImagePreviewViewController.swift */,
-				D892D34A1CD5DB5B003E7DDA /* LaunchScreenViewController.swift */,
+				D88FA0131CBAE1720004462C /* import */,
+				D87DCFF41C9B77B9007A32A8 /* measure */,
+				D85324111CC2E461002BC3ED /* search */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -1022,6 +1059,16 @@
 				D8B7652C1C96582300A9B4F2 /* DescriptionListItem.swift */,
 			);
 			name = descriptionLists;
+			sourceTree = "<group>";
+		};
+		D8FF49151CE269810079A4C1 /* catalogue */ = {
+			isa = PBXGroup;
+			children = (
+				D8FF491A1CE26A290079A4C1 /* CatalogueTableViewCell.xib */,
+				D8B765271C96577F00A9B4F2 /* CatalogueViewController.swift */,
+				D8FF49161CE269B60079A4C1 /* CatalogueTableViewCell.swift */,
+			);
+			name = catalogue;
 			sourceTree = "<group>";
 		};
 		D8FFC69D1C59460800A04881 /* extensions */ = {
@@ -1171,6 +1218,7 @@
 				D84D29E71CD1DC580084C851 /* kowhai_main.jpg in Resources */,
 				D8D2A3961CDD9922001A9A7F /* cabbage_flower2.jpg in Resources */,
 				D899D5401C7399C9005A9A7F /* slider-default7-track.png in Resources */,
+				D8FF49101CE1D7DE0079A4C1 /* broadleaf@2x.png in Resources */,
 				D837FC931C730E220032C033 /* Native-plants-of-Eastbourne-hills.pdf in Resources */,
 				D837FCB61C730E8A0032C033 /* smooth@2x.png in Resources */,
 				D837D94A1CDEACEE00B2D775 /* previous@2x.png in Resources */,
@@ -1186,9 +1234,9 @@
 				D837FD411C7317120032C033 /* slider-default-handle@2x.png in Resources */,
 				D84EA2BC1C815FE100BD75AD /* alternating@2x.png in Resources */,
 				D837FCB21C730E8A0032C033 /* serrated@2x.png in Resources */,
-				D837D9601CDEFEC600B2D775 /* narrowleaf.png in Resources */,
 				D86BD3181C37CA1C001E17E7 /* LaunchScreen.storyboard in Resources */,
 				D853240A1CC1AA8E002BC3ED /* cover_miro.jpg in Resources */,
+				D8FF49121CE1D7DE0079A4C1 /* narrowleaf@2x.png in Resources */,
 				D8D2A3A31CDDA19A001A9A7F /* rimu_main.jpg in Resources */,
 				D899D53F1C7399C9005A9A7F /* slider-default7-handle@2x.png in Resources */,
 				D837FC941C730E220032C033 /* test.html in Resources */,
@@ -1212,6 +1260,8 @@
 				D8D2A3A21CDDA19A001A9A7F /* pigeonwood_main.jpg in Resources */,
 				D837D9491CDEACEE00B2D775 /* previous.png in Resources */,
 				D892D3461CD48598003E7DDA /* grab.png in Resources */,
+				D8FF49111CE1D7DE0079A4C1 /* narrowleaf.png in Resources */,
+				D8FF49141CE266070079A4C1 /* makomako_main.jpg in Resources */,
 				D837FD401C7317120032C033 /* slider-default-handle.png in Resources */,
 				D899D5421C7399C9005A9A7F /* slider-default7-trackBackground.png in Resources */,
 				D837FCAD1C730E8A0032C033 /* individual@2x.png in Resources */,
@@ -1223,23 +1273,30 @@
 				D837FCAB1C730E8A0032C033 /* eye@2x.png in Resources */,
 				D837FCB11C730E8A0032C033 /* serrated.png in Resources */,
 				D853240C1CC1AC86002BC3ED /* cover_catalogue.jpg in Resources */,
+				D8FF48FC1CE022DF0079A4C1 /* lacebark_main.jpg in Resources */,
 				D837FCB51C730E8A0032C033 /* smooth.png in Resources */,
+				D8FF491E1CE343350079A4C1 /* lancewood_adult_main.jpg in Resources */,
 				D892D3471CD48598003E7DDA /* grab@2x.png in Resources */,
 				D837FCB81C730E8A0032C033 /* star@2x.png in Resources */,
 				D837FD3F1C7317120032C033 /* slider-default-handle-highlighted@2x.png in Resources */,
+				D8FF491B1CE26A290079A4C1 /* CatalogueTableViewCell.xib in Resources */,
 				D892D3431CD45704003E7DDA /* iphone@2x.png in Resources */,
 				D899D5441C7399C9005A9A7F /* slider-default7-trackCrossedOver.png in Resources */,
+				D8FF48FE1CE02BEB0079A4C1 /* kawakawa_main.jpg in Resources */,
 				D8B96F911C4A430700F659E4 /* Podfile in Resources */,
+				D8FF49001CE02CDF0079A4C1 /* hinau_main.jpg in Resources */,
 				D837FCAA1C730E8A0032C033 /* eye.png in Resources */,
 				D84D29F31CD2963A0084C851 /* placeholder.png in Resources */,
 				D837FC921C730E220032C033 /* leaf_morphology.svg in Resources */,
 				D837FD461C7317120032C033 /* slider-default-trackCrossedOver@2x.png in Resources */,
+				D8FF49021CE1232D0079A4C1 /* leafGreen.png in Resources */,
 				D899D53E1C7399C9005A9A7F /* slider-default7-handle.png in Resources */,
 				D837FCB41C730E8A0032C033 /* settings@2x.png in Resources */,
 				D87DCFF21C9669AB007A32A8 /* flower.png in Resources */,
 				D87DCFF61C9B7830007A32A8 /* MeasureLeaf.xib in Resources */,
 				D84D29F01CD21A790084C851 /* blackbeech_main.jpg in Resources */,
-				D837D95E1CDEFEC600B2D775 /* broadleaf@2x.png in Resources */,
+				D8FF49041CE1242E0079A4C1 /* greenStar.png in Resources */,
+				D837D95E1CDEFEC600B2D775 /* broadleaf.png in Resources */,
 				D892D3421CD45704003E7DDA /* iphone.png in Resources */,
 				D8D2A3A01CDDA19A001A9A7F /* ngaio_main.jpg in Resources */,
 				D837FCB31C730E8A0032C033 /* settings.png in Resources */,
@@ -1250,6 +1307,7 @@
 				D837D94D1CDEAE7700B2D775 /* next@2x.png in Resources */,
 				D86BD3131C37CA1C001E17E7 /* Main.storyboard in Resources */,
 				D837FCAF1C730E8A0032C033 /* lobed@2x.png in Resources */,
+				D8FF491F1CE343350079A4C1 /* lancewood_juevenille_main.jpg in Resources */,
 				D899D5411C7399C9005A9A7F /* slider-default7-track@2x.png in Resources */,
 				D837D94E1CDEAE7700B2D775 /* next.png in Resources */,
 			);
@@ -1349,6 +1407,7 @@
 				D892D37A1CDBD82A003E7DDA /* ImageCollectionViewCell.swift in Sources */,
 				D84D29B61CC74CE90084C851 /* ReferenceViewController.swift in Sources */,
 				D837FCE71C730FC20032C033 /* LeafEdgeType.swift in Sources */,
+				D8FF48FA1CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift in Sources */,
 				D837FCF91C7310350032C033 /* LeafViewController.swift in Sources */,
 				D8C7480A1CAC4F7F00FB8ED9 /* TOKCSVReader.m in Sources */,
 				D8B7652E1C96582300A9B4F2 /* DescriptionListItem.swift in Sources */,
@@ -1388,6 +1447,7 @@
 				D84D29F91CD29D2D0084C851 /* ImagePreviewViewController.swift in Sources */,
 				D892D3531CD92AD3003E7DDA /* FlowerCollectionViewDelegate.swift in Sources */,
 				D837FD141C73125D0032C033 /* LeafColorTypeProtocol.swift in Sources */,
+				D8FF49171CE269B60079A4C1 /* CatalogueTableViewCell.swift in Sources */,
 				D837FD011C7310FB0032C033 /* SearchTermByKeyword.swift in Sources */,
 				D8C747EA1CA0DADE00FB8ED9 /* UISliderExtension.swift in Sources */,
 				D837FD061C7311730032C033 /* StringExtension.swift in Sources */,
@@ -1610,6 +1670,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "florafinder/florafinder-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_RUNNING = NO;
 			};
 			name = Debug;
@@ -1628,6 +1689,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "florafinder/florafinder-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_RUNNING = NO;
 			};
 			name = Release;

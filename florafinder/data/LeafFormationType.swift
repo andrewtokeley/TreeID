@@ -25,11 +25,11 @@ class LeafFormationType: NSManagedObject {
                 case LeafFormationTypeEnum.Paired:
                         result = "Leaves form in pairs, opposite from one another."
                 case LeafFormationTypeEnum.Alternate:
-                        result = "Leaves are individually attached."
+                        result = "Leaves are attached to the stem in an alternating fashion, not opposite from one another."
                 case LeafFormationTypeEnum.Star:
                         result = "Leaves form together in a star like formation. A common example is the Five Finger."
-                case LeafFormationTypeEnum.Cluster:
-                        result = "Leafs are small, typically less than centimetre long and a few milimetres wide. They are clustred together, often in two rows. Common examples include Rimu, Kowhai and Miro."
+                //case LeafFormationTypeEnum.Cluster:
+                 //       result = "Leafs are small, typically less than centimetre long and a few milimetres wide. They are clustred together, often in two rows. Common examples include Rimu, Kowhai and Miro."
                 }
             }
         }

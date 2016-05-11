@@ -30,6 +30,28 @@ class ImageServiceTests: TestBase {
         let _ = try? cacheDataProvider?.deleteAll()
     }
 
+    func testClearingCacheClearsCache() {
+        
+        let IMAGE_FILENAME = "kowhai_main.jpg"
+        
+        if let image = UIImage(named: IMAGE_FILENAME)
+        {
+            // put an image in the cache
+            self.cacheDataProvider?.uploadImage(image, relativePath: IMAGE_FILENAME)
+            
+            // check it's there
+            XCTAssertTrue(self.cacheDataProvider!.fileExists(IMAGE_FILENAME), "File not in cache")
+            
+            // clear the cache
+            let _ = try? cacheDataProvider?.deleteAll()
+            
+            // check it's there
+            XCTAssertFalse(self.cacheDataProvider!.fileExists(IMAGE_FILENAME), "File shouldn't be in cache")
+
+        }
+    
+    }
+    
     func testStoringJPGFiles() {
         let IMAGE_FILENAME = "kowhai_main.jpg"
         

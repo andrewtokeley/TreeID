@@ -11,14 +11,15 @@ import UIKit
 
 class SettingsViewController: UITableViewController, ImportDelegate
 {
-    let SECTION_TEST = 3
-    let ROW_REBUILD_DATASTORE = 0
+    let SECTION_TEST = 2
+    let ROW_IMPORT = 0
 
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackOpaque
     }
     
     override func didReceiveMemoryWarning()
@@ -55,6 +56,10 @@ class SettingsViewController: UITableViewController, ImportDelegate
                 {
                     ServiceFactory.shareInstance.imageDataProvider?.uploadImage(image, relativePath: imagePath)
                 }
+                else
+                {
+                    
+                }
             }
         }
     }
@@ -76,11 +81,11 @@ class SettingsViewController: UITableViewController, ImportDelegate
     {
         if (indexPath.section == SECTION_TEST)
         {
-            if (indexPath.row == ROW_REBUILD_DATASTORE)
+            if (indexPath.row == ROW_IMPORT)
             {
                 if let path = NSBundle.mainBundle().pathForResource("TestImport", ofType: "csv")
                 {
-                    rebuildDatastore()
+                    //rebuildDatastore()
                     importTestFile(path)
                 }
                 else

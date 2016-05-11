@@ -45,27 +45,6 @@ class ReferenceViewController: UIViewController, UIWebViewDelegate
         }
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-//    {
-//        if (segue.identifier == SEGUE_EDIT)
-//        {
-//            if let controller = segue.destinationViewController as? FloraViewController
-//            {
-//                if (flora != nil)
-//                {
-//                    controller.prepareForEdit(flora!)
-//                }
-//            }
-//        }
-//        else if (segue.identifier == SEGUE_SEARCH_DETAILS)
-//        {
-//            if let controller = segue.destinationViewController as? SearchDetailsViewController
-//            {
-//                controller.prepareForView(searchResult)
-//            }
-//        }
-//        
-//    }
     override func viewDidLoad()
     {
         failMessage.hidden = true
@@ -83,6 +62,9 @@ class ReferenceViewController: UIViewController, UIWebViewDelegate
             spinner.stopAnimating()
             failMessage.hidden = false
         }
+        
+//        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackOpaque
+//        self.navigationController?.navigationBar.backgroundColor = UIColor.leafDarkGreen()
     }
     
     func configureWebNavigationButtons()

@@ -72,7 +72,7 @@ class FloraImporter: TOKCSVParser
                     
                     if (column.isValidField(field))
                     {
-                        return field // NSURL(string: field)!
+                        return field == "" ? nil : field // NSURL(string: field)!
                     }
                     return nil
             }
@@ -443,7 +443,7 @@ class FloraImporter: TOKCSVParser
         }
         else
         {
-            self.validationMessages.addMessage(TOKImportMessage(message: "Update flora \(flora?.commonName)", severity: TOKImportMessageSeverity.Information))
+            self.validationMessages.addMessage(TOKImportMessage(message: "Update flora \(flora?.commonName!)", severity: TOKImportMessageSeverity.Information))
         }
         
         // Only update the entity if we're saving

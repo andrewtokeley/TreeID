@@ -35,36 +35,42 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     let LOOKUP_TITLE_FLOWERCOLOR = "Flower Color"
     
     // Section indexes
-    let SECTION_LEAFMEASURE = 0
-    let ROW_LEAFMEASURE = 0
+    let SECTION_LEAFSHAPE = 0
+    let ROW_LEAFSHAPE = 1
     
-    let SECTION_LEAFEDGE = 1
+    let SECTION_LEAFMEASURE = 1
+    let ROW_LEAFMEASURE = 0
+
+    let SECTION_LEAFEDGE = 2
     let ROW_LEAFEDGE = 1
     
-    let SECTION_LEAFFORM = 2
+    let SECTION_LEAFFORM = 3
     let ROW_LEAFFORM = 1
 
-    let SECTION_FLOWER = 3
+    let SECTION_FLOWER = 4
     let ROW_FLOWER_COLOR = 1
     
-    let SECTION_FRUIT = 4
+    let SECTION_FRUIT = 5
     let ROW_FRUIT_COLOR = 1
 
-    let SECTION_LEAFSURFACE = 5
+    let SECTION_LEAFSURFACE = 6
     let ROW_LEAFTEXTURE = 0
     
-    let SECTION_BARK = 6
+    let SECTION_BARK = 7
     let ROW_BARKTEXTURE = 0
     
     let EDGE_SELECTOR = "edge"
     let FORM_SELECTOR = "form"
     
-    let FLOWER_COLLECTION_VIEW = 0
-    let FRUIT_COLLECTION_VIEW = 1
+//    let FLOWER_COLLECTION_VIEW = 0
+//    let FRUIT_COLLECTION_VIEW = 1
     
     // MARK: - Outlets
     
     
+    @IBOutlet weak var shapeSwitch: UISwitch!
+    @IBOutlet weak var shapeSwitchCell: UITableViewCell!
+    @IBOutlet weak var shapeImageSelectionView: LeafShapeImageSelectionView!
     
     
     @IBOutlet weak var fruitSwitch: UISwitch!
@@ -77,11 +83,9 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     
     @IBOutlet weak var leafEdgeSwitch: UISwitch!
     @IBOutlet weak var leafEdgeSwitchCell: UITableViewCell!
-    @IBOutlet weak var leafEdgeCell: UITableViewCell!
     @IBOutlet weak var leafEdgeImageSelectionView: LeafEdgeImageSelectionView!
     
     @IBOutlet weak var leafFormSwitch: UISwitch!
-    @IBOutlet weak var leafFormCell: UITableViewCell!
     @IBOutlet weak var leafFormSwitchCell: UITableViewCell!
     @IBOutlet weak var leafformationImageSelectionView: FormationImageSelectionView!
     
@@ -182,6 +186,7 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
         
         reset()
  
+        shapeImageSelectionView.delegate = self
         leafformationImageSelectionView.delegate = self
         leafEdgeImageSelectionView.delegate = self
         flowerImageSelectionView.delegate = self
@@ -198,11 +203,25 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
         // Find the parent view controller
         if let searchController = self.parentViewController as? SearchViewController
         {
-            if let results = floraService.performSearch([leafEdgeSeachTerm, leafDimensionSearchTerm, leafTextureSearchTerm, leafFormationSearchTerm, fruitColorSearchTerm, flowerColorSearchTerm], strict: false)
+            if let results = floraService.performSearch([leafEdgeSeachTerm, leafDimensionSearchTerm, leafTextureSearchTerm, leafFormationSearchTerm, fruitColorSearchTerm, flowerColorSearchTerm, leafShapeSearchTerm], strict: false)
             {
                 searchController.searchResults = results
             }
         }        
+    }
+    
+    var leafShapeSearchTerm: SearchTermByDimension?
+    {
+        var term:SearchTermByDimension?
+        
+        if (shapeSwitch.on)
+        {
+            if let value = shapeImageSelectionView.selectedItem
+            {
+                term = SearchTermByDimension(shape: value)
+            }
+        }
+        return term
     }
     
     var leafEdgeSeachTerm: SearchTermByLookupType?
@@ -300,7 +319,12 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
         {
             fruitImageSelectionView.clearSelection()
         }
-        
+
+        if (!shapeSwitch.on)
+        {
+            shapeImageSelectionView.clearSelection()
+        }
+
         resetTableCellMargins()
         performSearch()
     }
@@ -319,11 +343,13 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
         leafFormSwitch.on = false
         fruitSwitch.on = false
         flowerSwitch.on = false
-
+        shapeSwitch.on = false
+        
         leafformationImageSelectionView.clearSelection()
         leafEdgeImageSelectionView.clearSelection()
         flowerImageSelectionView.clearSelection()
         fruitImageSelectionView.clearSelection()
+        shapeImageSelectionView.clearSelection()
         
         // Sort out the margins on cells, since some cells are dynamically hidden and screw things up
         self.tableView.beginUpdates()
@@ -428,13 +454,21 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
         let section = indexPath.section
         let row = indexPath.row
         
-        if section == SECTION_LEAFEDGE && row == ROW_LEAFEDGE
+        if section == SECTION_LEAFSURFACE
+        {
+            return 0
+        }
+        else if section == SECTION_LEAFEDGE && row == ROW_LEAFEDGE
         {
             currentHeight = leafEdgeSwitch.on ? leafEdgeImageSelectionView.contentSize.height : 0
         }
         else if section == SECTION_LEAFFORM && row == ROW_LEAFFORM
         {
             currentHeight = leafFormSwitch.on ? leafformationImageSelectionView.contentSize.height : 0
+        }
+        else if section == SECTION_LEAFSHAPE && row == ROW_LEAFSHAPE
+        {
+            currentHeight = shapeSwitch.on ? shapeImageSelectionView.contentSize.height : 0
         }
         else if section == SECTION_FLOWER && row == ROW_FLOWER_COLOR
         {

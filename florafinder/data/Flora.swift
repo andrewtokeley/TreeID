@@ -12,14 +12,18 @@ import NYTPhotoViewer
 
 class Flora: NSManagedObject, NYTPhoto {
 
+    var imageCache: UIImage?
+    
     override var description: String
     {
         var sentences = [String]()
         
-        if let text = notes { sentences.append(text) }
+        if let text = notes {
+            sentences.append(text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) + "\n\n")
+        }
         if let text = leafUpper?.description { sentences.append(text) }
         
-        return sentences.joinWithSeparator(" ")
+        return sentences.joinWithSeparator("")
     }
     
     //MARK: - NYTPhoto Protocol
@@ -52,13 +56,16 @@ class Flora: NSManagedObject, NYTPhoto {
     
     var image: UIImage?
     {
-        if let imagePath = self.imagePath
+        if (imageCache == nil)
         {
-            if let imageStored = ServiceFactory.shareInstance.imageService.getImage(imagePath)
+            if let imagePath = self.imagePath
             {
-                return imageStored
+                if let imageStored = ServiceFactory.shareInstance.imageService.getImage(imagePath)
+                {
+                    imageCache = imageStored
+                }
             }
         }
-        return nil
+        return imageCache
     }
 }

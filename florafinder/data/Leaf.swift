@@ -18,12 +18,11 @@ class Leaf: NSManagedObject {
     {
         var sentences = [String]()
         
-        if let text = notes { sentences.append(text) }
+        if let text = notes {
+            sentences.append(text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) + "\n\n")
+        }
         if let text = dimensions?.description { sentences.append(text) }
-        if let text = textureType?.description { sentences.append(text) }
-        if let text = edgeType?.description { sentences.append(text) }
-        if let text = formationType?.description { sentences.append(text) }
         
-        return sentences.joinWithSeparator(" ")
+        return sentences.joinWithSeparator("")
     }
 }

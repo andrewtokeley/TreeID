@@ -25,14 +25,14 @@ class ImageService
         self.masterDataStoreProvider = masterDataStoreProvider
     }
     
-    var placeholderImage: UIImage
+    lazy var placeholderImage: UIImage =
     {
         if let image = UIImage(named: "placeholder.png")
         {
             return image
         }
         return UIImage()
-    }
+    }()
     
     /**
      Gets the specified image, either in the local cache, or in the datastore provider if not there.

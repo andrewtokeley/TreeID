@@ -295,7 +295,7 @@ class MeasureLeafViewController: UIViewController
         }
         else if action.title == CANCEL
         {
-            
+            return
         }
         
         // use this scaleFactor to toggle between 1:1 and phone scale

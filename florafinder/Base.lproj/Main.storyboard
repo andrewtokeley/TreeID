@@ -669,7 +669,13 @@
                             <outlet property="delegate" destination="eCg-8t-quN" id="q2R-P6-ePI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Flora" id="uXP-l3-Ib2"/>
+                    <navigationItem key="navigationItem" title="Flora" id="uXP-l3-Ib2">
+                        <barButtonItem key="rightBarButtonItem" image="more.png" id="Na3-bZ-Kub">
+                            <connections>
+                                <action selector="moreButton:" destination="eCg-8t-quN" id="BKv-aB-A8B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="commonName" destination="np5-Jd-VHK" id="z24-iQ-UYi"/>
@@ -677,6 +683,7 @@
                         <outlet property="fullDescription" destination="9oJ-bG-oU5" id="NCf-6l-cLx"/>
                         <outlet property="iconsCollectionView" destination="i4W-Jl-zdw" id="d5p-CO-zZZ"/>
                         <outlet property="latinName" destination="XIC-Iv-GFB" id="Fye-BS-pih"/>
+                        <outlet property="moreButtonItem" destination="Na3-bZ-Kub" id="aTW-Z3-xiM"/>
                         <outlet property="photosView" destination="xkF-dO-KrM" id="Myb-KM-t0Z"/>
                     </connections>
                 </tableViewController>
@@ -1354,6 +1361,7 @@
         <image name="first" width="30" height="30"/>
         <image name="fruit.png" width="64" height="64"/>
         <image name="lacebark_main.jpg" width="550" height="436"/>
+        <image name="more.png" width="25" height="25"/>
         <image name="next.png" width="25" height="25"/>
         <image name="previous.png" width="25" height="25"/>
         <image name="settings.png" width="24" height="24"/>

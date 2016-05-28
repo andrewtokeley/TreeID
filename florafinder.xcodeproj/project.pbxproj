@@ -251,6 +251,9 @@
 		D8FE364A1CF960AC0056384E /* akeake_main.jpg.meta in Resources */ = {isa = PBXBuildFile; fileRef = D8FE36471CF960AC0056384E /* akeake_main.jpg.meta */; };
 		D8FE364B1CF960AC0056384E /* blackbeech_main.jpg.meta in Resources */ = {isa = PBXBuildFile; fileRef = D8FE36481CF960AC0056384E /* blackbeech_main.jpg.meta */; };
 		D8FE364C1CF960AC0056384E /* miro_main.jpg.meta in Resources */ = {isa = PBXBuildFile; fileRef = D8FE36491CF960AC0056384E /* miro_main.jpg.meta */; };
+		D8FE364E1CF96F340056384E /* wiki in Resources */ = {isa = PBXBuildFile; fileRef = D8FE364D1CF96F340056384E /* wiki */; };
+		D8FE36511CF9A8A50056384E /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FE364F1CF9A8A50056384E /* more.png */; };
+		D8FE36521CF9A8A50056384E /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FE36501CF9A8A50056384E /* more@2x.png */; };
 		D8FF48FA1CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF48F91CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift */; };
 		D8FF48FC1CE022DF0079A4C1 /* lacebark_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF48FB1CE022DF0079A4C1 /* lacebark_main.jpg */; };
 		D8FF48FE1CE02BEB0079A4C1 /* kawakawa_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF48FD1CE02BEB0079A4C1 /* kawakawa_main.jpg */; };
@@ -552,6 +555,9 @@
 		D8FE36471CF960AC0056384E /* akeake_main.jpg.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = akeake_main.jpg.meta; path = images/storage/akeake_main.jpg.meta; sourceTree = "<group>"; };
 		D8FE36481CF960AC0056384E /* blackbeech_main.jpg.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = blackbeech_main.jpg.meta; path = images/storage/blackbeech_main.jpg.meta; sourceTree = "<group>"; };
 		D8FE36491CF960AC0056384E /* miro_main.jpg.meta */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = miro_main.jpg.meta; path = images/storage/miro_main.jpg.meta; sourceTree = "<group>"; };
+		D8FE364D1CF96F340056384E /* wiki */ = {isa = PBXFileReference; lastKnownFileType = folder; path = wiki; sourceTree = "<group>"; };
+		D8FE364F1CF9A8A50056384E /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = more.png; path = images/more.png; sourceTree = "<group>"; };
+		D8FE36501CF9A8A50056384E /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "more@2x.png"; path = "images/more@2x.png"; sourceTree = "<group>"; };
 		D8FF48F91CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafShapeImageSelectionView.swift; path = views/imageSelectionView/LeafShapeImageSelectionView.swift; sourceTree = "<group>"; };
 		D8FF48FB1CE022DF0079A4C1 /* lacebark_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lacebark_main.jpg; path = images/storage/lacebark_main.jpg; sourceTree = "<group>"; };
 		D8FF48FD1CE02BEB0079A4C1 /* kawakawa_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kawakawa_main.jpg; path = images/storage/kawakawa_main.jpg; sourceTree = "<group>"; };
@@ -685,6 +691,8 @@
 		D837D95A1CDEFE2F00B2D775 /* icons8 */ = {
 			isa = PBXGroup;
 			children = (
+				D8FE364F1CF9A8A50056384E /* more.png */,
+				D8FE36501CF9A8A50056384E /* more@2x.png */,
 				D837D94B1CDEAE7700B2D775 /* next@2x.png */,
 				D837D94C1CDEAE7700B2D775 /* next.png */,
 				D837D9471CDEACEE00B2D775 /* previous.png */,
@@ -857,6 +865,7 @@
 		D86BD2FF1C37CA1C001E17E7 = {
 			isa = PBXGroup;
 			children = (
+				D8FE364D1CF96F340056384E /* wiki */,
 				D8B96F901C4A430700F659E4 /* Podfile */,
 				D86BD30A1C37CA1C001E17E7 /* florafinder */,
 				D86BD3211C37CA1C001E17E7 /* florafinderTests */,
@@ -1320,6 +1329,7 @@
 				D84D29EF1CD21A790084C851 /* akeake_main.jpg in Resources */,
 				D837FCAE1C730E8A0032C033 /* lobed.png in Resources */,
 				D84D29F71CD299D70084C851 /* redmatipo_main.jpg in Resources */,
+				D8FE364E1CF96F340056384E /* wiki in Resources */,
 				D837FCAC1C730E8A0032C033 /* individual.png in Resources */,
 				D837FCB71C730E8A0032C033 /* star.png in Resources */,
 				D837FD431C7317120032C033 /* slider-default-track@2x.png in Resources */,
@@ -1358,6 +1368,7 @@
 				D8FE364C1CF960AC0056384E /* miro_main.jpg.meta in Resources */,
 				D899D5451C7399C9005A9A7F /* slider-default7-trackCrossedOver@2x.png in Resources */,
 				D8D2A3A21CDDA19A001A9A7F /* pigeonwood_main.jpg in Resources */,
+				D8FE36521CF9A8A50056384E /* more@2x.png in Resources */,
 				D837D9491CDEACEE00B2D775 /* previous.png in Resources */,
 				D892D3461CD48598003E7DDA /* grab.png in Resources */,
 				D8FF49111CE1D7DE0079A4C1 /* narrowleaf.png in Resources */,
@@ -1391,6 +1402,7 @@
 				D837FCAA1C730E8A0032C033 /* eye.png in Resources */,
 				D84D29F31CD2963A0084C851 /* placeholder.png in Resources */,
 				D837FC921C730E220032C033 /* leaf_morphology.svg in Resources */,
+				D8FE36511CF9A8A50056384E /* more.png in Resources */,
 				D837FD461C7317120032C033 /* slider-default-trackCrossedOver@2x.png in Resources */,
 				D8FF49021CE1232D0079A4C1 /* leafGreen.png in Resources */,
 				D899D53E1C7399C9005A9A7F /* slider-default7-handle.png in Resources */,

@@ -6,3 +6,4 @@
 - catalogue keyword search
 - catalogue - filter on found/not found trees
 - add regional support - i.e. each tree can be tagged with a region it's known to be present
+- add "Found!" function, record geo-coodinates

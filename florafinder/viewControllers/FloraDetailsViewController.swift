@@ -18,7 +18,7 @@ class specialButton: UIButton, NYTPhotoCaptionViewLayoutWidthHinting
     }
 }
 
-class FloraDetailsViewController: UITableViewController, NYTPhotosViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+class FloraDetailsViewController: UITableViewController, NYTPhotosViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIActionSheetDelegate
 {
     var flora: Flora?
     var showAllDetails: Bool = false
@@ -55,6 +55,7 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     @IBOutlet weak var commonName: UILabel!
     @IBOutlet weak var latinName: UILabel!
     
+    @IBOutlet weak var moreButtonItem: UIBarButtonItem!
     var leafDescriptions  = [String]()
     
     //MARK: UIViewController
@@ -243,12 +244,13 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     }
     
     //MARK: Actions
+    @IBAction func moreButton(sender: UIBarButtonItem) {
+        let action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Found it!" , "Map")
+        action.showInView(self.view)
+    }
     
-    @IBAction func moreDetails(sender: AnyObject) {
-        showAllDetails = !showAllDetails
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
     }
     
     //MARK: Photo CollectionView

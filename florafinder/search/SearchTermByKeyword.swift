@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchTermByKeyword: SearchTermProtocol
+class SearchTermByKeyword: SearchTerm
 {
     let SEARCH_TYPE = "Keyword Search"
     
@@ -20,7 +20,12 @@ class SearchTermByKeyword: SearchTermProtocol
         self.keyword = keyword
     }
     
-    func execute(floraService: FloraServiceProtocol) -> [SearchResult]? {
+    override var description: String
+    {
+        return "Keyword: '\(keyword)'"
+    }
+    
+    override func execute(floraService: FloraServiceProtocol) -> [SearchResult]? {
         
         self.floraService = floraService
         
@@ -63,18 +68,4 @@ class SearchTermByKeyword: SearchTermProtocol
         
         return result
     }
-    
-//    private func getResults(floraService: FloraServiceProtocol, predicate: NSPredicate) -> [SearchResult]
-//    {
-//        var searchResult = [SearchResult]()
-//        
-//        let results = floraService.getFlora(predicate)
-//        for flora in results
-//        {
-//            searchResult.append(SearchResult(flora: flora, relevance: 1))
-//        }
-//        
-//        return searchResult
-//    }
-
 }

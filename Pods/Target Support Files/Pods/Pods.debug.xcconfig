@@ -1,6 +1,8 @@
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 ANIMATED_GIF_SUPPORT=1
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) GTM_OAUTH2_USE_FRAMEWORK_IMPORTS=1 $(inherited) GTL_USE_FRAMEWORK_IMPORTS=1 ANIMATED_GIF_SUPPORT=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/HockeySDK"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Ensembles.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FLAnimatedImage.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/NYTPhotoViewer.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/PureLayout.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Ensembles" -framework "FLAnimatedImage" -framework "NYTPhotoViewer" -framework "PureLayout"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Ensembles.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FLAnimatedImage.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/GTMOAuth2.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/GTMSessionFetcher.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/GoogleAPIClient.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/NYTPhotoViewer.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/PureLayout.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/HockeySDK"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "AssetsLibrary" -framework "CoreGraphics" -framework "CoreTelephony" -framework "CoreText" -framework "Ensembles" -framework "FLAnimatedImage" -framework "Foundation" -framework "GTMOAuth2" -framework "GTMSessionFetcher" -framework "GoogleAPIClient" -framework "HockeySDK" -framework "MobileCoreServices" -framework "NYTPhotoViewer" -framework "Photos" -framework "PureLayout" -framework "QuartzCore" -framework "QuickLook" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods
 PODS_ROOT = ${SRCROOT}/Pods

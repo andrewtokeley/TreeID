@@ -55,6 +55,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="cabbage_main.jpg" width="768" height="1024"/>
+        <image name="cabbage_main.jpg" width="614" height="819"/>
     </resources>
 </document>

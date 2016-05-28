@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchTermByLookupType: SearchTermProtocol
+class SearchTermByLookupType: SearchTerm
 {
     
     var lookupName: String
@@ -20,12 +20,13 @@ class SearchTermByLookupType: SearchTermProtocol
     {
         preconditionFailure("Must override getter")
     }
-
-    init()
+    
+    override var description: String
     {
+        return "\(lookupName): \(lookupValue)"
     }
     
-    func execute(floraService: FloraServiceProtocol) -> [SearchResult]? {
+    override func execute(floraService: FloraServiceProtocol) -> [SearchResult]? {
         preconditionFailure("Must override")
     }
     

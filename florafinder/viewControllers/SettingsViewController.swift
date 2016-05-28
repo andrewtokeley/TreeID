@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
-class SettingsViewController: UITableViewController, ImportDelegate
+class SettingsViewController: UITableViewController, ImportDelegate, GoogleDriveDataStoreProviderDelegate
 {
     let SECTION_TEST = 2
     let ROW_IMPORT = 0
-
+    let ROW_GOOGLE_IMPORT = 1
+    
+    let META_FILE_EXTENSION = "meta"
+    let GOOGLE_REGISTER_NAME = "TreeIDRegister"
     
     override func viewDidLoad()
     {
@@ -42,41 +45,56 @@ class SettingsViewController: UITableViewController, ImportDelegate
         self.navigationController?.pushViewController(importViewController, animated: true)
     }
 
+    func importFromGoogle()
+    {
+        let provider = GoogleDriveDataStoreProvider(delegate: self)
+        
+        provider.authenticate({ (isAuthenticated) in
+            if (isAuthenticated)
+            {
+                provider.getFile(self.GOOGLE_REGISTER_NAME, completion: { (file) in
+                    
+                    // the CSV code requires a NSURL pointing to the CSV data
+                    if let _ = file
+                    {
+                        // could save NSData to file and use URL to this instead
+                        if let url = ServiceFactory.shareInstance.imageCacheProvider?.uploadFile(file!, relativePath: "import.csv")
+                        {
+                            let importViewController = ImportViewController(nibName: "Import", serviceFactory: ServiceFactory.shareInstance, fileURL: url, delegate: self)
+                        
+                            self.navigationController?.pushViewController(importViewController, animated: true)
+                        }
+                    }
+                })
+                
+            }
+        })
+    }
+    
+    func autenticationViewControllerFor(provider: GoogleDriveDataStoreProvider) -> UIViewController
+    {
+        return self
+    }
+    
     func importViewController(importViewController: ImportViewController, didImportRecords: Int) {
     
-        let _ = try? ServiceFactory.shareInstance.imageDataProvider?.deleteAll()
+        // clear the cache
         let _ = try? ServiceFactory.shareInstance.imageCacheProvider?.deleteAll()
-        
-        // Simulate files existing in a remote data store (like S3) by moving the files located in the app bundle there.
-        for flora in ServiceFactory.shareInstance.floraService.getAll()
-        {
-            if let imagePath = flora.imagePath
-            {
-                if let image = UIImage(named: imagePath)
-                {
-                    ServiceFactory.shareInstance.imageDataProvider?.uploadImage(image, relativePath: imagePath)
-                }
-                else
-                {
-                    
-                }
-            }
-        }
     }
     
-    func rebuildDatastore()
-    {
-        do
-        {
-            try ServiceFactory.shareInstance.dataManagementService.rebuildDatabase()
-            
-        }
-        catch
-        {
-            // what to do?
-        }
-    }
-    
+//    func rebuildDatastore()
+//    {
+//        do
+//        {
+//            try ServiceFactory.shareInstance.dataManagementService.rebuildDatabase()
+//            
+//        }
+//        catch
+//        {
+//            // what to do?
+//        }
+//    }
+//    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         if (indexPath.section == SECTION_TEST)
@@ -85,7 +103,6 @@ class SettingsViewController: UITableViewController, ImportDelegate
             {
                 if let path = NSBundle.mainBundle().pathForResource("TestImport", ofType: "csv")
                 {
-                    //rebuildDatastore()
                     importTestFile(path)
                 }
                 else
@@ -93,6 +110,10 @@ class SettingsViewController: UITableViewController, ImportDelegate
                     // no can do, report to user
                 }
 
+            }
+            else if (indexPath.row == ROW_GOOGLE_IMPORT)
+            {
+                importFromGoogle()
             }
         }
     }

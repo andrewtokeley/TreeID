@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HockeySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+    BITHockeyManager.sharedHockeyManager().configureWithIdentifier("2ac3761b3cba43959e578d1df74cbc9b")
+        
+        // Do some additional configuration if needed here
+        BITHockeyManager.sharedHockeyManager().startManager()
+        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+        
+        // TESTING - CLEAR DATA CACHE
+        let _ = try? ServiceFactory.shareInstance.imageCacheProvider?.deleteAll()
         
         Appearance.setAppearance()
         

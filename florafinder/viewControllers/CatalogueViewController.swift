@@ -77,13 +77,28 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
-        if let newIndex = sections.indexOf(title)
+        
+        // is there any data in the selected section index?
+        
+        let dataExists = datasource[title] != nil
+        if dataExists
         {
-            return newIndex
+            return sections.indexOf(title)!
         }
         else
         {
-            // return something close the letter clicked even though nothing mathces
+            // find the nearest
+            if let startIndex = alphabet.indexOf(title)
+            {
+                var index = startIndex - 1
+                while index >= 0 {
+                    if datasource[alphabet[index]] != nil
+                    {
+                        return sections.indexOf(alphabet[index])!
+                    }
+                    index -= 1
+                }
+            }
             return 0
         }
     }
@@ -96,6 +111,7 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
             let selectedFlora = datasource[sectionKey]![indexPath.row]
             cell.commonName?.text = selectedFlora.commonName
             cell.treeImage?.image = selectedFlora.image ?? UIImage(named: "placeholder.png")
+            cell.scientificName.text = selectedFlora.scientificName
             return cell
         }
         return UITableViewCell()

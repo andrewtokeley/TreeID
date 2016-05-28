@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
     <entity name="Bark" representedClassName=".Bark" syncable="YES">
         <relationship name="flora" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flora" inverseName="bark" inverseEntity="Flora" syncable="YES"/>
         <relationship name="textureType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BarkTextureType" inverseName="barks" inverseEntity="BarkTextureType" syncable="YES"/>
@@ -14,6 +14,7 @@
         <attribute name="externalURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scientificName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bark" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bark" inverseName="flora" inverseEntity="Bark" syncable="YES"/>
         <relationship name="flowerColor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlowerColorType" inverseName="flora" inverseEntity="FlowerColorType" syncable="YES"/>
         <relationship name="fruitColor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FruitColorType" inverseName="flora" inverseEntity="FruitColorType" syncable="YES"/>
@@ -71,7 +72,7 @@
     <elements>
         <element name="Bark" positionX="-5987" positionY="122" width="128" height="73"/>
         <element name="BarkTextureType" positionX="-5969" positionY="254" width="128" height="88"/>
-        <element name="Flora" positionX="-5735" positionY="-169" width="128" height="163"/>
+        <element name="Flora" positionX="-5735" positionY="-169" width="128" height="178"/>
         <element name="FlowerColorType" positionX="-5465" positionY="-0" width="128" height="103"/>
         <element name="FruitColorType" positionX="-5805" positionY="92" width="128" height="103"/>
         <element name="Leaf" positionX="-5591" positionY="110" width="128" height="148"/>

@@ -15,6 +15,7 @@ class ImageSelectionView: UIView, UICollectionViewDelegateFlowLayout, UICollecti
     
     private let CELL_IDENTIFIER = "cell"
     internal var _datasource = [ImageSelectionData]()
+    private var visibleSelectionStrip: UIView?
     
     //MARK: - Initialisers
     
@@ -81,7 +82,8 @@ class ImageSelectionView: UIView, UICollectionViewDelegateFlowLayout, UICollecti
         _selectedItem = nil
         
         // hide the selectionStrip (can do better than getting the whole collectinview to reload. e.g. keep track of the selectedStrip which is visible and hide it directly)
-        collectionView.reloadData()
+        //collectionView.reloadData()
+        visibleSelectionStrip?.hidden = true
     }
     
     //MARK: - SubViews
@@ -140,7 +142,17 @@ class ImageSelectionView: UIView, UICollectionViewDelegateFlowLayout, UICollecti
             cell.label.text = datasource[indexPath.row].text
         }
         
-        cell.selectionStrip.hidden = datasource[indexPath.row] != _selectedItem
+        if (datasource[indexPath.row] != _selectedItem)
+        {
+            cell.selectionStrip.hidden = true
+        }
+        else
+        {
+            // remember this selection strip to allow it to be hidden if selection cleared
+            visibleSelectionStrip = cell.selectionStrip
+            
+            cell.selectionStrip.hidden = false
+        }
         
         self.needsUpdateConstraints()
         return cell
@@ -158,7 +170,10 @@ class ImageSelectionView: UIView, UICollectionViewDelegateFlowLayout, UICollecti
             _selectedItem = datasource[indexPath.row]
         }
         
-        collectionView.reloadData()
+        visibleSelectionStrip?.hidden = true
+        collectionView.reloadItemsAtIndexPaths([indexPath])
+        
+        //collectionView.reloadData()
         delegate?.imageSelectionView(self, didSelectItem: _selectedItem)
     }
 }

@@ -75,6 +75,41 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
         return UIImage(contentsOfFile: fullPath(relativePath).path!)
     }
     
+    func getImageRecordsFromFolder(folderPath: String) -> [ImageRecord]
+    {
+        return [ImageRecord]()
+    }
+    
+    func getImageRecords(nameOrPattern: String) -> [ImageRecord]
+    {
+        return [ImageRecord]()
+    }
+    
+    func getFile(relativePath: String, completion: ((file: NSData?) -> Void))
+    {
+        completion(file:  NSFileManager.defaultManager().contentsAtPath(fullPath(relativePath).path!))
+    }
+    
+    func getFile(relativePath: String) -> NSData?
+    {
+        return NSFileManager.defaultManager().contentsAtPath(fullPath(relativePath).path!)
+    }
+
+    func uploadFile(file: NSData, relativePath: String) -> NSURL?
+    {
+        do
+        {
+            try file.writeToURL(fullPath(relativePath), options: NSDataWritingOptions.DataWritingAtomic)
+            return fullPath(relativePath)
+        }
+        catch let error as NSError
+        {
+            print(error.localizedDescription)
+            //throw DataStoreProviderError.ErrorWritingFile
+            return nil
+        }
+    }
+    
     func uploadImage(image: UIImage, relativePath: String) -> NSURL?
     {
         var imageData: NSData!
@@ -93,17 +128,7 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
             return nil
         }
         
-        do
-        {
-            try imageData?.writeToURL(fullPath(relativePath), options: NSDataWritingOptions.DataWritingAtomic)
-            return fullPath(relativePath)
-        }
-        catch let error as NSError
-        {
-            print(error.localizedDescription)
-            //throw DataStoreProviderError.ErrorWritingFile
-            return nil
-        }
+        return uploadFile(imageData, relativePath: relativePath)
     }
     
     func fileExists(relativePath: String) -> Bool

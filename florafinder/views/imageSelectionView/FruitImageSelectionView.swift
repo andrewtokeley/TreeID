@@ -46,7 +46,12 @@ class FruitImageSelectionView: ImageSelectionView
                     data.tag = service.getObject(fruit)
                     _datasource.append(data)
                 }
+                else
+                {
+                    
+                }
             }
+            
         }
         return _datasource
     }

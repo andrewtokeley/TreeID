@@ -9,6 +9,15 @@
 import Foundation
 import NYTPhotoViewer
 
+class specialButton: UIButton, NYTPhotoCaptionViewLayoutWidthHinting
+{
+    var preferredMaxLayoutWidth: CGFloat
+    {
+        set{}
+        get{return 100}
+    }
+}
+
 class FloraDetailsViewController: UITableViewController, NYTPhotosViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     var flora: Flora?
@@ -17,6 +26,8 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     var layoutGigDone: Bool = false
     
     //MARK: - Constants
+    let COLLECTIONVIEW_ICONS = 0
+    let COLLECTIONVIEW_PHOTOS = 1
     
     let NO_INFO = "-"
     let SEGUE_EDIT = "edit"
@@ -36,11 +47,11 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     
     //MARK: Outlets
     
-    @IBOutlet weak var moreDetailsButton: UIButton!
+    @IBOutlet weak var iconsCollectionView: UICollectionView!
+    //@IBOutlet weak var moreDetailsButton: UIButton!
     @IBOutlet weak var photosView: UICollectionView!
     @IBOutlet weak var fullDescription: UILabel!
     @IBOutlet weak var externalReferenceURL: UIButton!
-    @IBOutlet weak var iconsStackView: UIStackView!
     @IBOutlet weak var commonName: UILabel!
     @IBOutlet weak var latinName: UILabel!
     
@@ -93,9 +104,16 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     
     func configureView()
     {
-        // Temporary until we get multiple images
-        photos.append(flora!)
+        if let imageRoot = flora?.imagePath
+        {
+            let imageRecords = ServiceFactory.shareInstance.imageService.getImageRecords(imageRoot)
+            for record in imageRecords
+            {
+                photos.append(record)
+            }
+        }
         
+        iconsCollectionView.backgroundColor = UIColor.whiteColor()
         photosView.backgroundColor = UIColor.whiteColor()
         
         externalReferenceURL.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
@@ -103,31 +121,28 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
         commonName.text = flora?.commonName
         fullDescription.text = flora?.description
         fullDescription.sizeToFit()
-        latinName.text = "Dacrydium cupressinum"
         
-        setIcons()
+        latinName.text = flora?.scientificName ?? "-"
         
         if let reference = flora?.externalURL
         {
             externalReferenceURL.setAttributedTitle(NSAttributedString(string: reference), forState: UIControlState.Normal)
         }
         
-        
-//        self.tableView.beginUpdates()
-//        self.tableView.endUpdates()
+        iconsCollectionView.transform = CGAffineTransformMakeScale(-1, 1)
     }
     
     func prepareForView(flora: Flora)
     {
         self.flora = flora
-        self.title = flora.commonName
+        self.title = ""
     }
     
-    func setIcons()
+    lazy var iconImages: [UIImage] =
     {
         var images = [UIImage]()
         
-        if let flowerColor = flora?.flowerColor?.color as? UIColor
+        if let flowerColor = self.flora?.flowerColor?.color as? UIColor
         {
             if let image = UIImage(named: "flower.png")
             {
@@ -135,7 +150,7 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
             }
         }
         
-        if let fruitColor = flora?.fruitColor?.color as? UIColor
+        if let fruitColor = self.flora?.fruitColor?.color as? UIColor
         {
             if let image = UIImage(named: "fruit.png")
             {
@@ -143,7 +158,7 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
             }
         }
         
-        if let edge = flora?.leafUpper?.edgeType
+        if let edge = self.flora?.leafUpper?.edgeType
         {
             if let type = LeafEdgeTypeEnum(rawValue: edge.name!)
             {
@@ -151,30 +166,15 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
             }
         }
         
-        if let formation = flora?.leafUpper?.formationType
+        if let formation = self.flora?.leafUpper?.formationType
         {
             if let type = LeafFormationTypeEnum(rawValue: formation.name!)
             {
                 images.append(type.image())
             }
         }
-        
-        let count = images.count
-        let numberOfIcons = 3
-        
-        for i in 0...numberOfIcons
-        {
-            if (i < count)
-            {
-                (iconsStackView.subviews[numberOfIcons - i] as! UIImageView).image = images[i]
-            }
-            else
-            {
-                (iconsStackView.subviews[numberOfIcons - i] as! UIImageView).image = nil
-            }
-        }
-        
-    }
+        return images
+    }()
     
     func previewImage(photo: NYTPhoto)
     {
@@ -207,7 +207,7 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
         return super.tableView(tableView, numberOfRowsInSection: section)
     }
     
-    //MARK - NYTPhotosViewControllerDelegate
+    //MARK: - NYTPhotosViewControllerDelegate
 
     func photosViewController(photosViewController: NYTPhotosViewController, handleActionButtonTappedForPhoto photo: NYTPhoto) -> Bool {
         
@@ -234,10 +234,12 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     
     func photosViewController(photosViewController: NYTPhotosViewController, captionViewForPhoto photo: NYTPhoto) -> UIView?
     {
-        let label = UILabel()
-        label.text = photo.attributedCaptionTitle?.string
-        label.textColor = UIColor.whiteColor()
-        return label
+        return nil
+    }
+    
+    func deletePhoto(sender: UILabel)
+    {
+        photos.removeAtIndex(sender.tag)
     }
     
     //MARK: Actions
@@ -252,14 +254,13 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     //MARK: Photo CollectionView
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (section == 0)
+        
+        var count = photos.count
+        if (collectionView.tag == COLLECTIONVIEW_ICONS)
         {
-            return photos.count
+            count = iconImages.count
         }
-        else
-        {
-            return 0
-        }
+        return count
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -268,14 +269,25 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 
-        previewImage(self.photos[indexPath.row])
+        if collectionView.tag == COLLECTIONVIEW_PHOTOS
+        {
+            previewImage(self.photos[indexPath.row])
+        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath:indexPath) as! ImageCollectionViewCell
 
-        cell.image.image = photos[indexPath.row].image
+        if collectionView.tag == COLLECTIONVIEW_PHOTOS
+        {
+            cell.image.image = photos[indexPath.row].image
+        }
+        else if collectionView.tag == COLLECTIONVIEW_ICONS
+        {
+            cell.rightAlign = true
+            cell.image.image = iconImages[indexPath.row]
+        }
         
         return cell
     }
@@ -284,13 +296,24 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
                         layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSize(width: 100, height: 100)
+        var size = CGSize(width: 100, height: 100)
+        if collectionView.tag == COLLECTIONVIEW_ICONS
+        {
+            size = CGSize(width: 20, height: 20)
+        }
+        return size
     }
+    
     
     func collectionView(collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                                insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 2, left: 10, bottom: 0, right: 10)
+        var insets = UIEdgeInsets(top: 2, left: 10, bottom: 0, right: 10)
+        if collectionView.tag == COLLECTIONVIEW_ICONS
+        {
+            insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        return insets
     }
     
 }

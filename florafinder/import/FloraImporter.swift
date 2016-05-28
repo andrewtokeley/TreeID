@@ -22,6 +22,7 @@ class FloraImporter: TOKCSVParser
     override var columnDefinitions: [AnyObject]!
     {
         return [commonNameColumn,
+                scientificNameColumn,
                 notesColumn,
                 leafMinWidthColumn,
                 leafMaxWidthColumn,
@@ -34,7 +35,7 @@ class FloraImporter: TOKCSVParser
                 leafTextureColumn,
                 leafEdgeColumn,
                 externalURLColumn,
-                imageColumn,
+                imageRootColumn,
                 leafNotesColumn]
     }
     
@@ -44,9 +45,15 @@ class FloraImporter: TOKCSVParser
             return column
     }()
     
-    lazy var imageColumn: TOKCSVColumnDefinition =
+    lazy var scientificNameColumn: TOKCSVColumnDefinition =
         {
-            let column = TOKCSVColumnDefinition(heading: "Image", mandatory: false)
+            let column = TOKCSVColumnDefinition(heading: "ScientificName", mandatory: false)
+            return column
+    }()
+    
+    lazy var imageRootColumn: TOKCSVColumnDefinition =
+        {
+            let column = TOKCSVColumnDefinition(heading: "ImageRoot", mandatory: false)
             return column
     }()
     
@@ -419,9 +426,10 @@ class FloraImporter: TOKCSVParser
         let formationType = data["LeafFormation"]
         let leafTexture = data["LeafTexture"]
         let externalURL = data["ExternalURL"]
-        let image = data["Image"]
+        let imageRoot = data["ImageRoot"]
         let leafNotes = data["LeafNotes"]
         let notes = data["Notes"]
+        let scientificNameColumn = data["ScientificName"]
         
         // Check if flora exists already, if not create one
         flora = serviceFactory.floraService.getObject(commonNameField.transformedData as! String)
@@ -443,7 +451,7 @@ class FloraImporter: TOKCSVParser
         }
         else
         {
-            self.validationMessages.addMessage(TOKImportMessage(message: "Update flora \(flora?.commonName!)", severity: TOKImportMessageSeverity.Information))
+            self.validationMessages.addMessage(TOKImportMessage(message: "Update flora \(flora!.commonName!)", severity: TOKImportMessageSeverity.Information))
         }
         
         // Only update the entity if we're saving
@@ -461,8 +469,9 @@ class FloraImporter: TOKCSVParser
             flora?.flowerColor = flowerColor?.transformedData as? FlowerColorType
             flora?.fruitColor = fruitColor?.transformedData as? FruitColorType
             flora?.externalURL = externalURL?.transformedData as? String
-            flora?.imagePath = image?.transformedData as? String
+            flora?.imagePath = imageRoot?.transformedData as? String
             flora?.notes = notes?.transformedData as? String
+            flora?.scientificName = scientificNameColumn?.transformedData as? String
             
 //            if let image = UIImage(named: "fivefinger_main.jpg")
 //            {

@@ -81,37 +81,51 @@ class FloraService:Service<Flora>, FloraServiceProtocol {
         return Array(getAll().prefix(3))
     }
     
-    func performSearch(searchTerms: [SearchTermProtocol?]) -> [SearchResult]?
+    func performSearch(searchTerms: [SearchTerm]) -> [SearchResult]?
     {
         return performSearch(searchTerms, strict: false)
     }
     
-    func performSearch(searchTerms: [SearchTermProtocol?], strict: Bool) -> [SearchResult]?
+    func performSearch(searchTerms: [SearchTerm], strict: Bool) -> [SearchResult]?
     {
         var combinedResults = [SearchResult]()
         var nonNilSearchTerms = 0
         
         for searchTerm in searchTerms
         {
-            if let term = searchTerm
+            if let results = searchTerm.execute(self)
             {
-                if let results = term.execute(self)
+                if (searchTerm.strict)
                 {
-                    nonNilSearchTerms += 1
-                    for searchResult in results
-                    {
-                        // for the first search we always want to add the results, so set intersection off. For subsequent searches we need to adhere to the strict setting as to whether we union or intersect results.
-                        searchResult.addTo(&combinedResults)
-                    }
+                    // remove items in the combinedResults set that are not included in this result set
+                    combinedResults = combinedResults.filter({ (searchResult) in
+                        
+                        let isCombinedResultInStrictSet = results.filter({ (strictResult) in
+                                // Return true if the combineResults item is in the strict result set
+                                return strictResult.flora.objectID == searchResult.flora.objectID
+                        }).count != 0
+                        
+                        // Returns true to keep this item in the combinedResults
+                        return isCombinedResultInStrictSet
+                    })
+                }
+                
+                nonNilSearchTerms += 1
+                for searchResult in results
+                {
+                    searchResult.addTo(&combinedResults)
                 }
             }
         }
         
-        // if this is a strict search then only return flora that matched with all searchterms
-        if (strict)
-        {
-            combinedResults = combinedResults.filter({(result) in return result.hitCount == nonNilSearchTerms })
-        }
+        // Remove any flora that didn't match any of the strict terms
+        
+//        
+//        // if this is a strict search then only return flora that matched with all searchterms
+//        if (strict)
+//        {
+//            combinedResults = combinedResults.filter({(result) in return result.hitCount == nonNilSearchTerms })
+//        }
         
         // Order results
         return combinedResults.sort({(result1, result2) in return result1.relevance > result2.relevance })

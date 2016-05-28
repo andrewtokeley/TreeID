@@ -86,12 +86,18 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Ensembles.framework"
   install_framework "Pods/FLAnimatedImage.framework"
+  install_framework "Pods/GTMOAuth2.framework"
+  install_framework "Pods/GTMSessionFetcher.framework"
+  install_framework "Pods/GoogleAPIClient.framework"
   install_framework "Pods/NYTPhotoViewer.framework"
   install_framework "Pods/PureLayout.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Ensembles.framework"
   install_framework "Pods/FLAnimatedImage.framework"
+  install_framework "Pods/GTMOAuth2.framework"
+  install_framework "Pods/GTMSessionFetcher.framework"
+  install_framework "Pods/GoogleAPIClient.framework"
   install_framework "Pods/NYTPhotoViewer.framework"
   install_framework "Pods/PureLayout.framework"
 fi

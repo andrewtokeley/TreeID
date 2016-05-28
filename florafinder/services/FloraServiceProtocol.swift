@@ -28,6 +28,6 @@ protocol FloraServiceProtocol
     func descriptionListItems(flora: Flora) -> [DescriptionListItem]?
     
     // Search
-    func performSearch(searchTerms: [SearchTermProtocol?]) -> [SearchResult]?
-    func performSearch(searchTerms: [SearchTermProtocol?], strict: Bool) -> [SearchResult]?
+    func performSearch(searchTerms: [SearchTerm]) -> [SearchResult]?
+    func performSearch(searchTerms: [SearchTerm], strict: Bool) -> [SearchResult]?
 }

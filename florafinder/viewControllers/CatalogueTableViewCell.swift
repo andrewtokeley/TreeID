@@ -12,6 +12,6 @@ class CatalogueTableViewCell: UITableViewCell
 {
     @IBOutlet weak var commonName: UILabel!
     @IBOutlet weak var treeImage: UIImageView!
-    
+    @IBOutlet weak var scientificName: UILabel!
     
 }

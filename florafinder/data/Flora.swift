@@ -12,7 +12,7 @@ import NYTPhotoViewer
 
 class Flora: NSManagedObject, NYTPhoto {
 
-    var imageCache: UIImage?
+    var imageRecordCache: ImageRecord?
     
     override var description: String
     {
@@ -36,36 +36,40 @@ class Flora: NSManagedObject, NYTPhoto {
     
     var attributedCaptionTitle: NSAttributedString?
     {
-        return NSAttributedString(string: commonName ?? "")
+        return imageRecord?.attributedCaptionTitle
     }
     
     var attributedCaptionSummary: NSAttributedString?
     {
-        return NSAttributedString(string: commonName ?? "")
+        return imageRecord?.attributedCaptionSummary
     }
     
     var attributedCaptionCredit: NSAttributedString?
     {
-        return NSAttributedString(string: commonName ?? "")
+        return imageRecord?.attributedCaptionCredit
     }
     
     var imageData: NSData?
     {
         return nil
     }
-    
     var image: UIImage?
     {
-        if (imageCache == nil)
+        return imageRecord?.image
+    }
+    
+    var imageRecord: ImageRecord?
+    {
+        if (imageRecordCache == nil)
         {
-            if let imagePath = self.imagePath
+            if let imageRoot = self.imagePath
             {
-                if let imageStored = ServiceFactory.shareInstance.imageService.getImage(imagePath)
+                if let imageRecord = ServiceFactory.shareInstance.imageService.getImageRecords(imageRoot + "_main").first
                 {
-                    imageCache = imageStored
+                    imageRecordCache = imageRecord
                 }
             }
         }
-        return imageCache
+        return imageRecordCache
     }
 }

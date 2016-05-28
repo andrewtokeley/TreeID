@@ -27,11 +27,18 @@ class LeafShapeImageSelectionView: ImageSelectionView
     
     var selectedItem: LeafShapeEnum?
     {
-        if let rawValue = super._selectedItem?.tag as? String
+        set
         {
-            return LeafShapeEnum(rawValue: rawValue)
+            super._selectedItem?.tag = newValue?.rawValue
         }
-        return nil
+        get
+        {
+            if let rawValue = super._selectedItem?.tag as? String
+            {
+                return LeafShapeEnum(rawValue: rawValue)
+            }
+            return nil
+        }
     }
     
     override internal var datasource: [ImageSelectionData]

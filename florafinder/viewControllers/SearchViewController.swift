@@ -12,13 +12,20 @@ import UIKit
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let SEGUE_VIEW = "viewer"
+    let SEGUE_REPORT = "report"
+    let RESULTS_SECTION_HEIGHT_COLLAPSED: CGFloat = 40
+    let RESULTS_SECTION_HEIGHT_EXPANDED: CGFloat = 150
+    
+    @IBOutlet weak var resultsSectionHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerView: UIView!
     
     var selectedFlora: Flora?
     let RESULTS_LABEL = "RESULTS"
     
+    @IBOutlet weak var letUsKnowButton: UIButton!
+    @IBOutlet weak var dontSeeLabel: UILabel!
     @IBOutlet weak var searchResultsCollectionView: UICollectionView!
     @IBOutlet weak var noResultsLabel: UILabel!
-    
     @IBOutlet weak var resultsLabel: UILabel!
     
     var selectedSearchResult: SearchResult?
@@ -28,18 +35,12 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         searchResultsCollectionView.registerNib(UINib(nibName: "SearchResultCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         searchResultsCollectionView.delegate = self;
         searchResultsCollectionView.dataSource = self;
-        searchResultsCollectionView.backgroundColor = UIColor.whiteColor()
         
-        searchResultsCollectionView.layer.borderWidth = 0.5
-        searchResultsCollectionView.layer.borderColor = UIColor.defaultTableCellSeparator().CGColor
-        
-        resultsLabel.text = RESULTS_LABEL
-        
+        resultViewsCollapse()
     }
 
     override func didReceiveMemoryWarning()
@@ -49,9 +50,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if (segue.identifier == "searchSearchView")
         {
             leafViewController = segue.destinationViewController as? LeafViewController
+            
+            leafViewController?.prepareForView(SessionStateService.shareInstance.savedSearchState)
+            
         }
         if (segue.identifier == SEGUE_VIEW)
         {
@@ -61,6 +66,16 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                 {
                     // get only the search results for this
                     viewController.prepareForView(flora)
+                }
+            }
+        }
+        if (segue.identifier == SEGUE_REPORT)
+        {
+            if let viewController = segue.destinationViewController as? FloraNotFoundViewController
+            {
+                if let searchItems = leafViewController?.searchTerms
+                {
+                    viewController.prepareForView(searchItems)
                 }
             }
         }
@@ -75,22 +90,66 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     {
         didSet
         {
-            if (searchResults.count == 0)
+            let noResults = self.searchResults.count == 0
+            
+            if (noResults)
             {
-                resultsLabel.text = RESULTS_LABEL
-                noResultsLabel.hidden = false
+                resultViewsCollapse()
             }
             else
             {
-                resultsLabel.text = "\(RESULTS_LABEL) (\(searchResults.count))"
-                noResultsLabel.hidden = true
+                resultViewsExpand()
             }
             
-            searchResultsCollectionView.reloadData()
+            
+            // animate results section expanding
+            
+            UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations:
+            {
+                () in
+                    self.view.layoutIfNeeded()
+            },
+            completion:
+            {
+                (result) in
+                    if result
+                    {
+                        self.noResultsLabel.hidden = !noResults
+                        self.dontSeeLabel.hidden = noResults
+                        self.letUsKnowButton.hidden = noResults
+                        self.searchResultsCollectionView.reloadData()
+                    }
+            })
+            
         }
     }
     
-    // MARK: CollectionView 
+    // MARK: Results Views
+    
+    func resultViewsCollapse()
+    {
+        resultsSectionHeightConstraint.constant = RESULTS_SECTION_HEIGHT_COLLAPSED
+
+        self.searchResultsCollectionView.backgroundColor = UIColor.clearColor()
+        searchResultsCollectionView.layer.borderWidth = 0
+        
+        self.resultsLabel.text = ""
+        self.dontSeeLabel.hidden = true
+        self.letUsKnowButton.hidden = true
+    }
+    
+    func resultViewsExpand()
+    {
+        self.resultsSectionHeightConstraint.constant = self.RESULTS_SECTION_HEIGHT_EXPANDED
+        
+        searchResultsCollectionView.backgroundColor = UIColor.whiteColor()
+        searchResultsCollectionView.layer.borderWidth = 0.5
+        searchResultsCollectionView.layer.borderColor = UIColor.defaultTableCellSeparator().CGColor
+        
+        self.resultsLabel.text = "\(self.RESULTS_LABEL) (\(self.searchResults.count))"
+    }
+    
+    // MARK: CollectionView
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (section == 0)
@@ -132,15 +191,14 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                         layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let scale = 1.0
-        return CGSize(width: 100 * scale, height: 130 * scale)
+        return CGSize(width: 100, height: 130)
     }
     
     //3
     func collectionView(collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                                insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 2, left: 10, bottom: 0, right: 10)
+        return UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
     }
     
 

@@ -9,13 +9,20 @@
 import Foundation
 import UIKit
 
+struct SearchState
+{
+    var selectedLeafEdge: LeafEdgeType?
+    var selectedLeafShape: LeafShapeEnum?
+    var selectedLeafDimension: LeafDimension?
+    var selectedLeafForm: LeafFormationType?
+    var selectedFlowerColor: FlowerColorType?
+    var selectedFruitColor: FruitColorType?
+}
 
 class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDelegate,  ImageSelectionViewDelegate
 {
     //MARK: - Constants
     private let UNIT = "cm" // TODO - should be a configuration setting
-//    private let IMAGE_SELECTOR_CELL_HEIGHT: CGFloat = 130
-//    private let IMAGE_SELECTOR_CELL_HEIGHT_NO_LABELS: CGFloat = 101
     
     private let DEFAULT_CELL_MARGIN: CGFloat = 15
     private let DEFAULT_CELL_HEIGHT: CGFloat = 40
@@ -27,12 +34,6 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     
     let TAG_SELECT_LEAFCOLOR = "selectLeafColor"
     let LOOKUP_TITLE_LEAFCOLOR = "Leaf Color"
-
-    let TAG_SELECT_FRUITCOLOR = "selectFruitColor"
-    let LOOKUP_TITLE_FRUITCOLOR = "Fruit Color"
-    
-    let TAG_SELECT_FLOWERCOLOR = "selectFlowerColor"
-    let LOOKUP_TITLE_FLOWERCOLOR = "Flower Color"
     
     // Section indexes
     let SECTION_LEAFSHAPE = 0
@@ -59,44 +60,71 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     let SECTION_BARK = 7
     let ROW_BARKTEXTURE = 0
     
-    let EDGE_SELECTOR = "edge"
-    let FORM_SELECTOR = "form"
-    
-//    let FLOWER_COLLECTION_VIEW = 0
-//    let FRUIT_COLLECTION_VIEW = 1
-    
     // MARK: - Outlets
     
+    @IBOutlet weak var fruitCaretCell: TableViewCellWithCaret!
+    @IBOutlet weak var flowerCaretCell: TableViewCellWithCaret!
+    @IBOutlet weak var formCaretCell: TableViewCellWithCaret!
+    @IBOutlet weak var edgeCaretCell: TableViewCellWithCaret!
+    @IBOutlet weak var shapeCaretCell: TableViewCellWithCaret!
     
-    @IBOutlet weak var shapeSwitch: UISwitch!
-    @IBOutlet weak var shapeSwitchCell: UITableViewCell!
+    // State for the TableViewCellWithCaret cells
+    var caretCellStateUp: [Int: Bool]!
+    var caretCellLabel: [Int: String]!
+    var caretCellImage: [Int: UIImage?]!
+    
     @IBOutlet weak var shapeImageSelectionView: LeafShapeImageSelectionView!
-    
-    
-    @IBOutlet weak var fruitSwitch: UISwitch!
-    @IBOutlet weak var fruitSwitchCell: UITableViewCell!
     @IBOutlet weak var fruitImageSelectionView: FruitImageSelectionView!
-    
-    @IBOutlet weak var flowerSwitch: UISwitch!
-    @IBOutlet weak var flowerSwitchCell: UITableViewCell!
     @IBOutlet weak var flowerImageSelectionView: FlowerImageSelectionView!
-    
-    @IBOutlet weak var leafEdgeSwitch: UISwitch!
-    @IBOutlet weak var leafEdgeSwitchCell: UITableViewCell!
     @IBOutlet weak var leafEdgeImageSelectionView: LeafEdgeImageSelectionView!
-    
-    @IBOutlet weak var leafFormSwitch: UISwitch!
-    @IBOutlet weak var leafFormSwitchCell: UITableViewCell!
     @IBOutlet weak var leafformationImageSelectionView: FormationImageSelectionView!
     
     @IBOutlet weak var textureLabel: UILabel!
     @IBOutlet weak var leafMeasurement: UILabel!
     
+    //MARK: - Initialisation and set up
+    
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        tableView.registerNib(UINib(nibName: "TableViewCellWithCaret", bundle: nil), forCellReuseIdentifier: "caretCell")
+        
+        // Must set these defaults here, otherwise bad things will happen
+        caretCellLabel = [SECTION_FRUIT: "Fruit",
+                       SECTION_FLOWER: "Flower",
+                       SECTION_LEAFEDGE: "Edge",
+                       SECTION_LEAFFORM: "Form",
+                       SECTION_LEAFSHAPE: "Shape"]
+        
+        shapeImageSelectionView.delegate = self
+        leafformationImageSelectionView.delegate = self
+        leafEdgeImageSelectionView.delegate = self
+        flowerImageSelectionView.delegate = self
+        fruitImageSelectionView.delegate = self
+        
+        //print("set shapeImageSelectionView.selectedItem")
+        //shapeImageSelectionView.selectedItem = state?.selectedLeafShape
+        
+        reset()
+    }
+
+    func prepareForView(state: SearchState)
+    {
+        self.state = state
+    }
+    
     // MARK: - Properties
     
     var leafWidth: CGFloat = 0
     var leafLength: CGFloat = 0
-    
+    var state: SearchState?
     var selectedTextureType: LeafTextureType?
     
     //MARK: - Services
@@ -171,55 +199,46 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     }
     
 
-    //MARK: - UIViewController
-    
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-        reset()
- 
-        shapeImageSelectionView.delegate = self
-        leafformationImageSelectionView.delegate = self
-        leafEdgeImageSelectionView.delegate = self
-        flowerImageSelectionView.delegate = self
-        fruitImageSelectionView.delegate = self
-    }
-
     //MARK: - Search
+    
+    var searchTerms: [SearchTerm]
+    {
+        var result = [SearchTerm]()
+        
+        if let term = leafEdgeSeachTerm { result.append(term) }
+        if let term = leafDimensionSearchTerm { result.append(term) }
+        if let term = leafTextureSearchTerm { result.append(term) }
+        if let term = leafFormationSearchTerm { result.append(term) }
+        if let term = fruitColorSearchTerm { result.append(term) }
+        if let term = flowerColorSearchTerm { result.append(term) }
+        if let term = leafShapeSearchTerm { result.append(term) }
+        
+        return result
+    }
     
     /**
      Collects all the search filter from the view
     */
     func performSearch()
     {
-        // Find the parent view controller
+        // Find the parent view controller - this is where the search results will be displayed
         if let searchController = self.parentViewController as? SearchViewController
         {
-            if let results = floraService.performSearch([leafEdgeSeachTerm, leafDimensionSearchTerm, leafTextureSearchTerm, leafFormationSearchTerm, fruitColorSearchTerm, flowerColorSearchTerm, leafShapeSearchTerm], strict: false)
+            if let results = floraService.performSearch(searchTerms)
             {
                 searchController.searchResults = results
             }
         }        
     }
     
-    var leafShapeSearchTerm: SearchTermByDimension?
+    var leafShapeSearchTerm: SearchTermLeafShape?
     {
-        var term:SearchTermByDimension?
-        
-        if (shapeSwitch.on)
+        var term:SearchTermLeafShape?
+    
+        if let value = shapeImageSelectionView.selectedItem
         {
-            if let value = shapeImageSelectionView.selectedItem
-            {
-                term = SearchTermByDimension(shape: value)
-            }
+            term = SearchTermLeafShape(shape: value)
+            term?.strict = true
         }
         return term
     }
@@ -228,13 +247,11 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     {
         var term:SearchTermByLookupType?
         
-        if (leafEdgeSwitch.on)
+        if let value = leafEdgeImageSelectionView.selectedItem
         {
-            if let value = leafEdgeImageSelectionView.selectedItem
-            {
-                term = SearchTermByLeafEdge(leafEdgeType: value)
-            }
+            term = SearchTermByLeafEdge(leafEdgeType: value)
         }
+    
         return term
     }
 
@@ -244,8 +261,7 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
         
         if (leafWidth != 0 && leafLength != 0)
         {
-            term = SearchTermByDimension(size:Measurement(width: Float(leafWidth), length: Float(leafLength)), tolerance: 0.2)
-            term?.leafDimensionService = leafDimensionService
+            term = SearchTermByDimension(size:Measurement(width: Float(leafWidth), length: Float(leafLength)), leafDimensionService: self.leafDimensionService)
         }
         return term
     }
@@ -254,13 +270,11 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     {
         var term:SearchTermByLookupType?
         
-        if (leafFormSwitch.on)
+        if let value =  leafformationImageSelectionView.selectedItem
         {
-            if let value =  leafformationImageSelectionView.selectedItem
-            {
-                term = SearchTermByLeafFormation(leafFormationType: value)
-            }
+            term = SearchTermByLeafFormation(leafFormationType: value)
         }
+        
         return term
     }
 
@@ -299,35 +313,35 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
 
     //MARK: - Action handlers
     
-    @IBAction func handleSwitch(sender: UISwitch)
-    {
-        if (!leafEdgeSwitch.on)
-        {
-            leafEdgeImageSelectionView.clearSelection()
-        }
-        if (!leafFormSwitch.on)
-        {
-            leafformationImageSelectionView.clearSelection()
-        }
-        
-        if (!flowerSwitch.on)
-        {
-            flowerImageSelectionView.clearSelection()
-        }
-
-        if (!fruitSwitch.on)
-        {
-            fruitImageSelectionView.clearSelection()
-        }
-
-        if (!shapeSwitch.on)
-        {
-            shapeImageSelectionView.clearSelection()
-        }
-
-        resetTableCellMargins()
-        performSearch()
-    }
+//    @IBAction func handleSwitch(sender: UISwitch)
+//    {
+//        if (!leafEdgeSwitch.on)
+//        {
+//            leafEdgeImageSelectionView.clearSelection()
+//        }
+//        if (!leafFormSwitch.on)
+//        {
+//            leafformationImageSelectionView.clearSelection()
+//        }
+//        
+//        if (!flowerSwitch.on)
+//        {
+//            flowerImageSelectionView.clearSelection()
+//        }
+//
+//        if (!fruitSwitch.on)
+//        {
+//            fruitImageSelectionView.clearSelection()
+//        }
+//
+////        if (!shapeSwitch.on)
+////        {
+////            shapeImageSelectionView.clearSelection()
+////        }
+//
+//        resetTableCellMargins()
+//        performSearch()
+//    }
     
     //MARK: - Public functions
     
@@ -336,32 +350,45 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     */
     func reset()
     {
-        // reset all the underlying search items
+
+//        if let state = state?.selectedLeafShape
+//        {
+//            shapeImageSelectionView.selectedItem = state
+//        }
+//        else
+//        {
+//            shapeImageSelectionView.clearSelection()
+//        }
+//
         
-        // close the optional sections
-        leafEdgeSwitch.on = false
-        leafFormSwitch.on = false
-        fruitSwitch.on = false
-        flowerSwitch.on = false
-        shapeSwitch.on = false
-        
-        leafformationImageSelectionView.clearSelection()
+        // deselect all the options
+        shapeImageSelectionView.clearSelection()
         leafEdgeImageSelectionView.clearSelection()
         flowerImageSelectionView.clearSelection()
         fruitImageSelectionView.clearSelection()
-        shapeImageSelectionView.clearSelection()
+        leafformationImageSelectionView.clearSelection()
+        
+        // mark all sections as collapsed
+        caretCellStateUp = [SECTION_FRUIT: true,
+                          SECTION_FLOWER: true,
+                          SECTION_LEAFEDGE: true,
+                          SECTION_LEAFFORM: true,
+                          SECTION_LEAFSHAPE: true]
+        
+        caretCellImage = [SECTION_FRUIT: nil,
+                        SECTION_FLOWER: nil,
+                        SECTION_LEAFEDGE: nil,
+                        SECTION_LEAFFORM: nil,
+                        SECTION_LEAFSHAPE: nil]
         
         // Sort out the margins on cells, since some cells are dynamically hidden and screw things up
         self.tableView.beginUpdates()
-        resetTableCellMargins()
+        //resetTableCellMargins()
         self.tableView.endUpdates()
         
         textureLabel.text = NO_SELECTION_INDICATOR
         selectedTextureType = nil
         
-//        fruitCollectionViewDelegate?.selectedFruitColorType = nil
-//        flowerCollectionViewDelegate?.selectedFlowerColorType = nil
-//        
         leafMeasurement.text = NO_SELECTION_INDICATOR
         textureLabel.text = NO_SELECTION_INDICATOR
         self.leafWidth = 0
@@ -382,12 +409,6 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     private func resetTableCellMargins()
     {
         self.tableView.beginUpdates()
-        
-        //leafSizeSwitchCell.separatorLeftMargin(leafSizeSwitch.on ? DEFAULT_CELL_MARGIN : 0)
-        leafFormSwitchCell.separatorLeftMargin(leafFormSwitch.on ? DEFAULT_CELL_MARGIN : 0)
-        leafEdgeSwitchCell.separatorLeftMargin(leafEdgeSwitch.on ? DEFAULT_CELL_MARGIN : 0)
-        flowerSwitchCell.separatorLeftMargin(flowerSwitch.on ? DEFAULT_CELL_MARGIN : 0)
-        fruitSwitchCell.separatorLeftMargin(fruitSwitch.on ? DEFAULT_CELL_MARGIN : 0)
         self.tableView.endUpdates()
     }
     
@@ -406,9 +427,27 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
         performSearch()
     }
     
-    
     //MARK: - UITableView
 
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        
+        if ([SECTION_LEAFSHAPE, SECTION_LEAFEDGE, SECTION_LEAFFORM, SECTION_FRUIT, SECTION_FLOWER].contains(indexPath.section) && indexPath.row == 0)
+        {
+            if let caretCell = tableView.dequeueReusableCellWithIdentifier("caretCell", forIndexPath: indexPath) as? TableViewCellWithCaret
+            {
+                caretCell.separatorLeftMargin(caretCellStateUp![indexPath.section]! ? 0 : DEFAULT_CELL_MARGIN)
+                caretCell.label.text = caretCellLabel![indexPath.section]
+                caretCell.setState(!caretCellStateUp![indexPath.section]!)
+                caretCell.selectedImageView.image = caretCellImage![indexPath.section]!
+                cell = caretCell
+            }
+        }
+        
+        return cell
+    }
+    
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         // Hide these sections titles for now - not using yet
@@ -424,15 +463,16 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        // Hide these sections for now - not using yet
-        if (section == SECTION_BARK)
-        {
-            return 0.1
-        }
-        else
-        {
-            return super.tableView(tableView, heightForHeaderInSection: section)
-        }
+        return 0.1
+//        // Hide these sections for now - not using yet
+//        if ([SECTION_BARK, SECTION_LEAFSHAPE].contains(section))
+//        {
+//            return 0.1
+//        }
+//        else
+//        {
+//            return super.tableView(tableView, heightForHeaderInSection: section)
+//        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -454,31 +494,39 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
         let section = indexPath.section
         let row = indexPath.row
         
-        if section == SECTION_LEAFSURFACE
+        if let state = caretCellStateUp![section]
         {
-            return 0
+            if section == SECTION_LEAFSURFACE
+            {
+                return 0
+            }
+            else if section == SECTION_LEAFEDGE && row == ROW_LEAFEDGE
+            {
+                if (state) { leafEdgeImageSelectionView.clearSelection() }
+                currentHeight = state ? 0 : leafEdgeImageSelectionView.contentSize.height
+            }
+            else if section == SECTION_LEAFFORM && row == ROW_LEAFFORM
+            {
+                if (state) { leafformationImageSelectionView.clearSelection() }
+                currentHeight = state ? 0 : leafformationImageSelectionView.contentSize.height
+            }
+            else if section == SECTION_LEAFSHAPE && row == ROW_LEAFSHAPE
+            {
+                if (state) { shapeImageSelectionView.clearSelection() }
+                currentHeight = state ? 0 : shapeImageSelectionView.contentSize.height
+            }
+            else if section == SECTION_FLOWER && row == ROW_FLOWER_COLOR
+            {
+                if (state) { flowerImageSelectionView.clearSelection() }
+                currentHeight = state ? 0 : flowerImageSelectionView.contentSize.height
+            }
+            else if section == SECTION_FRUIT && row == ROW_FRUIT_COLOR
+            {
+                if (state) { fruitImageSelectionView.clearSelection() }
+                currentHeight = state ? 0 : fruitImageSelectionView.contentSize.height
+            }
         }
-        else if section == SECTION_LEAFEDGE && row == ROW_LEAFEDGE
-        {
-            currentHeight = leafEdgeSwitch.on ? leafEdgeImageSelectionView.contentSize.height : 0
-        }
-        else if section == SECTION_LEAFFORM && row == ROW_LEAFFORM
-        {
-            currentHeight = leafFormSwitch.on ? leafformationImageSelectionView.contentSize.height : 0
-        }
-        else if section == SECTION_LEAFSHAPE && row == ROW_LEAFSHAPE
-        {
-            currentHeight = shapeSwitch.on ? shapeImageSelectionView.contentSize.height : 0
-        }
-        else if section == SECTION_FLOWER && row == ROW_FLOWER_COLOR
-        {
-            currentHeight = flowerSwitch.on ? flowerImageSelectionView.contentSize.height : 0
-        }
-        else if section == SECTION_FRUIT && row == ROW_FRUIT_COLOR
-        {
-            currentHeight = fruitSwitch.on ? fruitImageSelectionView.contentSize.height : 0
-        }
-        
+
         return currentHeight
     }
     
@@ -502,21 +550,53 @@ class LeafViewController: UITableViewController, SelectorDelegate, MeasureLeafDe
             controller.view.frame = UIScreen.mainScreen().bounds
             self.navigationController?.pushViewController(controller, animated: true)
         }
+        else if ([SECTION_LEAFEDGE, SECTION_LEAFFORM, SECTION_LEAFSHAPE, SECTION_FLOWER, SECTION_FRUIT].contains(indexPath.section) && indexPath.row == 0)
+        {
+            caretCellStateUp![indexPath.section]! = !caretCellStateUp![indexPath.section]!
+            if let caretCell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as? TableViewCellWithCaret
+            {
+                caretCell.setState(!caretCellStateUp![indexPath.section]!)
+                //resetTableCellMargins()
+                
+                // need to reload cell to show the new caret icon
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+                
+                performSearch()
+            }
+        }
     }
     
     //MARK: ImageSelectionView
     
-    func imageSelectionView(imageSelectionView: ImageSelectionView, didSelectItem: ImageSelectionData?)
+    func imageSelectionView(imageSelectionView: ImageSelectionView, didSelectItem item: ImageSelectionData?)
     {
+//        
+//        if let _ = imageSelectionView as? LeafEdgeImageSelectionView
+//        {
+//            caretCellImage[SECTION_LEAFEDGE] = item?.image
+//            caretCellStateUp[SECTION_LEAFEDGE] = true
+//            
+//            //tableView.reloadData()
+////            let range = NSMakeRange(SECTION_LEAFEDGE, SECTION_LEAFEDGE + 2)
+////            let sections = NSIndexSet(indexesInRange: range)
+////            tableView.beginUpdates()
+////            tableView.reloadSections(sections, withRowAnimation: UITableViewRowAnimation.None)
+////            tableView.endUpdates()
+//            let caretCellIndex = NSIndexPath(forRow: 0, inSection: SECTION_LEAFEDGE)
+//            let imageSelectionViewIndex = NSIndexPath(forRow: 1, inSection: SECTION_LEAFEDGE)
+//            tableView.reloadRowsAtIndexPaths([caretCellIndex, imageSelectionViewIndex], withRowAnimation: UITableViewRowAnimation.None)
+//            tableView.reloadData()
+//        }
+
         performSearch()
     }
-    
-    func collectionView(collectionView: UICollectionView, didSelectFlower flowerColor: FlowerColorType?) {
         
-        performSearch()
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectFruit fruitColor: FruitColorType?) {
-        performSearch()
-    }
+//    func collectionView(collectionView: UICollectionView, didSelectFlower flowerColor: FlowerColorType?) {
+//        
+//        performSearch()
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, didSelectFruit fruitColor: FruitColorType?) {
+//        performSearch()
+//    }
 }

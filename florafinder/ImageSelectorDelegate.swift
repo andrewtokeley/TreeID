@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol ImageSelectorDelegate
+protocol _ImageSelectorDelegate
 {
-    func imageSelector(imageSelector: ImageSelector, itemForIndex index: Int) -> ImageSelectorItem?
-    func numberOfItemsInImageSelector(imageSelector: ImageSelector) -> Int
-    func imageSelector(imageSelector: ImageSelector, didSelectIndex index: Int) -> Int
+//    func imageSelector(imageSelector: ImageSelector, itemForIndex index: Int) -> ImageSelectorItem?
+//    func numberOfItemsInImageSelector(imageSelector: ImageSelector) -> Int
+//    func imageSelector(imageSelector: ImageSelector, didSelectIndex index: Int) -> Int
 }

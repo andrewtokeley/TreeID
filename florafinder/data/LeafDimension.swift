@@ -25,42 +25,12 @@ class LeafDimension: NSManagedObject {
     
     var shape: LeafShapeEnum?
     {
-        if (maximumSize == nil)
-        {
-            return LeafShapeEnum.Regular // guess
-        }
-        else if (maximumSize!.length < 1.5 && maximumSize!.width < 1)
-        {
-            return LeafShapeEnum.Small
-        }
-        else if (ratio > LeafShapeEnum.Narrow.ratio && maximumSize!.length > 5)
-        {
-            return LeafShapeEnum.Narrow
-        }
-        else if (ratio > LeafShapeEnum.Regular.ratio)
-        {
-            return LeafShapeEnum.Regular
-        }
-        else if (ratio > LeafShapeEnum.Broad.ratio && maximumSize!.width > 3)
-        {
-            return LeafShapeEnum.Broad
-        }
-        else
-        {
-            //propbably a leaf with no dimensions refined, but assume regular??
-            return LeafShapeEnum.Regular
-        }
+        return maximumSize?.shape
     }
     
     var ratio: Float
     {
-        if (widthMin != nil && lengthMin != nil && widthMax != nil && lengthMax != nil)
-        {
-            // average length divided by average width
-            return (((lengthMin?.floatValue)! + (lengthMax?.floatValue)!)/2) / (((widthMin?.floatValue)! + (widthMax?.floatValue)!)/2)
-        }
-        
-        return 0
+        return maximumSize?.ratio ?? 0
     }
     
     var minimumSize: Measurement?

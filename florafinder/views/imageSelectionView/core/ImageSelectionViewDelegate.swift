@@ -9,5 +9,8 @@
 import Foundation
 
 protocol ImageSelectionViewDelegate {
-    func imageSelectionView(imageSelectionView: ImageSelectionView, didSelectItem: ImageSelectionData?)
+    func imageSelectionView(imageSelectionView: ImageSelectionView, didSelectItem item: ImageSelectionData?)
+    
+    //func associatedTableViewCell() -> UITableViewCell?
+    
 }

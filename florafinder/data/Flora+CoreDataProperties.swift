@@ -2,7 +2,7 @@
 //  Flora+CoreDataProperties.swift
 //  florafinder
 //
-//  Created by Andrew Tokeley  on 3/05/16.
+//  Created by Andrew Tokeley  on 27/05/16.
 //  Copyright © 2016 Andrew Tokeley . All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,6 +18,7 @@ extension Flora {
     @NSManaged var externalURL: String?
     @NSManaged var imagePath: String?
     @NSManaged var notes: String?
+    @NSManaged var scientificName: String?
     @NSManaged var bark: Bark?
     @NSManaged var flowerColor: FlowerColorType?
     @NSManaged var fruitColor: FruitColorType?

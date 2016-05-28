@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="PGj-5l-RSL" customClass="TableViewCellWithCaret" customModule="florafinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PGj-5l-RSL" id="V0P-Ij-y5K">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qV9-g1-N3Y">
+                        <rect key="frame" x="8" y="9.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xct-ai-4HD">
+                        <rect key="frame" x="289" y="12.5" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="U3l-aT-Qz6"/>
+                            <constraint firstAttribute="width" constant="15" id="fZw-bk-SCB"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UTB-b9-p0e">
+                        <rect key="frame" x="251" y="5" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Dr4-nH-bSK"/>
+                            <constraint firstAttribute="width" constant="30" id="oLM-g5-CqD"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Xct-ai-4HD" firstAttribute="centerY" secondItem="V0P-Ij-y5K" secondAttribute="centerY" id="4zp-nw-gUb"/>
+                    <constraint firstItem="qV9-g1-N3Y" firstAttribute="centerY" secondItem="V0P-Ij-y5K" secondAttribute="centerY" id="9D1-qG-iAS"/>
+                    <constraint firstItem="qV9-g1-N3Y" firstAttribute="leading" secondItem="V0P-Ij-y5K" secondAttribute="leadingMargin" id="Dxx-Fw-hVK"/>
+                    <constraint firstItem="Xct-ai-4HD" firstAttribute="leading" secondItem="UTB-b9-p0e" secondAttribute="trailing" constant="8" id="hO6-4a-AEY"/>
+                    <constraint firstItem="Xct-ai-4HD" firstAttribute="trailing" secondItem="V0P-Ij-y5K" secondAttribute="trailingMargin" constant="-8" id="mI0-64-aoL"/>
+                    <constraint firstItem="UTB-b9-p0e" firstAttribute="centerY" secondItem="V0P-Ij-y5K" secondAttribute="centerY" id="y1E-64-P4n"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="caret" destination="Xct-ai-4HD" id="lXr-Hf-cFV"/>
+                <outlet property="label" destination="qV9-g1-N3Y" id="eX3-ij-Jtg"/>
+                <outlet property="selectedImageView" destination="UTB-b9-p0e" id="tS8-33-Keb"/>
+            </connections>
+            <point key="canvasLocation" x="212" y="158"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="down-arrow.png" width="32" height="32"/>
+    </resources>
+</document>

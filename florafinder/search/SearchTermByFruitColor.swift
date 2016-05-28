@@ -26,7 +26,7 @@ class SearchTermByFruitColor: SearchTermByLookupType
     {
         return self.fruitColorType.name!
     }
-    
+
     override func execute(floraService: FloraServiceProtocol) -> [SearchResult]?
     {
         return super.getResults(floraService, predicate: NSPredicate(format: "fruitColor=%@", self.fruitColorType))

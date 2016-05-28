@@ -23,22 +23,33 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd1-aG-BFe">
-                        <rect key="frame" x="66" y="20" width="275" height="19.5"/>
+                        <rect key="frame" x="66" y="8" width="275" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaX-DA-Tjf">
+                        <rect key="frame" x="66" y="30" width="275" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Cd1-aG-BFe" firstAttribute="leading" secondItem="Ll8-IN-CPp" secondAttribute="trailing" constant="8" id="7l8-vI-Vyh"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="SaX-DA-Tjf" secondAttribute="trailing" constant="-8" id="9MI-VL-Lgq"/>
                     <constraint firstItem="Ll8-IN-CPp" firstAttribute="centerY" secondItem="leU-lQ-ww7" secondAttribute="centerY" id="JsL-Gm-ppE"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="SaX-DA-Tjf" secondAttribute="bottom" constant="0.5" id="KgI-aL-6eK"/>
+                    <constraint firstItem="SaX-DA-Tjf" firstAttribute="leading" secondItem="Ll8-IN-CPp" secondAttribute="trailing" constant="8" id="ZKs-bh-ZiT"/>
+                    <constraint firstItem="SaX-DA-Tjf" firstAttribute="top" secondItem="Cd1-aG-BFe" secondAttribute="bottom" constant="2.5" id="aTE-dv-833"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Cd1-aG-BFe" secondAttribute="trailing" constant="-8" id="qs6-F6-mFs"/>
-                    <constraint firstItem="Cd1-aG-BFe" firstAttribute="centerY" secondItem="leU-lQ-ww7" secondAttribute="centerY" id="vAU-YB-NLp"/>
+                    <constraint firstItem="Cd1-aG-BFe" firstAttribute="centerY" secondItem="leU-lQ-ww7" secondAttribute="centerY" constant="-12" id="vAU-YB-NLp"/>
                     <constraint firstItem="Ll8-IN-CPp" firstAttribute="leading" secondItem="leU-lQ-ww7" secondAttribute="leading" constant="8" id="x3B-oZ-VSQ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="commonName" destination="Cd1-aG-BFe" id="UHw-tA-cgO"/>
+                <outlet property="scientificName" destination="SaX-DA-Tjf" id="PNo-bA-Qdu"/>
                 <outlet property="treeImage" destination="Ll8-IN-CPp" id="yi6-oS-6eY"/>
             </connections>
             <point key="canvasLocation" x="202.5" y="159"/>

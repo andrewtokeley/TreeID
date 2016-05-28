@@ -30,6 +30,11 @@ class ImageServiceTests: TestBase {
         let _ = try? cacheDataProvider?.deleteAll()
     }
 
+    func testGetImageRecords()
+    {
+        
+    }
+    
     func testClearingCacheClearsCache() {
         
         let IMAGE_FILENAME = "kowhai_main.jpg"

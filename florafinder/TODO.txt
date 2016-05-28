@@ -1,0 +1,7 @@
+- create (and cache) thumbnails to be used in catalogue
+- Start discover screen with no search results panel, just instructions
+- Remember last search
+- save photos taken when attaching to "Not found!"
+- ability to mark trees as found
+- catalogue keyword search
+- catalogue - filter on found/not found trees

@@ -18,11 +18,19 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
     let META_FILE_EXTENSION = "meta"
     let GOOGLE_REGISTER_NAME = "TreeIDRegister"
     
+    var googleImportSpinner: UIActivityIndicatorView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        googleImportSpinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         
-        //self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackOpaque
+        // make sure the Google spinner is reset
+        let cell = super.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: ROW_GOOGLE_IMPORT, inSection: SECTION_TEST))
+        cell.accessoryView = nil
     }
     
     override func didReceiveMemoryWarning()
@@ -52,6 +60,8 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
         provider.authenticate({ (isAuthenticated) in
             if (isAuthenticated)
             {
+                self.googleImportSpinner?.startAnimating()
+
                 provider.getFile(self.GOOGLE_REGISTER_NAME, completion: { (file) in
                     
                     // the CSV code requires a NSURL pointing to the CSV data
@@ -65,6 +75,8 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
                             self.navigationController?.pushViewController(importViewController, animated: true)
                         }
                     }
+                    
+                    self.googleImportSpinner?.stopAnimating()
                 })
                 
             }
@@ -95,6 +107,7 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
 //        }
 //    }
 //    
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         if (indexPath.section == SECTION_TEST)
@@ -113,6 +126,11 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
             }
             else if (indexPath.row == ROW_GOOGLE_IMPORT)
             {
+                googleImportSpinner.frame = CGRectMake(0, 0, 24, 24);
+                if let cell = tableView.cellForRowAtIndexPath(indexPath)
+                {
+                    cell.accessoryView = googleImportSpinner
+                }
                 importFromGoogle()
             }
         }

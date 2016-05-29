@@ -16,27 +16,28 @@ enum ImageRecordExceptions: ErrorType
 
 class ImageRecord: NSObject, NYTPhoto
 {
-    /* example of meta data
-    "imageTitle": "Akeake leaves",
-    "imageSummary": "Andrew Tokeley",
-    "imageCredit": "http://remote.bloxus.com/"
-     */
-    
-    let JSON_TITLE = "imageTitle"
-    let JSON_SUMMARY = "imageSummary"
-    let JSON_CREDIT = "imageCredit"
-    
     var imageCache: UIImage?
+    var metaData: ImageMetaData?
+    var imageFetcher: (() -> UIImage)?
     
-    init(image: UIImage, metaData: NSData?)
+    override init()
     {
         super.init()
-        
+    }
+    
+    convenience init(imageFetcher: () -> UIImage)
+    {
+        self.init()
+        self.imageFetcher = imageFetcher
+    }
+    
+    convenience init(image: UIImage, metaData: NSData?)
+    {
+        self.init()
         self.image = image
-        if metaData != nil
+        if (metaData != nil)
         {
-            // going to ignore errors for now
-            parseMetaData(metaData!)
+            self.metaData = ImageMetaData(metaData: metaData!)
         }
     }
     
@@ -45,13 +46,44 @@ class ImageRecord: NSObject, NYTPhoto
         self.init(image: image, metaData: nil)
     }
     
+    convenience init(imageURL: NSURL)
+    {
+        self.init()
+        self.imageURL = imageURL
+    }
+    
     //MARK: - NYTPhoto properties
+    var imageURL: NSURL?
     var image: UIImage?
     var imageData: NSData?
-    var attributedCaptionTitle: NSAttributedString?
-    var attributedCaptionSummary: NSAttributedString?
-    var attributedCaptionCredit: NSAttributedString?
     
+    var attributedCaptionTitle: NSAttributedString?
+    {
+        if let title = metaData?.title
+        {
+            return NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)])
+        }
+        return nil
+    }
+
+    var attributedCaptionSummary: NSAttributedString?
+    {
+        if let summary = metaData?.summary
+        {
+            return NSAttributedString(string: summary, attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)])
+        }
+        return nil
+    }
+    
+    var attributedCaptionCredit: NSAttributedString?
+    {
+        if let credit = metaData?.credit
+        {
+            return NSAttributedString(string: credit, attributes:[NSForegroundColorAttributeName: UIColor.grayColor(), NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)])
+        }
+        return nil
+    }
+
     // MARK: - Other properties
     var placeholderImage: UIImage?
     {
@@ -59,32 +91,4 @@ class ImageRecord: NSObject, NYTPhoto
         return service.placeholderImage
     }
 
-    //MARK: - Meta data
-    func parseMetaData(metaData: NSData) -> Bool
-    {
-        do
-        {
-            let json = try NSJSONSerialization.JSONObjectWithData(metaData, options: NSJSONReadingOptions.AllowFragments)
-            
-            if let title = json[JSON_TITLE] as? String
-            {
-                //self.attributedCaptionTitle = NSAttributedString(string: title)
-                
-                self.attributedCaptionTitle = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)])
-            }
-            if let summary = json[JSON_SUMMARY] as? String
-            {
-                self.attributedCaptionSummary = NSAttributedString(string: summary, attributes:[NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)])
-            }
-            if let credit = json[JSON_CREDIT] as? String
-            {
-                self.attributedCaptionCredit = NSAttributedString(string: credit, attributes:[NSForegroundColorAttributeName: UIColor.grayColor(), NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)])
-            }
-        }
-        catch
-        {
-            return false
-        }
-        return true
     }
-}

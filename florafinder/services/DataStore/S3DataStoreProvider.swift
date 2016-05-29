@@ -31,6 +31,11 @@ class S3DataStoreProvider: DataStoreProviderProtocol
         return [ImageRecord]()
     }
     
+    func getImageRecords(nameOrPattern: String, inFolder: String?, completion: ((imageRecords: [ImageRecord]) -> Void))
+    {
+        
+    }
+
     func getFile(path: String, completion: ((file: NSData?) -> Void))
     {
     }

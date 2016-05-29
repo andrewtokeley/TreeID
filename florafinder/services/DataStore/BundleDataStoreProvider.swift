@@ -53,6 +53,11 @@ class BundleDataStoreProvider: DataStoreProviderProtocol
         return [ImageRecord]()
     }
     
+    func getImageRecords(nameOrPattern: String, inFolder: String?, completion: ((imageRecords: [ImageRecord]) -> Void))
+    {
+        
+    }
+
     func uploadFile(file: NSData, relativePath: String) -> NSURL?
     {
         fatalError("not implemented")

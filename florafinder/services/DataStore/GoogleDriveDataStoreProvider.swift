@@ -27,6 +27,8 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
         return self.delegate?.autenticationViewControllerFor(self)
     }
 
+    //MARK: - Initialisers
+    
     init(delegate: GoogleDriveDataStoreProviderDelegate)
     {
         self.delegate = delegate
@@ -110,11 +112,59 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
         return [ImageRecord]()
     }
     
+    func getImageRecords(nameOrPattern: String, inFolder: String?, completion: ((imageRecords: [ImageRecord]) -> Void))
+    {
+        if (isAuthenticated)
+        {
+            let query = GTLQueryDrive.queryForFilesList()
+            
+            query.orderBy = "name"
+            query.pageSize = 10
+            var queryString = "name contains '\(nameOrPattern)'"
+            
+            if inFolder != nil
+            {
+                queryString += " and \(inFolder) in parents"
+            }
+            
+            query.q = queryString
+            query.fields = "nextPageToken, files(id, name)"
+            
+            var imageRecords = [ImageRecord]()
+            
+            service.executeQuery(query, completionHandler: { (ticket, fileList, error) in
+                
+                // Iterate over the results
+                if let list = fileList as? GTLDriveFileList
+                {
+                    for item in list.files
+                    {
+                        if let file = item as? GTLDriveFile
+                        {
+                            let url = "https://www.googleapis.com/drive/v3/files/\(file.identifier)?alt=media"
+                            
+                            let fetcher = self.service.fetcherService.fetcherWithURLString(url as String)
+                            
+                            fetcher.beginFetchWithCompletionHandler({ (data, error) in
+                                
+                                if (data != nil)
+                                {
+                                    if let image = UIImage(data: data!)
+                                    {
+                                        imageRecords.append(ImageRecord(image: image))
+                                    }
+                                }
+                            })
+                        }
+                    }
+                }
+            })
+            
+        }
+    }
+
     func getFile(name: String, exportMimeType: String?, completion: ((file: NSData?) -> Void))
     {
-        // application/pdf
-        // application/csv
-        
         if (isAuthenticated)
         {
             let query = GTLQueryDrive.queryForFilesList()

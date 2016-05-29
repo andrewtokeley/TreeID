@@ -233,11 +233,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/LocalDataStoreProvider.swift"
-            timestampString = "485728673.321013"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "uploadImage(_:relativePath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -249,11 +249,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/LocalDataStoreProvider.swift"
-            timestampString = "485728673.321013"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "LocalDataStoreProvider"
             landmarkType = "3">
          </BreakpointContent>
@@ -1608,11 +1608,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486169694.019552"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "importViewController(_:didImportRecords:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2009,11 +2009,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486169694.019552"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "importViewController(_:didImportRecords:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2665,11 +2665,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485602893.833908"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "handleAuth(_:finishedWithAuth:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2681,11 +2681,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486169694.019552"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "importFromGoogle()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2697,11 +2697,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486169694.019552"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2713,11 +2713,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485602893.833908"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "handleAuth(_:finishedWithAuth:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2729,11 +2729,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486169694.019552"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "importFromGoogle()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2745,11 +2745,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485728673.321013"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "getFile(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2761,11 +2761,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485728673.321013"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "getFile(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2777,11 +2777,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485728673.321013"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "getFile(_:exportMimeType:completion:)"
             landmarkType = "5">
             <Locations>
@@ -2825,11 +2825,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485602893.833908"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "authenticate(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2841,11 +2841,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485602893.833908"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "createAuthController()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2857,11 +2857,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485602893.833908"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "handleAuth(_:finishedWithAuth:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2873,11 +2873,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485602893.833908"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "handleAuth(_:finishedWithAuth:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3045,22 +3045,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "florafinder/services/images/ImageRecord.swift"
-            timestampString = "485729229.923413"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "parseMetaData(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -3097,11 +3081,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486169694.019552"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "importFromGoogle()"
             landmarkType = "5">
             <Locations>
@@ -3209,11 +3193,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486169694.019552"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "importFromGoogle()"
             landmarkType = "5">
             <Locations>
@@ -3257,11 +3241,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/LocalDataStoreProvider.swift"
-            timestampString = "485808318.082456"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "uploadFile(_:relativePath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3305,11 +3289,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485808581.527449"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "getFile(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3321,11 +3305,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "485808803.714285"
+            timestampString = "486209911.278246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "getFile(_:exportMimeType:completion:)"
             landmarkType = "5">
          </BreakpointContent>

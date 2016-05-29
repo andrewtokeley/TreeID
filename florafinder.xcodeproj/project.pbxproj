@@ -254,6 +254,7 @@
 		D8FE364E1CF96F340056384E /* wiki in Resources */ = {isa = PBXBuildFile; fileRef = D8FE364D1CF96F340056384E /* wiki */; };
 		D8FE36511CF9A8A50056384E /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FE364F1CF9A8A50056384E /* more.png */; };
 		D8FE36521CF9A8A50056384E /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FE36501CF9A8A50056384E /* more@2x.png */; };
+		D8FE36541CFAEADC0056384E /* ImageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FE36531CFAEADB0056384E /* ImageMetaData.swift */; };
 		D8FF48FA1CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF48F91CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift */; };
 		D8FF48FC1CE022DF0079A4C1 /* lacebark_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF48FB1CE022DF0079A4C1 /* lacebark_main.jpg */; };
 		D8FF48FE1CE02BEB0079A4C1 /* kawakawa_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FF48FD1CE02BEB0079A4C1 /* kawakawa_main.jpg */; };
@@ -558,6 +559,7 @@
 		D8FE364D1CF96F340056384E /* wiki */ = {isa = PBXFileReference; lastKnownFileType = folder; path = wiki; sourceTree = "<group>"; };
 		D8FE364F1CF9A8A50056384E /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = more.png; path = images/more.png; sourceTree = "<group>"; };
 		D8FE36501CF9A8A50056384E /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "more@2x.png"; path = "images/more@2x.png"; sourceTree = "<group>"; };
+		D8FE36531CFAEADB0056384E /* ImageMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageMetaData.swift; path = services/images/ImageMetaData.swift; sourceTree = "<group>"; };
 		D8FF48F91CDFD47B0079A4C1 /* LeafShapeImageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeafShapeImageSelectionView.swift; path = views/imageSelectionView/LeafShapeImageSelectionView.swift; sourceTree = "<group>"; };
 		D8FF48FB1CE022DF0079A4C1 /* lacebark_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lacebark_main.jpg; path = images/storage/lacebark_main.jpg; sourceTree = "<group>"; };
 		D8FF48FD1CE02BEB0079A4C1 /* kawakawa_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kawakawa_main.jpg; path = images/storage/kawakawa_main.jpg; sourceTree = "<group>"; };
@@ -1163,6 +1165,7 @@
 		D8FF49221CE3BF730079A4C1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D8FE36531CFAEADB0056384E /* ImageMetaData.swift */,
 				D8FF49231CE3C27D0079A4C1 /* ImageRecord.swift */,
 				D8FF49241CE3C27D0079A4C1 /* ImageService.swift */,
 			);
@@ -1564,6 +1567,7 @@
 				D86BD30C1C37CA1C001E17E7 /* AppDelegate.swift in Sources */,
 				D84D29DD1CCFF7930084C851 /* S3DataStoreProvider.swift in Sources */,
 				D8C748121CAC52CD00FB8ED9 /* FloraImporter.swift in Sources */,
+				D8FE36541CFAEADC0056384E /* ImageMetaData.swift in Sources */,
 				D837FD1F1C73125D0032C033 /* ServiceFactory.swift in Sources */,
 				D837FCE81C730FC20032C033 /* LeafEdgeType+CoreDataProperties.swift in Sources */,
 				D892D36E1CDBD684003E7DDA /* LeafEdgeImageSelectionView.swift in Sources */,

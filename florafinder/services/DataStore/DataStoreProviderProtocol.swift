@@ -15,9 +15,12 @@ protocol DataStoreProviderProtocol {
     */
     func getImage(path: String) -> UIImage?
     func getImageRecordsFromFolder(folderPath: String) -> [ImageRecord]
+    
     func getImageRecords(nameOrPattern: String) -> [ImageRecord]
+    func getImageRecords(nameOrPattern: String, inFolder: String?, completion: ((imageRecords: [ImageRecord]) -> Void))
     
     func getFile(path: String) -> NSData?
+    
     func getFile(path: String, completion: ((file: NSData?) -> Void))
     
     func uploadImage(image: UIImage, relativePath: String) -> NSURL?

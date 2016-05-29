@@ -85,6 +85,11 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
         return [ImageRecord]()
     }
     
+    func getImageRecords(nameOrPattern: String, inFolder: String?, completion: ((imageRecords: [ImageRecord]) -> Void))
+    {
+        
+    }
+
     func getFile(relativePath: String, completion: ((file: NSData?) -> Void))
     {
         completion(file:  NSFileManager.defaultManager().contentsAtPath(fullPath(relativePath).path!))

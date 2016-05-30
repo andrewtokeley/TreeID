@@ -16,6 +16,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     let RESULTS_SECTION_HEIGHT_COLLAPSED: CGFloat = 40
     let RESULTS_SECTION_HEIGHT_EXPANDED: CGFloat = 150
     
+    var imageCache = [String: UIImage]()
+    
     @IBOutlet weak var resultsSectionHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
     
@@ -179,8 +181,37 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath:indexPath) as! SearchResultCollectionViewCell
         
         let result = searchResults[indexPath.row]
+        let session = ServiceFactory.shareInstance.sessionStateService
         
-        cell.image.image = result.flora.image ?? result.flora.placeholderImage
+        if let thumbnailName = result.flora.thumbnailName
+        {
+            // check memory cache
+            if let image = session.state[thumbnailName] as? UIImage // imageCache[thumbnailName]
+            {
+                cell.image.image = image
+            }
+            else
+            {
+                let imageService = ServiceFactory.shareInstance.imageService
+                
+                cell.image.image = imageService.placeholderImage
+                
+                // Get image asynchronously
+                imageService.getImageRecords(thumbnailName, recordFound: { (imageRecord) in
+                    
+                    if let image = imageRecord.image
+                    {
+                        // add to a local memory cache
+                        if let name = imageRecord.name
+                        {
+                            session.state[name] = image
+                        }
+                        cell.image.image = image
+                    }
+                })
+                
+            }
+        }
         cell.label.text = result.flora.commonName!
         
         return cell

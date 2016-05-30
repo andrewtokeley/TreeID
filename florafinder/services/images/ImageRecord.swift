@@ -18,17 +18,17 @@ class ImageRecord: NSObject, NYTPhoto
 {
     var imageCache: UIImage?
     var metaData: ImageMetaData?
-    var imageFetcher: (() -> UIImage)?
+    var fetcher: (() -> UIImage)?
     
     override init()
     {
         super.init()
     }
     
-    convenience init(imageFetcher: () -> UIImage)
+    convenience init(fetcher: () -> UIImage)
     {
         self.init()
-        self.imageFetcher = imageFetcher
+        self.fetcher = fetcher
     }
     
     convenience init(image: UIImage, metaData: NSData?)
@@ -54,8 +54,12 @@ class ImageRecord: NSObject, NYTPhoto
     
     //MARK: - NYTPhoto properties
     var imageURL: NSURL?
+    
+    // will be nil until the first fetch call
     var image: UIImage?
+    
     var imageData: NSData?
+    var name: String?
     
     var attributedCaptionTitle: NSAttributedString?
     {

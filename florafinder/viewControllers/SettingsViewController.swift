@@ -91,22 +91,11 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
     func importViewController(importViewController: ImportViewController, didImportRecords: Int) {
     
         // clear the cache
-        let _ = try? ServiceFactory.shareInstance.imageCacheProvider?.deleteAll()
+        ServiceFactory.shareInstance.imageCacheProvider?.deleteAll({ (result) in
+            
+            // what would we do with a fail here?
+        })
     }
-    
-//    func rebuildDatastore()
-//    {
-//        do
-//        {
-//            try ServiceFactory.shareInstance.dataManagementService.rebuildDatabase()
-//            
-//        }
-//        catch
-//        {
-//            // what to do?
-//        }
-//    }
-//    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {

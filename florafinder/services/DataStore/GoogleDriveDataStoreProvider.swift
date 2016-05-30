@@ -97,22 +97,22 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
     
     //MARK: - Delegate Methods
     
-    func getImage(path: String) -> UIImage?
-    {
-        return nil
-    }
+//    func getImage(path: String) -> UIImage?
+//    {
+//        return nil
+//    }
+//    
+//    func getImageRecordsFromFolder(folderPath: String) -> [ImageRecord]
+//    {
+//        return [ImageRecord]()
+//    }
+//    
+//    func getImageRecords(nameOrPattern: String) -> [ImageRecord]
+//    {
+//        return [ImageRecord]()
+//    }
     
-    func getImageRecordsFromFolder(folderPath: String) -> [ImageRecord]
-    {
-        return [ImageRecord]()
-    }
-    
-    func getImageRecords(nameOrPattern: String) -> [ImageRecord]
-    {
-        return [ImageRecord]()
-    }
-    
-    func getImageRecords(nameOrPattern: String, inFolder: String?, completion: ((imageRecords: [ImageRecord]) -> Void))
+    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord) -> Void))
     {
         if (isAuthenticated)
         {
@@ -120,17 +120,15 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
             
             query.orderBy = "name"
             query.pageSize = 10
-            var queryString = "name contains '\(nameOrPattern)'"
+            let queryString = "name contains '\(nameOrPattern)'"
             
-            if inFolder != nil
-            {
-                queryString += " and \(inFolder) in parents"
-            }
+//            if inFolder != nil
+//            {
+//                queryString += " and \(inFolder) in parents"
+//            }
             
             query.q = queryString
             query.fields = "nextPageToken, files(id, name)"
-            
-            var imageRecords = [ImageRecord]()
             
             service.executeQuery(query, completionHandler: { (ticket, fileList, error) in
                 
@@ -151,7 +149,10 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
                                 {
                                     if let image = UIImage(data: data!)
                                     {
-                                        imageRecords.append(ImageRecord(image: image))
+                                        // Let the callback know we have found an image
+                                        let imageRecord = ImageRecord(image: image, metaData: nil)
+                                        imageRecord.name = file.name
+                                        recordFound(imageRecord: imageRecord)
                                     }
                                 }
                             })
@@ -207,7 +208,7 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
     
     func getFile(name: String, completion: ((file: NSData?) -> Void))
     {
-        // Tricky hack to avoid having to add to DataStoreProciderProtocol for an export option
+        // Hack to avoid having to add to DataStoreProciderProtocol for an export option
         if name.lowercaseString.containsString("register")
         {
             getFile(name, exportMimeType: "text/csv", completion: completion)
@@ -218,10 +219,10 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
         }
     }
     
-    func getFile(name: String) -> NSData?
-    {
-        return nil
-    }
+//    func getFile(name: String) -> NSData?
+//    {
+//        return nil
+//    }
     
     func uploadFile(file: NSData, relativePath: String) -> NSURL?
     {
@@ -233,14 +234,38 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
         return nil
     }
     
-    func fileExists(path: String) -> Bool
+    func fileExists(path: String, completion: (Bool) -> Void)
     {
-        return false
+        if (isAuthenticated)
+        {
+            let query = GTLQueryDrive.queryForFilesList()
+            
+            query.orderBy = "name"
+            query.pageSize = 10
+            query.q = "name = '\(path)'"
+            query.fields = "nextPageToken, files(id, name)"
+            
+            service.executeQuery(query, completionHandler: { (ticket, fileList, error) in
+                
+                var ok = (error == nil)
+                if ok
+                {
+                    // ensure there's a match
+                    if let list = fileList as? GTLDriveFileList
+                    {
+                        if let _ = list.files.first as? GTLDriveFile
+                        {
+                            ok = true
+                        }
+                    }
+                }
+                completion(ok)
+            })
+        }
     }
     
-    func deleteAll() -> Bool
-    {
-        return false
+    func deleteAll(completion: (Bool) -> Void) {
+        completion(false)
     }
     
 }

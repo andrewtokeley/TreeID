@@ -10,9 +10,10 @@ import Foundation
 import CoreData
 import NYTPhotoViewer
 
-class Flora: NSManagedObject, NYTPhoto {
+class Flora: NSManagedObject //, NYTPhoto 
+{
 
-    var imageRecordCache: ImageRecord?
+    //var imageRecordCache: ImageRecord?
     
     override var description: String
     {
@@ -28,48 +29,57 @@ class Flora: NSManagedObject, NYTPhoto {
     
     //MARK: - NYTPhoto Protocol
     
-    var placeholderImage: UIImage?
+//    var placeholderImage: UIImage?
+//    {
+//        let service = ServiceFactory.shareInstance.imageService
+//        return service.placeholderImage
+//    }
+//    
+//    var attributedCaptionTitle: NSAttributedString?
+//    {
+//        return imageRecord?.attributedCaptionTitle
+//    }
+//    
+//    var attributedCaptionSummary: NSAttributedString?
+//    {
+//        return imageRecord?.attributedCaptionSummary
+//    }
+//    
+//    var attributedCaptionCredit: NSAttributedString?
+//    {
+//        return imageRecord?.attributedCaptionCredit
+//    }
+//    
+//    var imageData: NSData?
+//    {
+//        return nil
+//    }
+//    var image: UIImage?
+//    {
+//        return imageRecord?.image
+//    }
+    var thumbnailName: String?
     {
-        let service = ServiceFactory.shareInstance.imageService
-        return service.placeholderImage
-    }
-    
-    var attributedCaptionTitle: NSAttributedString?
-    {
-        return imageRecord?.attributedCaptionTitle
-    }
-    
-    var attributedCaptionSummary: NSAttributedString?
-    {
-        return imageRecord?.attributedCaptionSummary
-    }
-    
-    var attributedCaptionCredit: NSAttributedString?
-    {
-        return imageRecord?.attributedCaptionCredit
-    }
-    
-    var imageData: NSData?
-    {
+        if let imageRoot = self.imagePath
+        {
+            // TODO - this assujmes jpg files sucks, but is temporary.
+            return imageRoot + "_main.jpg"
+        }
         return nil
     }
-    var image: UIImage?
-    {
-        return imageRecord?.image
-    }
-    
-    var imageRecord: ImageRecord?
-    {
-        if (imageRecordCache == nil)
-        {
-            if let imageRoot = self.imagePath
-            {
-                if let imageRecord = ServiceFactory.shareInstance.imageService.getImageRecords(imageRoot + "_main").first
-                {
-                    imageRecordCache = imageRecord
-                }
-            }
-        }
-        return imageRecordCache
-    }
+//
+//    var imageRecord: ImageRecord?
+//    {
+//        if (imageRecordCache == nil)
+//        {
+//            if let imageName = thumbnailName
+//            {
+//                if let imageRecord = ServiceFactory.shareInstance.imageService.getImageRecords(imageName).first
+//                {
+//                    imageRecordCache = imageRecord
+//                }
+//            }
+//        }
+//        return imageRecordCache
+//    }
 }

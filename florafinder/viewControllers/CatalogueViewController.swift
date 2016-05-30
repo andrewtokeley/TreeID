@@ -13,6 +13,7 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
     let SEGUE_VIEW = "view"
     let SEGUE_ADD = "add"
     
+    var imageCache = [String: UIImage]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -110,8 +111,46 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
             let sectionKey = sections[indexPath.section]
             let selectedFlora = datasource[sectionKey]![indexPath.row]
             cell.commonName?.text = selectedFlora.commonName
-            cell.treeImage?.image = selectedFlora.image ?? UIImage(named: "placeholder.png")
             cell.scientificName.text = selectedFlora.scientificName
+            
+            let imageService = ServiceFactory.shareInstance.imageService
+            let session = ServiceFactory.shareInstance.sessionStateService
+            
+            // Get the image, asynchronously
+            if let thumbnailName = selectedFlora.thumbnailName
+            {
+                // check if there's an image in the cache
+                if let image = session.state[thumbnailName] as? UIImage
+                {
+                    cell.treeImage?.image = image
+                }
+                else
+                {
+                    // temp image until async gets image
+                    cell.treeImage?.image = imageService.placeholderImage
+                    
+                    // Get image asynchronously
+                    imageService.getImageRecords(thumbnailName, recordFound: { (imageRecord) in
+                        
+                        if let image = imageRecord.image
+                        {
+                            // add to a local memory cache
+                            if let name = imageRecord.name
+                            {
+                                session.state[name] = image
+                            }
+                            
+                            cell.treeImage?.image = image
+                        }
+                    })
+                }
+            }
+            else
+            {
+                // If an image doesn't have a thumb...
+                cell.treeImage?.image = imageService.placeholderImage
+            }
+            
             return cell
         }
         return UITableViewCell()

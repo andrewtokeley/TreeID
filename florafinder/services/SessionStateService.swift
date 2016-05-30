@@ -11,10 +11,12 @@ import Foundation
 class SessionStateService
 {
     static var shareInstance: SessionStateService =
-    {
+        {
             return SessionStateService()
     }()
    
+    var state = [String: AnyObject]()
+    
     var savedSearchState: SearchState
     {
         var state = SearchState()
@@ -22,4 +24,5 @@ class SessionStateService
         
         return state
     }
+    
 }

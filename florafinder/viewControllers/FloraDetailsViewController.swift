@@ -9,17 +9,20 @@
 import Foundation
 import NYTPhotoViewer
 
-class specialButton: UIButton, NYTPhotoCaptionViewLayoutWidthHinting
-{
-    var preferredMaxLayoutWidth: CGFloat
-    {
-        set{}
-        get{return 100}
-    }
-}
+//class specialButton: UIButton, NYTPhotoCaptionViewLayoutWidthHinting
+//{
+//    var preferredMaxLayoutWidth: CGFloat
+//    {
+//        set{}
+//        get{return 100}
+//    }
+//}
 
 class FloraDetailsViewController: UITableViewController, NYTPhotosViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIActionSheetDelegate
 {
+    
+    let SESSION_KEY_PREFIX = "FloraDetailsImageRecords_"
+    
     var flora: Flora?
     var showAllDetails: Bool = false
     var photos: [NYTPhoto] = []
@@ -105,12 +108,29 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     
     func configureView()
     {
+        let session = ServiceFactory.shareInstance.sessionStateService
+        
         if let imageRoot = flora?.imagePath
         {
-            let imageRecords = ServiceFactory.shareInstance.imageService.getImageRecords(imageRoot)
-            for record in imageRecords
+            
+            // Check cache first
+            let sessionKey = SESSION_KEY_PREFIX + imageRoot
+            if let imageRecords = session.state[sessionKey] as? [ImageRecord]
             {
-                photos.append(record)
+                self.photos = imageRecords
+                self.photosView.reloadData()
+            }
+            else
+            {
+                let service = ServiceFactory.shareInstance.imageService
+                var imageRecords = [ImageRecord]()
+                service.getImageRecords(imageRoot, recordFound: { (imageRecord) in
+                    
+                    imageRecords.append(imageRecord)
+                    session.state[sessionKey] = imageRecords
+                    self.photos.append(imageRecord)
+                    self.photosView.reloadData()
+                })
             }
         }
         
@@ -233,15 +253,15 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
         return false
     }
     
-    func photosViewController(photosViewController: NYTPhotosViewController, captionViewForPhoto photo: NYTPhoto) -> UIView?
-    {
-        return nil
-    }
+//    func photosViewController(photosViewController: NYTPhotosViewController, captionViewForPhoto photo: NYTPhoto) -> UIView?
+//    {
+//        return nil
+//    }
     
-    func deletePhoto(sender: UILabel)
-    {
-        photos.removeAtIndex(sender.tag)
-    }
+//    func deletePhoto(sender: UILabel)
+//    {
+//        photos.removeAtIndex(sender.tag)
+//    }
     
     //MARK: Actions
     @IBAction func moreButton(sender: UIBarButtonItem) {

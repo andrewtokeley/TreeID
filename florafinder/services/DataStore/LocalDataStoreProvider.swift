@@ -28,7 +28,7 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
         self.storeURL = try initializeStore(storeName)
     }
     
-    var rootFolder: NSURL
+    internal var rootFolder: NSURL
     {
         // Return the app's Document directory
         return NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first!)
@@ -70,24 +70,23 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
         return self.storeURL.URLByAppendingPathComponent(relativePath)
     }
     
-    func getImage(relativePath: String) -> UIImage?
+    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord) -> Void))
     {
-        return UIImage(contentsOfFile: fullPath(relativePath).path!)
-    }
-    
-    func getImageRecordsFromFolder(folderPath: String) -> [ImageRecord]
-    {
-        return [ImageRecord]()
-    }
-    
-    func getImageRecords(nameOrPattern: String) -> [ImageRecord]
-    {
-        return [ImageRecord]()
-    }
-    
-    func getImageRecords(nameOrPattern: String, inFolder: String?, completion: ((imageRecords: [ImageRecord]) -> Void))
-    {
-        
+        if let paths = try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(self.storeURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles)
+        {
+            for path in paths
+            {
+                if let data = NSFileManager.defaultManager().contentsAtPath(path.path!)
+                {
+                    if let image = UIImage(data: data)
+                    {
+                        let imageRecord = ImageRecord(image: image)
+                        imageRecord.name = path.URLByDeletingPathExtension?.lastPathComponent
+                        recordFound(imageRecord: imageRecord)
+                    }
+                }
+            }
+        }
     }
 
     func getFile(relativePath: String, completion: ((file: NSData?) -> Void))
@@ -95,11 +94,6 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
         completion(file:  NSFileManager.defaultManager().contentsAtPath(fullPath(relativePath).path!))
     }
     
-    func getFile(relativePath: String) -> NSData?
-    {
-        return NSFileManager.defaultManager().contentsAtPath(fullPath(relativePath).path!)
-    }
-
     func uploadFile(file: NSData, relativePath: String) -> NSURL?
     {
         do
@@ -115,40 +109,43 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
         }
     }
     
+    
     func uploadImage(image: UIImage, relativePath: String) -> NSURL?
     {
-        var imageData: NSData!
-        
-        if (relativePath.hasSuffix("jpg"))
+        if let imageData = UIImagePNGRepresentation(image)
         {
-            imageData = UIImageJPEGRepresentation(image, 1)
+            return uploadFile(imageData, relativePath: relativePath)
         }
-        else if (relativePath.hasSuffix("png"))
-        {
-            imageData = UIImagePNGRepresentation(image)
-        }
-        else
-        {
-            //throw DataStoreProviderError.UnsupportedFileExtension
-            return nil
-        }
-        
-        return uploadFile(imageData, relativePath: relativePath)
+        return nil
     }
     
-    func fileExists(relativePath: String) -> Bool
+    func fileExists(path: String, completion: (Bool) -> Void)
     {
-        return NSFileManager.defaultManager().fileExistsAtPath(fullPath(relativePath).path!)
+        let result = NSFileManager.defaultManager().fileExistsAtPath(fullPath(path).path!)
+        completion(result)
     }
     
-    func deleteAll() throws -> Bool
+    func deleteAll(completion: (Bool) -> Void)
     {
+        // Assume all will be good
+        var result = true
+        
         let fileManager = NSFileManager.defaultManager()
-        let paths = try fileManager.contentsOfDirectoryAtPath(self.storeURL!.path!)
-        for path in paths
+        if let paths = try? fileManager.contentsOfDirectoryAtPath(self.storeURL!.path!)
         {
-            try fileManager.removeItemAtPath(self.storeURL.URLByAppendingPathComponent(path).path!)
+            for path in paths
+            {
+                do
+                {
+                    try fileManager.removeItemAtPath(self.storeURL.URLByAppendingPathComponent(path).path!)
+                }
+                catch
+                {
+                    result = false
+                    break
+                }
+            }
         }
-        return true
+        completion(result)
     }
 }

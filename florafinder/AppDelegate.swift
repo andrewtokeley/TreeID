@@ -24,7 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
         
         // TESTING - CLEAR DATA CACHE
-        let _ = try? ServiceFactory.shareInstance.imageCacheProvider?.deleteAll()
+        ServiceFactory.shareInstance.imageCacheProvider?.deleteAll({ (result) in
+            if !result
+            {
+                // failed to clear cache!
+            }
+            
+        })
         
         Appearance.setAppearance()
         

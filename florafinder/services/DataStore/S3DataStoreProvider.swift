@@ -16,33 +16,13 @@ class S3DataStoreProvider: DataStoreProviderProtocol
         // or whatever we need to set this up
     }
     
-    func getImage(path: String) -> UIImage?
-    {
-        return nil
-    }
-    
-    func getImageRecordsFromFolder(folderPath: String) -> [ImageRecord]
-    {
-        return [ImageRecord]()
-    }
-    
-    func getImageRecords(nameOrPattern: String) -> [ImageRecord]
-    {
-        return [ImageRecord]()
-    }
-    
-    func getImageRecords(nameOrPattern: String, inFolder: String?, completion: ((imageRecords: [ImageRecord]) -> Void))
+    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord) -> Void))
     {
         
     }
 
     func getFile(path: String, completion: ((file: NSData?) -> Void))
     {
-    }
-    
-    func getFile(path: String) -> NSData?
-    {
-        return nil
     }
     
     func uploadFile(file: NSData, relativePath: String) -> NSURL?
@@ -55,13 +35,12 @@ class S3DataStoreProvider: DataStoreProviderProtocol
         return nil
     }
 
-    func fileExists(path: String) -> Bool
-    {
-        return false
+    func fileExists(path: String, completion: (Bool) -> Void) {
+        completion(false)
     }
     
-    func deleteAll() -> Bool
+    func deleteAll(completion: (Bool) -> Void)
     {
-        return false
+        completion(true)
     }
 }

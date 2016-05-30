@@ -39,101 +39,77 @@ class ImageService
 //         return [ImageRecord]()
 //    }
     
-    func getImageRecords(nameOrPattern: String) -> [ImageRecord]
+//    func getImageRecords(nameOrPattern: String) -> [ImageRecord]
+//    {
+//        fatalError("deprecated")
+//    }
+    
+    func getImageRecords(nameOrPattern: String, recordFound: (ImageRecord) -> Void)
     {
-        var results = [ImageRecord]()
-        
-        var imageURLs = NSBundle.mainBundle().URLsForResourcesWithExtension("jpg", subdirectory: nil)
-        let pngURLs = NSBundle.mainBundle().URLsForResourcesWithExtension("png", subdirectory: nil)
-        //let metaURLs = NSBundle.mainBundle().URLsForResourcesWithExtension("meta", subdirectory: nil)
-        
-        // Combine the images files
-        if let _ = imageURLs
-        {
-            if let _ = pngURLs
-            {
-                imageURLs!.appendContentsOf(pngURLs!)
-            }
-        }
-        else
-        {
-            imageURLs = pngURLs
-        }
-        
-        // Find any matching files
-        if let urls = imageURLs
-        {
-            for url in urls
-            {
-                if let filename = url.lastPathComponent
-                {
-                    if (filename.containsString(nameOrPattern))
-                    {
-                        // match!
-                        
-                        // see if there's any meta data too
-                        let meta = getFile(filename + ".meta")
-                        
-                        if let image = UIImage(named: filename)
-                        {
-                            results.append(ImageRecord(image: image, metaData: meta))
-                        }
-                    }
-                }
-            }
-        }
-        
-        return results
+        self.masterDataStoreProvider.getImageRecords(nameOrPattern, recordFound: {
+            (imageRecord) in
+            
+            recordFound(imageRecord)
+        })    
     }
     
-    func getImageRecord(relativePath: String) -> ImageRecord?
-    {
-        if let image = getImage(relativePath)
-        {
-            // meta files have the same path as
-            let metaPath = relativePath.stringByAppendingString(".meta")
-            let meta = getFile(metaPath)
-            
-            return ImageRecord(image: image, metaData: meta)
-        }
-        return nil
-    }
+//    func getImageRecord(relativePath: String) -> ImageRecord?
+//    {
+//        if let image = getImage(relativePath)
+//        {
+//            // meta files have the same path as
+//            let metaPath = relativePath.stringByAppendingString(".meta")
+//            let meta = getFile(metaPath)
+//            
+//            return ImageRecord(image: image, metaData: meta)
+//        }
+//        return nil
+//    }
     
     /**
      Gets the specified image, either in the local cache, or in the datastore provider if not there.
      */
     
-    func getFile(relativePath: String) -> NSData?
+    func getFile(relativePath: String, completion: (NSData) -> Void)
     {
-        var file: NSData?
-        
-        if cacheDataStore.fileExists(relativePath)
-        {
-            file = cacheDataStore.getFile(relativePath)
-        }
-        else
-        {
-            if let masterFile = masterDataStoreProvider.getFile(relativePath)
+        cacheDataStore.fileExists(relativePath, completion: {
+            (result) in
+            if (result)
             {
-                // add file to cache
-                cacheDataStore.uploadFile(masterFile, relativePath: relativePath)
-                
-                file = masterFile
+                self.cacheDataStore.getFile(relativePath, completion: { (file) in
+                    if (file != nil)
+                    {
+                        completion(file!)
+                    }
+                })
             }
-        }
-        return file
+            else
+            {
+                self.masterDataStoreProvider.getFile(relativePath, completion: { (file) in
+                    
+                    if (file != nil)
+                    {
+                        // add file to cache
+                        self.cacheDataStore.uploadFile(file!, relativePath: relativePath)
+                        
+                        completion(file!)
+                    }
+                })
+            }
+        })
+        
     }
     
-    func getImage(relativePath: String) -> UIImage?
-    {
-        if let imageData = getFile(relativePath)
-        {
-            if let image = UIImage(data: imageData)
-            {
-                return image
-            }
-        }
-        return placeholderImage
-    }
+//    func getImage(relativePath: String) -> UIImage?
+//    {
+//        if let imageData = getFile(relativePath)
+//        {
+//            if let image = UIImage(data: imageData)
+//            {
+//                return image
+//            }
+//        }
+//        return placeholderImage
+//    }
     
 }

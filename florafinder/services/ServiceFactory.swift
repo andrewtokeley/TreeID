@@ -117,4 +117,8 @@ class ServiceFactory {
     lazy var imageService: ImageService = {
         return ImageService(cacheDataStoreProvider: self.imageCacheProvider!, masterDataStoreProvider: self.imageDataProvider!)
     }()
+    
+    lazy var sessionStateService: SessionStateService = {
+        return SessionStateService()
+    }()
 }

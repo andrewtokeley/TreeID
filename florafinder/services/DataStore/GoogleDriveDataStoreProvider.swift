@@ -36,7 +36,8 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
         if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
             kKeychainItemName,
             clientID: kClientID,
-            clientSecret: nil) {
+            clientSecret: nil)
+        {
             service.authorizer = auth
         }
     }
@@ -55,11 +56,11 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
             if let viewController = self.delegate?.autenticationViewControllerFor(self)
             {
                 viewController.presentViewController(
-                createAuthController(),
-                animated: true,
-                completion: { () in
-                    completion?(isAuthenticated: self.isAuthenticated)
-                    }
+                    createAuthController(),
+                    animated: true,
+                    completion: { () in
+                        completion?(isAuthenticated: self.isAuthenticated)
+                        }
                 )
             }
         }
@@ -97,22 +98,7 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
     
     //MARK: - Delegate Methods
     
-//    func getImage(path: String) -> UIImage?
-//    {
-//        return nil
-//    }
-//    
-//    func getImageRecordsFromFolder(folderPath: String) -> [ImageRecord]
-//    {
-//        return [ImageRecord]()
-//    }
-//    
-//    func getImageRecords(nameOrPattern: String) -> [ImageRecord]
-//    {
-//        return [ImageRecord]()
-//    }
-    
-    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord) -> Void))
+    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord, index: Int, count: Int) -> Void))
     {
         if (isAuthenticated)
         {
@@ -133,10 +119,13 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
             service.executeQuery(query, completionHandler: { (ticket, fileList, error) in
                 
                 // Iterate over the results
+                var index = 0
                 if let list = fileList as? GTLDriveFileList
                 {
+                    let count = list.files.count
                     for item in list.files
                     {
+                        
                         if let file = item as? GTLDriveFile
                         {
                             let url = "https://www.googleapis.com/drive/v3/files/\(file.identifier)?alt=media"
@@ -152,11 +141,13 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
                                         // Let the callback know we have found an image
                                         let imageRecord = ImageRecord(image: image, metaData: nil)
                                         imageRecord.name = file.name
-                                        recordFound(imageRecord: imageRecord)
+                                        recordFound(imageRecord: imageRecord, index: index, count:  count)
                                     }
                                 }
                             })
                         }
+                        index += 1
+                        
                     }
                 }
             })
@@ -218,11 +209,6 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
             getFile(name, exportMimeType: nil, completion: completion)
         }
     }
-    
-//    func getFile(name: String) -> NSData?
-//    {
-//        return nil
-//    }
     
     func uploadFile(file: NSData, relativePath: String) -> NSURL?
     {

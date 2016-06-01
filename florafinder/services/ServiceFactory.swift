@@ -106,12 +106,8 @@ class ServiceFactory {
     }()
     
     lazy var imageDataProvider: DataStoreProviderProtocol? = {
-//        if let service = try? LocalDataStoreProvider(storeName: "ImageStore")
-//        {
-//            return service
-//        }
-//        return nil
         return BundleDataStoreProvider()
+        
     }()
     
     lazy var imageService: ImageService = {

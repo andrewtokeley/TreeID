@@ -17,7 +17,7 @@ protocol DataStoreProviderProtocol {
      - parameter inFolder:
      - parameter completion: callback method that accepts a single parameter for the resulting file. If no file is found the callback parameter will be nil.
      */
-    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord) -> Void))
+    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord, index: Int, count: Int) -> Void))
     
     /**
      Requests a single file, by path, returning the result as callback.

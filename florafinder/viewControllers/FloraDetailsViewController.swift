@@ -20,8 +20,13 @@ import NYTPhotoViewer
 
 class FloraDetailsViewController: UITableViewController, NYTPhotosViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIActionSheetDelegate
 {
+    var isFound = false
     
     let SESSION_KEY_PREFIX = "FloraDetailsImageRecords_"
+    
+    let ACTION_FOUND = "Found it!"
+    let ACTION_NOT_FOUND = "Not Found!"
+    let ACTION_SHOW_MAP = "View Map"
     
     var flora: Flora?
     var showAllDetails: Bool = false
@@ -58,6 +63,7 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     @IBOutlet weak var commonName: UILabel!
     @IBOutlet weak var latinName: UILabel!
     
+    @IBOutlet weak var photoCell: UITableViewCell!
     @IBOutlet weak var moreButtonItem: UIBarButtonItem!
     var leafDescriptions  = [String]()
     
@@ -104,6 +110,14 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
         
     }
 
+    lazy var spinner: UIActivityIndicatorView = {
+       let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        spinner.hidesWhenStopped = true
+        spinner.stopAnimating()
+        return spinner
+    
+    }()
+    
     //MARK: Functions
     
     func configureView()
@@ -112,7 +126,6 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
         
         if let imageRoot = flora?.imagePath
         {
-            
             // Check cache first
             let sessionKey = SESSION_KEY_PREFIX + imageRoot
             if let imageRecords = session.state[sessionKey] as? [ImageRecord]
@@ -122,14 +135,23 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
             }
             else
             {
+                photoCell.accessoryView = spinner
+                spinner.startAnimating()
+                
                 let service = ServiceFactory.shareInstance.imageService
                 var imageRecords = [ImageRecord]()
-                service.getImageRecords(imageRoot, recordFound: { (imageRecord) in
+                service.getImageRecords(imageRoot, recordFound: { (imageRecord, index, count) in
                     
                     imageRecords.append(imageRecord)
                     session.state[sessionKey] = imageRecords
                     self.photos.append(imageRecord)
                     self.photosView.reloadData()
+                    
+                    print("index \(index), count \(count)")
+                    if (index == (count - 1))
+                    {
+                        self.spinner.stopAnimating()
+                    }
                 })
             }
         }
@@ -265,12 +287,37 @@ class FloraDetailsViewController: UITableViewController, NYTPhotosViewController
     
     //MARK: Actions
     @IBAction func moreButton(sender: UIBarButtonItem) {
-        let action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Found it!" , "Map")
+        
+        var action: UIActionSheet
+        
+        if (isFound)
+        {
+            action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: ACTION_NOT_FOUND , ACTION_SHOW_MAP)
+        }
+        else
+        {
+            action = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: ACTION_FOUND , ACTION_SHOW_MAP)
+        }
         action.showInView(self.view)
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        
+        if let selectedTitle = actionSheet.buttonTitleAtIndex(buttonIndex)
+        {
+            switch selectedTitle
+            {
+                case ACTION_FOUND:
+                    isFound = true
+                    break
+                case ACTION_NOT_FOUND:
+                    isFound = false
+                    break
+                case ACTION_SHOW_MAP:
+                    break
+            default:
+                break
+            }
+        }
     }
     
     //MARK: Photo CollectionView

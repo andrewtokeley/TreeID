@@ -684,6 +684,7 @@
                         <outlet property="iconsCollectionView" destination="i4W-Jl-zdw" id="d5p-CO-zZZ"/>
                         <outlet property="latinName" destination="XIC-Iv-GFB" id="Fye-BS-pih"/>
                         <outlet property="moreButtonItem" destination="Na3-bZ-Kub" id="aTW-Z3-xiM"/>
+                        <outlet property="photoCell" destination="eL1-rD-rao" id="KfC-eG-Zgu"/>
                         <outlet property="photosView" destination="xkF-dO-KrM" id="Myb-KM-t0Z"/>
                     </connections>
                 </tableViewController>
@@ -1367,7 +1368,7 @@
         <image name="settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WVX-0e-2n5"/>
+        <segue reference="Nui-xM-6nO"/>
         <segue reference="WX1-Jg-efU"/>
     </inferredMetricsTieBreakers>
 </document>

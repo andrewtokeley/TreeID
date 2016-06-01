@@ -70,8 +70,9 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
         return self.storeURL.URLByAppendingPathComponent(relativePath)
     }
     
-    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord) -> Void))
+    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord, index: Int, count: Int) -> Void))
     {
+        
         if let paths = try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(self.storeURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles)
         {
             for path in paths
@@ -82,7 +83,7 @@ class LocalDataStoreProvider: DataStoreProviderProtocol
                     {
                         let imageRecord = ImageRecord(image: image)
                         imageRecord.name = path.URLByDeletingPathExtension?.lastPathComponent
-                        recordFound(imageRecord: imageRecord)
+                        recordFound(imageRecord: imageRecord, index: 0, count: 0)
                     }
                 }
             }

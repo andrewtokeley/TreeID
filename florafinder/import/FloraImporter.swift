@@ -405,16 +405,12 @@ class FloraImporter: TOKCSVParser
     
     override func processRowData(data: [NSObject : AnyObject]!, recordNumber: UInt, save: Bool) -> AnyObject!
     {
+        var isNew = false
         var flora:Flora?
         
         // retrieve each data element from the row - can ensure this field can be converted to TOKRowField since it's mandatory
         let commonNameField = data["CommonName"] as! TOKRowField
        
-        if (commonNameField.rawData == "Northern Rata")
-        {
-            print("hi")
-        }
-
         let leafMinWidth = data["LeafMinWidth"]
         let leafMaxWidth = data["LeafMaxWidth"]
         let leafMinLength = data["LeafMinLength"]
@@ -436,7 +432,7 @@ class FloraImporter: TOKCSVParser
         
         if (flora == nil)
         {
-            self.validationMessages.addMessage(TOKImportMessage(message: "New flora - '\(commonNameField.transformedData)'", severity: TOKImportMessageSeverity.Information))
+            isNew = true
             
             // Add entities to datastore
             if (save)
@@ -449,36 +445,46 @@ class FloraImporter: TOKCSVParser
                 flora?.leafUpper = serviceFactory.leafService.addLeaf(leafDimensions, edge: nil, color: nil, texture: nil)
             }
         }
-        else
-        {
-            self.validationMessages.addMessage(TOKImportMessage(message: "Update flora \(flora!.commonName!)", severity: TOKImportMessageSeverity.Information))
-        }
         
         // Only update the entity if we're saving
+        
+        flora?.leafUpper?.dimensions?.widthMin = leafMinWidth?.transformedData as? Float
+        flora?.leafUpper?.dimensions?.widthMax = leafMaxWidth?.transformedData as? Float
+        flora?.leafUpper?.dimensions?.lengthMin = leafMinLength?.transformedData as? Float
+        flora?.leafUpper?.dimensions?.lengthMax = leafMaxLength?.transformedData as? Float
+        flora?.leafUpper?.textureType = leafTexture?.transformedData as? LeafTextureType
+        flora?.leafUpper?.colorType = leafColor?.transformedData as? LeafColorType
+        flora?.leafUpper?.edgeType = edgeType?.transformedData as? LeafEdgeType
+        flora?.leafUpper?.formationType = formationType?.transformedData as? LeafFormationType
+        flora?.leafUpper?.notes = leafNotes?.transformedData as? String
+        flora?.flowerColor = flowerColor?.transformedData as? FlowerColorType
+        flora?.fruitColor = fruitColor?.transformedData as? FruitColorType
+        flora?.externalURL = externalURL?.transformedData as? String
+        flora?.imagePath = imageRoot?.transformedData as? String
+        flora?.notes = notes?.transformedData as? String
+        flora?.scientificName = scientificNameColumn?.transformedData as? String
+        
+        if (isNew)
+        {
+            self.validationMessages.addMessage(TOKImportMessage(message: "New flora - '\(commonNameField.transformedData)'", severity: TOKImportMessageSeverity.Information))
+        }
+        else
+        {
+            let floraChange = flora?.hasChanges ?? false
+            let leafChange = flora?.leafUpper?.hasChanges ?? false
+            let dimensionChange = flora?.leafUpper?.dimensions?.hasChanges ?? false
+            
+            if floraChange || leafChange || dimensionChange
+            {
+                self.validationMessages.addMessage(TOKImportMessage(message: "Update flora \(flora!.commonName!)", severity: TOKImportMessageSeverity.Information))
+            }
+        }
+            
         if (save)
         {
-            flora?.leafUpper?.dimensions?.widthMin = leafMinWidth?.transformedData as? Float
-            flora?.leafUpper?.dimensions?.widthMax = leafMaxWidth?.transformedData as? Float
-            flora?.leafUpper?.dimensions?.lengthMin = leafMinLength?.transformedData as? Float
-            flora?.leafUpper?.dimensions?.lengthMax = leafMaxLength?.transformedData as? Float
-            flora?.leafUpper?.textureType = leafTexture?.transformedData as? LeafTextureType
-            flora?.leafUpper?.colorType = leafColor?.transformedData as? LeafColorType
-            flora?.leafUpper?.edgeType = edgeType?.transformedData as? LeafEdgeType
-            flora?.leafUpper?.formationType = formationType?.transformedData as? LeafFormationType
-            flora?.leafUpper?.notes = leafNotes?.transformedData as? String
-            flora?.flowerColor = flowerColor?.transformedData as? FlowerColorType
-            flora?.fruitColor = fruitColor?.transformedData as? FruitColorType
-            flora?.externalURL = externalURL?.transformedData as? String
-            flora?.imagePath = imageRoot?.transformedData as? String
-            flora?.notes = notes?.transformedData as? String
-            flora?.scientificName = scientificNameColumn?.transformedData as? String
-            
-//            if let image = UIImage(named: "fivefinger_main.jpg")
-//            {
-//                serviceFactory.imageDataProvider?.uploadImage(image, relativePath: "fivefinger_main.jpg")
-//            }
             do
             {
+                //self.serviceFactory.coreDataController.sav
                 try self.serviceFactory.coreDataController.save()
             }
             catch

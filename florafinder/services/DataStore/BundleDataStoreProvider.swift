@@ -62,7 +62,7 @@ class BundleDataStoreProvider: DataStoreProviderProtocol
 //        return [ImageRecord]()
 //    }
     
-    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord) -> Void))
+    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord, index: Int, count: Int) -> Void))
     {
         // get the URLs for all images in the bundle
         var imageURLs = NSBundle.mainBundle().URLsForResourcesWithExtension("jpg", subdirectory: nil)
@@ -82,6 +82,8 @@ class BundleDataStoreProvider: DataStoreProviderProtocol
         }
         
         // Find any matching files
+        var matchingFiles = [String]()
+        
         if let urls = imageURLs
         {
             for url in urls
@@ -91,31 +93,40 @@ class BundleDataStoreProvider: DataStoreProviderProtocol
                     if (filename.containsString(nameOrPattern))
                     {
                         // match!
-                        
-                        // see if there's any meta data too
-                        getFile(filename + ".meta", completion: {
-                            (file) in
-                            
-                                let meta = file
-                            
-                                if let image = UIImage(named: filename)
-                                {
-                                    // Simulate a 2 second delay before returning the result
-                                    let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 2 * Int64(NSEC_PER_SEC))
-                                    dispatch_after(time, dispatch_get_main_queue())
-                                    {
-                                        // let the callback know we've found an image
-                                        let imageRecord = ImageRecord(image: image, metaData: meta)
-                                        imageRecord.name = filename
-                                        recordFound(imageRecord: imageRecord)
-                                    }
-                                    
-                                }
-                            })
+                        matchingFiles.append(filename)
                     }
                 }
             }
         }
+        
+        // Process
+        let count = matchingFiles.count
+        var index = 0
+        for filename in matchingFiles
+        {
+            // see if there's any meta data too
+            getFile(filename + ".meta", completion: {
+                (file) in
+                
+                let meta = file
+                
+                if let image = UIImage(named: filename)
+                {
+                    // Simulate a 2 second delay before returning the result
+                    let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 2 * Int64(NSEC_PER_SEC))
+                    dispatch_after(time, dispatch_get_main_queue())
+                    {
+                        // let the callback know we've found an image
+                        let imageRecord = ImageRecord(image: image, metaData: meta)
+                        imageRecord.name = filename
+                        recordFound(imageRecord: imageRecord, index: index, count: count)
+                        index += 1
+                    }
+                    
+                }
+            })
+        }
+
     }
 
     func uploadFile(file: NSData, relativePath: String) -> NSURL?

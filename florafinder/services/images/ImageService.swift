@@ -44,13 +44,13 @@ class ImageService
 //        fatalError("deprecated")
 //    }
     
-    func getImageRecords(nameOrPattern: String, recordFound: (ImageRecord) -> Void)
+    func getImageRecords(nameOrPattern: String, recordFound: (ImageRecord, Int, Int) -> Void)
     {
-        self.masterDataStoreProvider.getImageRecords(nameOrPattern, recordFound: {
-            (imageRecord) in
-            
-            recordFound(imageRecord)
-        })    
+        
+        self.masterDataStoreProvider.getImageRecords(nameOrPattern, recordFound: { (imageRecord, index, count) in
+            recordFound(imageRecord, index, count)
+        })
+        
     }
     
 //    func getImageRecord(relativePath: String) -> ImageRecord?

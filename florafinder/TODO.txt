@@ -1,10 +1,11 @@
-- create (and cache) thumbnails to be used in catalogue
-- Start discover screen with no search results panel, just instructions
 - Remember last search
 - save photos taken when attaching to "Not found!"
 - ability to mark trees as found
 - catalogue keyword search
 - catalogue - filter on found/not found trees
 - add regional support - i.e. each tree can be tagged with a region it's known to be present
-- add "Found!" function, record geo-coodinates
+- add user data for,
+    - add "Found!" function with record geo-coodinates
 - work out whether there's a newer copy of the register to download'
+- choose external service provider for registers, images and user data
+- import - don't update unless data has changed on the record

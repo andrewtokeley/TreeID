@@ -197,7 +197,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                 cell.image.image = imageService.placeholderImage
                 
                 // Get image asynchronously
-                imageService.getImageRecords(thumbnailName, recordFound: { (imageRecord) in
+                imageService.getImageRecords(thumbnailName, recordFound: { (imageRecord, index, count) in
                     
                     if let image = imageRecord.image
                     {

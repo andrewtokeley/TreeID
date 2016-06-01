@@ -16,9 +16,8 @@ class S3DataStoreProvider: DataStoreProviderProtocol
         // or whatever we need to set this up
     }
     
-    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord) -> Void))
-    {
-        
+    func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord, index: Int, count: Int) -> Void)) {
+        //
     }
 
     func getFile(path: String, completion: ((file: NSData?) -> Void))

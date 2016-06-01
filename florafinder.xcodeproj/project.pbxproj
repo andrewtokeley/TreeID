@@ -635,6 +635,7 @@
 		D82FE8701C3F7DEE00AEB5D8 /* services */ = {
 			isa = PBXGroup;
 			children = (
+				D8FE36551CFF66D30056384E /* authentication */,
 				D865CF001CF2D4C300735107 /* Leaves */,
 				D8FF49221CE3BF730079A4C1 /* images */,
 				D84D29D81CCFF77D0084C851 /* DataStore */,
@@ -1150,6 +1151,13 @@
 				D8B7652C1C96582300A9B4F2 /* DescriptionListItem.swift */,
 			);
 			name = descriptionLists;
+			sourceTree = "<group>";
+		};
+		D8FE36551CFF66D30056384E /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = authentication;
 			sourceTree = "<group>";
 		};
 		D8FF49151CE269810079A4C1 /* catalogue */ = {

@@ -160,7 +160,7 @@ class CoreDataController: NSObject {
     func save() throws
     {
         // propogates the error up the chain
-        try self.managedObjectContext.save()
+            try self.managedObjectContext.save()
     }
     
     func resetDatastore() throws -> Bool

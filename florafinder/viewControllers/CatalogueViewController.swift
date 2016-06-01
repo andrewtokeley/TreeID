@@ -104,6 +104,20 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let found = UITableViewRowAction(style: .Normal, title: "Found!", handler: {
+        (tableViewRow, indexPath) in
+            
+        })
+        found.backgroundColor = UIColor.leafGreen()
+        
+        return [found]
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("cell") as? CatalogueTableViewCell
@@ -122,6 +136,7 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
                 // check if there's an image in the cache
                 if let image = session.state[thumbnailName] as? UIImage
                 {
+                    print(thumbnailName)
                     cell.treeImage?.image = image
                 }
                 else
@@ -130,7 +145,7 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
                     cell.treeImage?.image = imageService.placeholderImage
                     
                     // Get image asynchronously
-                    imageService.getImageRecords(thumbnailName, recordFound: { (imageRecord) in
+                    imageService.getImageRecords(thumbnailName, recordFound: { (imageRecord, index, count) in
                         
                         if let image = imageRecord.image
                         {
@@ -140,7 +155,15 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
                                 session.state[name] = image
                             }
                             
-                            cell.treeImage?.image = image
+                            dispatch_async(dispatch_get_main_queue(), { () in
+                                
+                                // only set the image if the cell is visible
+                                if let updateCell = tableView.cellForRowAtIndexPath(indexPath) as? CatalogueTableViewCell
+                                {
+                                    updateCell.treeImage?.image = image
+                                }
+                            })
+                            
                         }
                     })
                 }

@@ -11,7 +11,7 @@
             <objects>
                 <tableViewController title="Leaf" id="fZq-oN-R4i" userLabel="Flora Properties" customClass="LeafViewController" customModule="florafinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ehC-3X-Dxi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -704,7 +704,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDk-3A-EHr">
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UDk-3A-EHr">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
@@ -1242,6 +1242,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="O7n-6j-6ba" kind="show" id="6yo-xU-33W"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1348,10 +1351,87 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="loginTableViewCell" destination="bXJ-x2-nZC" id="pam-EY-otb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YS-lG-u1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3150" y="-3254"/>
+        </scene>
+        <!--User-->
+        <scene sceneID="7sI-IL-oxq">
+            <objects>
+                <viewController title="User" id="O7n-6j-6ba" customClass="UserViewController" customModule="florafinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GvJ-cn-ZsI"/>
+                        <viewControllerLayoutGuide type="bottom" id="ArV-cI-tIH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HQH-WU-aDY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-vF-YNh">
+                                <rect key="frame" x="189" y="133" width="223" height="90"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="google.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MtK-H6-dBH">
+                                        <rect key="frame" x="112" y="2" width="91" height="85"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hea-pn-bUA">
+                                        <rect key="frame" x="20" y="34.5" width="88" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="2na-2L-RUM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="1D9-nq-HlO"/>
+                                    <constraint firstItem="Hea-pn-bUA" firstAttribute="leading" secondItem="zyk-vF-YNh" secondAttribute="leading" constant="20" id="AXK-De-5Wr"/>
+                                    <constraint firstAttribute="width" constant="223" id="BSQ-Pr-TtL"/>
+                                    <constraint firstAttribute="trailing" secondItem="MtK-H6-dBH" secondAttribute="trailing" constant="20" id="DIJ-rD-yef"/>
+                                    <constraint firstAttribute="bottom" secondItem="MtK-H6-dBH" secondAttribute="bottom" constant="3" id="Q8A-s2-Zvb"/>
+                                    <constraint firstItem="MtK-H6-dBH" firstAttribute="top" secondItem="zyk-vF-YNh" secondAttribute="top" constant="2" id="YFz-du-7sV"/>
+                                    <constraint firstItem="MtK-H6-dBH" firstAttribute="leading" secondItem="Hea-pn-bUA" secondAttribute="trailing" constant="4" id="fEF-PG-wVr"/>
+                                    <constraint firstItem="Hea-pn-bUA" firstAttribute="centerY" secondItem="zyk-vF-YNh" secondAttribute="centerY" id="nAz-bS-DFh"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Only worth signing in if you are andrewtokeley@gmail.com!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42F-OZ-eNT">
+                                <rect key="frame" x="133" y="231" width="334" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7rK-S3-MBF"/>
+                                    <constraint firstAttribute="width" constant="334" id="KK2-Ig-Wka"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KK2-Ig-Wka"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="42F-OZ-eNT" firstAttribute="top" secondItem="zyk-vF-YNh" secondAttribute="bottom" constant="8" id="IdL-ZY-TKi"/>
+                            <constraint firstItem="zyk-vF-YNh" firstAttribute="centerX" secondItem="HQH-WU-aDY" secondAttribute="centerX" id="Sbo-ek-GKj"/>
+                            <constraint firstItem="zyk-vF-YNh" firstAttribute="top" secondItem="GvJ-cn-ZsI" secondAttribute="bottom" constant="69" id="WXc-GG-jZ8"/>
+                            <constraint firstItem="42F-OZ-eNT" firstAttribute="centerX" secondItem="HQH-WU-aDY" secondAttribute="centerX" id="xTB-If-wiB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="googleSignInView" destination="zyk-vF-YNh" id="1EM-nt-xYJ"/>
+                        <outlet property="messageLabel" destination="42F-OZ-eNT" id="wHx-eU-CJE"/>
+                        <outlet property="signInOutMessageLabel" destination="Hea-pn-bUA" id="AEm-2p-wI4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byO-PK-FOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4216" y="-3441"/>
         </scene>
     </scenes>
     <resources>
@@ -1361,6 +1441,7 @@
         <image name="eye.png" width="24" height="24"/>
         <image name="first" width="30" height="30"/>
         <image name="fruit.png" width="64" height="64"/>
+        <image name="google.jpg" width="300" height="300"/>
         <image name="lacebark_main.jpg" width="550" height="436"/>
         <image name="more.png" width="25" height="25"/>
         <image name="next.png" width="25" height="25"/>

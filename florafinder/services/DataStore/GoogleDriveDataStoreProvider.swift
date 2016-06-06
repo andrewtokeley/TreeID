@@ -10,16 +10,16 @@ import Foundation
 import GoogleAPIClient
 import GTMOAuth2
 
+enum GoogleDriveDataStoreException: ErrorType
+{
+    case Unauthorized
+}
+
 class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
 {
     private let ROOT_FOLDER_NAME = "TreeID"
     private var rootForderID: String?
-    
-    private let kKeychainItemName = "Drive API"
-    private let kClientID = "630604644095-h99d0gh6sd3ast4tvd0rf23rh5p4kcn0.apps.googleusercontent.com"
-    private let scopes = [kGTLAuthScopeDriveMetadataReadonly, kGTLAuthScopeDriveReadonly]
-    private let service = GTLServiceDrive()
-    private var isAuthenticated: Bool = false
+    private var authenticationService: AuthenticationServiceProtocol
     
     var delegate: GoogleDriveDataStoreProviderDelegate?
     var hostViewController: UIViewController?
@@ -27,80 +27,35 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
         return self.delegate?.autenticationViewControllerFor(self)
     }
 
+    
     //MARK: - Initialisers
     
-    init(delegate: GoogleDriveDataStoreProviderDelegate)
+    init(service: AuthenticationServiceProtocol)
     {
-        self.delegate = delegate
-        
-        if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
-            kKeychainItemName,
-            clientID: kClientID,
-            clientSecret: nil)
-        {
-            service.authorizer = auth
-        }
+        self.authenticationService = service
+        super.init()
     }
     
-    //MARK: - Authentication
-    func authenticate(completion: ((isAuthenticated: Bool) -> Void)?)
+    var service: GTLServiceDrive?
     {
-        if let authorizer = service.authorizer,
-            canAuth = authorizer.canAuthorize where canAuth
-        {
-            self.isAuthenticated = true
-            completion?(isAuthenticated: true)
-        }
-        else
-        {
-            if let viewController = self.delegate?.autenticationViewControllerFor(self)
-            {
-                viewController.presentViewController(
-                    createAuthController(),
-                    animated: true,
-                    completion: { () in
-                        completion?(isAuthenticated: self.isAuthenticated)
-                        }
-                )
-            }
-        }
-    }
-        
-    private func createAuthController() -> GTMOAuth2ViewControllerTouch
-    {
-        let scopeString = scopes.joinWithSeparator(" ")
-        return GTMOAuth2ViewControllerTouch(
-            scope: scopeString,
-            clientID: kClientID,
-            clientSecret: nil,
-            keychainItemName: kKeychainItemName,
-            delegate: self,
-            finishedSelector: #selector(self.handleAuth(_:finishedWithAuth:error:))
-        )
+        return authenticationService.context as? GTLServiceDrive
     }
     
-    // Handle completion of the authorization process, and update the Drive API
-    // with the new credentials.
-    @objc func handleAuth(vc : UIViewController,
-                        finishedWithAuth authResult : GTMOAuth2Authentication, error : NSError?) {
-        
-        if let error = error {
-            service.authorizer = nil
-            print(error)
-            return
-        }
-        
-        isAuthenticated = true
-        service.authorizer = authResult
-        hostViewController?.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+//    var isAuthenticated: Bool
+//    {
+//        let service = authenticationService.context as? GTLServiceDrive
+//        if let authorizer = service.authorizer, canAuth = authorizer.canAuthorize where canAuth
+//        {
+//            return true
+//        }
+//        return false
+//    }
     
     //MARK: - Delegate Methods
     
     func getImageRecords(nameOrPattern: String, recordFound: ((imageRecord: ImageRecord, index: Int, count: Int) -> Void))
     {
-        if (isAuthenticated)
+        if (authenticationService.isAuthenticated)
         {
             let query = GTLQueryDrive.queryForFilesList()
             
@@ -116,7 +71,7 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
             query.q = queryString
             query.fields = "nextPageToken, files(id, name)"
             
-            service.executeQuery(query, completionHandler: { (ticket, fileList, error) in
+            service?.executeQuery(query, completionHandler: { (ticket, fileList, error) in
                 
                 // Iterate over the results
                 var index = 0
@@ -130,21 +85,22 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
                         {
                             let url = "https://www.googleapis.com/drive/v3/files/\(file.identifier)?alt=media"
                             
-                            let fetcher = self.service.fetcherService.fetcherWithURLString(url as String)
-                            
-                            fetcher.beginFetchWithCompletionHandler({ (data, error) in
-                                
-                                if (data != nil)
-                                {
-                                    if let image = UIImage(data: data!)
+                            if let fetcher = self.service?.fetcherService.fetcherWithURLString(url as String)
+                            {
+                                fetcher.beginFetchWithCompletionHandler({ (data, error) in
+                                    
+                                    if (data != nil)
                                     {
-                                        // Let the callback know we have found an image
-                                        let imageRecord = ImageRecord(image: image, metaData: nil)
-                                        imageRecord.name = file.name
-                                        recordFound(imageRecord: imageRecord, index: index, count:  count)
+                                        if let image = UIImage(data: data!)
+                                        {
+                                            // Let the callback know we have found an image
+                                            let imageRecord = ImageRecord(image: image, metaData: nil)
+                                            imageRecord.name = file.name
+                                            recordFound(imageRecord: imageRecord, index: index, count:  count)
+                                        }
                                     }
-                                }
-                            })
+                                })
+                            }
                         }
                         index += 1
                         
@@ -157,7 +113,7 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
 
     func getFile(name: String, exportMimeType: String?, completion: ((file: NSData?) -> Void))
     {
-        if (isAuthenticated)
+        if (authenticationService.isAuthenticated)
         {
             let query = GTLQueryDrive.queryForFilesList()
             
@@ -166,7 +122,7 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
             query.q = "name = '\(name)'"
             query.fields = "nextPageToken, files(id, name)"
             
-            service.executeQuery(query, completionHandler: { (ticket, fileList, error) in
+            service?.executeQuery(query, completionHandler: { (ticket, fileList, error) in
                 
                 // just return the first result
                 if let list = fileList as? GTLDriveFileList
@@ -184,11 +140,12 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
                             url = "https://www.googleapis.com/drive/v3/files/\(file.identifier)?alt=media"
                         }
                         
-                        let fetcher = self.service.fetcherService.fetcherWithURLString(url as String)
-                        
-                        fetcher.beginFetchWithCompletionHandler({ (data, error) in
-                            completion(file: data)
-                        })
+                        if let fetcher = self.service?.fetcherService.fetcherWithURLString(url as String)
+                        {
+                            fetcher.beginFetchWithCompletionHandler({ (data, error) in
+                                completion(file: data)
+                            })
+                        }
                     }
                 }
             })
@@ -222,7 +179,7 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
     
     func fileExists(path: String, completion: (Bool) -> Void)
     {
-        if (isAuthenticated)
+        if (authenticationService.isAuthenticated)
         {
             let query = GTLQueryDrive.queryForFilesList()
             
@@ -231,7 +188,7 @@ class GoogleDriveDataStoreProvider: NSObject, DataStoreProviderProtocol
             query.q = "name = '\(path)'"
             query.fields = "nextPageToken, files(id, name)"
             
-            service.executeQuery(query, completionHandler: { (ticket, fileList, error) in
+            service?.executeQuery(query, completionHandler: { (ticket, fileList, error) in
                 
                 var ok = (error == nil)
                 if ok

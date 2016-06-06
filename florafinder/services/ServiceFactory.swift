@@ -117,4 +117,8 @@ class ServiceFactory {
     lazy var sessionStateService: SessionStateService = {
         return SessionStateService()
     }()
+    
+    lazy var authenticationService: AuthenticationServiceProtocol = {
+        return GoogleAuthenticationService()
+    }()
 }

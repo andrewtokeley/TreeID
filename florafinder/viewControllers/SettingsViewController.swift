@@ -8,15 +8,25 @@
 
 import Foundation
 import UIKit
+import GoogleAPIClient
 
 class SettingsViewController: UITableViewController, ImportDelegate, GoogleDriveDataStoreProviderDelegate
 {
+    let SECTION_USER = 0
+    let ROW_LOGIN = 0
+    
     let SECTION_TEST = 2
     let ROW_IMPORT = 0
     let ROW_GOOGLE_IMPORT = 1
     
     let META_FILE_EXTENSION = "meta"
     let GOOGLE_REGISTER_NAME = "TreeIDRegister"
+    let LOG_IN = "Sign in"
+    let LOG_OUT = "Log out"
+    
+    var authenticationService: AuthenticationServiceProtocol!
+    
+    @IBOutlet weak var loginTableViewCell: UITableViewCell!
     
     var googleImportSpinner: UIActivityIndicatorView!
     
@@ -24,6 +34,9 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
     {
         super.viewDidLoad()
         googleImportSpinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        
+        self.authenticationService = ServiceFactory.shareInstance.authenticationService
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -31,6 +44,8 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
         // make sure the Google spinner is reset
         let cell = super.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: ROW_GOOGLE_IMPORT, inSection: SECTION_TEST))
         cell.accessoryView = nil
+        
+        loginTableViewCell.textLabel?.text = authenticationService.isAuthenticated ? authenticationService.username : LOG_IN
     }
     
     override func didReceiveMemoryWarning()
@@ -55,31 +70,27 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
 
     func importFromGoogle()
     {
-        let provider = GoogleDriveDataStoreProvider(delegate: self)
+        let service = ServiceFactory.shareInstance.authenticationService
+        let provider = GoogleDriveDataStoreProvider(service: service)
         
-        provider.authenticate({ (isAuthenticated) in
-            if (isAuthenticated)
+        self.googleImportSpinner?.startAnimating()
+        
+        provider.getFile(self.GOOGLE_REGISTER_NAME, completion: { (file) in
+            
+            // the CSV code requires a NSURL pointing to the CSV data
+            if let _ = file
             {
-                self.googleImportSpinner?.startAnimating()
-
-                provider.getFile(self.GOOGLE_REGISTER_NAME, completion: { (file) in
+                // could save NSData to file and use URL to this instead
+                if let url = ServiceFactory.shareInstance.imageCacheProvider?.uploadFile(file!, relativePath: "import.csv")
+                {
+                    let importViewController = ImportViewController(nibName: "Import", serviceFactory: ServiceFactory.shareInstance, fileURL: url, delegate: self)
                     
-                    // the CSV code requires a NSURL pointing to the CSV data
-                    if let _ = file
-                    {
-                        // could save NSData to file and use URL to this instead
-                        if let url = ServiceFactory.shareInstance.imageCacheProvider?.uploadFile(file!, relativePath: "import.csv")
-                        {
-                            let importViewController = ImportViewController(nibName: "Import", serviceFactory: ServiceFactory.shareInstance, fileURL: url, delegate: self)
-                        
-                            self.navigationController?.pushViewController(importViewController, animated: true)
-                        }
-                    }
-                    
-                    self.googleImportSpinner?.stopAnimating()
-                })
-                
+                    self.navigationController?.pushViewController(importViewController, animated: true)
+                }
             }
+            
+            self.googleImportSpinner?.stopAnimating()
+            
         })
     }
     
@@ -97,8 +108,47 @@ class SettingsViewController: UITableViewController, ImportDelegate, GoogleDrive
         })
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        var height = super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        
+        if (indexPath.section == SECTION_TEST && indexPath.row == ROW_GOOGLE_IMPORT)
+        {
+            height = authenticationService.isAuthenticated ? height : 0
+        }
+        
+        return height
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+//        if (indexPath.section == SECTION_USER)
+//        {
+//            if (indexPath.row == ROW_LOGIN)
+//            {
+//                if authenticationService.isAuthenticated
+//                {
+//                    // Logging out...
+//                    
+//                    authenticationService.signOut()
+//                    loginTableViewCell.textLabel?.text = LOG_IN
+//                    
+//                }
+//                else
+//                {
+//                    // Logging in...
+//                    
+//                    authenticationService.signIn(self, completion: { (isAuthenticated) in
+//                        if (isAuthenticated)
+//                        {
+//                            self.loginTableViewCell.textLabel?.text = self.LOG_OUT
+//                        }
+//                    })
+//                }
+//            }
+//            
+//            let googleIndexPath = NSIndexPath(forRow: ROW_GOOGLE_IMPORT, inSection: SECTION_TEST)
+//            tableView.reloadRowsAtIndexPaths([googleIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+//        }
         if (indexPath.section == SECTION_TEST)
         {
             if (indexPath.row == ROW_IMPORT)

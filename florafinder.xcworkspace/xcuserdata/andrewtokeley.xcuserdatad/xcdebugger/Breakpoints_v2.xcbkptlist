@@ -1512,11 +1512,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486209911.278246"
+            timestampString = "486860585.460187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "importViewController(_:didImportRecords:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1848,11 +1848,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486295494.117081"
+            timestampString = "486860585.460187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "importViewController(_:didImportRecords:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2487,44 +2487,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "486453016.438953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "handleAuth(_:finishedWithAuth:error:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486209911.278246"
+            timestampString = "486860585.460187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "importFromGoogle()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486295494.117081"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2536,43 +2504,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "486453016.438953"
+            timestampString = "486609780.507453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "handleAuth(_:finishedWithAuth:error:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486209911.278246"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "importFromGoogle()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "486453016.438953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "getFile(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2584,11 +2520,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "486453016.438953"
+            timestampString = "486609780.507453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "getFile(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2600,11 +2536,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "486453016.438953"
+            timestampString = "486609780.507453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "getFile(_:exportMimeType:completion:)"
             landmarkType = "5">
             <Locations>
@@ -2639,54 +2575,6 @@
                   offsetFromSymbolStart = "268">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "486453016.438953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "createAuthController()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "486453016.438953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "handleAuth(_:finishedWithAuth:error:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "486453016.438953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "handleAuth(_:finishedWithAuth:error:)"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2807,54 +2695,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486209911.278246"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "importFromGoogle()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "florafinder.SettingsViewController.(importFromGoogle () -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "florafinder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewtokeley/Documents/Dev/florafinder/florafinder/viewControllers/SettingsViewController.swift"
-                  timestampString = "485807623.964017"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "florafinder.SettingsViewController.(importFromGoogle () -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "florafinder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewtokeley/Documents/Dev/florafinder/florafinder/viewControllers/SettingsViewController.swift"
-                  timestampString = "485807623.964594"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "648">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/CacheDataStoreProvider.swift"
             timestampString = "485807840.030977"
             startingColumnNumber = "9223372036854775807"
@@ -2919,54 +2759,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486209911.278246"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "importFromGoogle()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "florafinder.SettingsViewController.(importFromGoogle () -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "florafinder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewtokeley/Documents/Dev/florafinder/florafinder/viewControllers/SettingsViewController.swift"
-                  timestampString = "486379166.600928"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "94">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "florafinder.SettingsViewController.(importFromGoogle () -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "florafinder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewtokeley/Documents/Dev/florafinder/florafinder/viewControllers/SettingsViewController.swift"
-                  timestampString = "486379166.601257"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "656">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/LocalDataStoreProvider.swift"
             timestampString = "486368641.326894"
             startingColumnNumber = "9223372036854775807"
@@ -3016,11 +2808,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/services/DataStore/GoogleDriveDataStoreProvider.swift"
-            timestampString = "486453016.438953"
+            timestampString = "486609780.507453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "getFile(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3096,11 +2888,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486169438.623984"
+            timestampString = "486609123.883505"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3112,11 +2904,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486169567.601447"
+            timestampString = "486814379.939768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3240,11 +3032,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "florafinder/viewControllers/SettingsViewController.swift"
-            timestampString = "486379156.848946"
+            timestampString = "486860585.460187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "importFromGoogle()"
             landmarkType = "5">
             <Locations>
@@ -3326,6 +3118,54 @@
             startingLineNumber = "435"
             endingLineNumber = "435"
             landmarkName = "processRowData(_:recordNumber:save:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "florafinder/services/authentication/GoogleAuthenticationService.swift"
+            timestampString = "486865696.82929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "handleAuth(_:finishedWithAuth:error:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "florafinder/viewControllers/UserViewController.swift"
+            timestampString = "486865178.492065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "signInTap(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "florafinder/viewControllers/UserViewController.swift"
+            timestampString = "486865221.379995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "signOutTap(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
